@@ -137,22 +137,22 @@
 
         /* Category Carousel Responsive Card Widths */
         .cat-slide-card {
-            flex: 0 0 calc((100% - 12px) / 1.75);
-            min-width: 170px;
+            flex: 0 0 calc((100% - 14px) / 1.75);
+            min-width: 165px;
         }
         @media (min-width: 640px) {
             .cat-slide-card {
-                flex: 0 0 calc((100% - (2 * 12px)) / 3);
+                flex: 0 0 calc((100% - (2 * 16px)) / 3);
             }
         }
         @media (min-width: 768px) {
             .cat-slide-card {
-                flex: 0 0 calc((100% - (3 * 12px)) / 4);
+                flex: 0 0 calc((100% - (3 * 16px)) / 4);
             }
         }
         @media (min-width: 1024px) {
             .cat-slide-card {
-                flex: 0 0 calc((100% - (5 * 12px)) / 6);
+                flex: 0 0 calc((100% - (5 * 16px)) / 6);
                 min-width: 0;
             }
         }
@@ -237,43 +237,43 @@
     <!-- 2. MAIN HEADER & DIRECTORY NAVIGATION -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all shadow-subtle">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20 gap-4">
+            <div class="flex items-center justify-between h-[68px] sm:h-20 gap-3 sm:gap-4">
                 
                 <!-- Official Brand Logo -->
                 <a href="#" class="flex items-center shrink-0 py-1" aria-label="Umer Din Pharmacy & Surgical Home">
                     <img src="assets/umer-din-pharmacy-logo.png" 
                          alt="Umer Din Pharmacy & Surgical Logo - Lalamusa" 
-                         class="h-11 sm:h-14 w-auto object-contain transition-transform duration-200 hover:scale-[1.02]"
+                         class="h-10 sm:h-12 w-auto object-contain transition-transform duration-200 hover:scale-[1.02]"
                          width="1986" height="564">
                 </a>
 
-                <!-- Desktop Search Bar -->
-                <div class="hidden md:flex flex-1 max-w-md mx-4 relative">
+                <!-- Desktop Search Bar (Proportionate & Balanced) -->
+                <div class="hidden md:flex flex-1 max-w-xs lg:max-w-sm xl:max-w-md mx-2 lg:mx-4 relative">
                     <div class="w-full relative">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs sm:text-sm"></i>
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs sm:text-sm pointer-events-none"></i>
                         <input type="text" 
                                id="global-search" 
                                onkeyup="handleSearchFilter(this.value)" 
                                placeholder="Search medicines, BP monitors, baby milk..." 
-                               class="w-full pl-9 pr-9 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-brand-green focus:bg-white transition"
+                               class="w-full pl-9 pr-8 py-2 bg-slate-50 hover:bg-slate-100/70 focus:bg-white border border-slate-200/90 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green transition"
                                aria-label="Search catalog items">
-                        <button onclick="clearSearch()" id="clear-search-btn" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1" aria-label="Clear search">
+                        <button onclick="clearSearch()" id="clear-search-btn" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1 transition" aria-label="Clear search">
                             <i class="fa-solid fa-circle-xmark text-sm"></i>
                         </button>
                     </div>
                 </div>
 
                 <!-- Navigation Links & Order CTAs -->
-                <div class="flex items-center gap-3">
-                    <nav class="hidden lg:flex items-center gap-6 text-xs font-bold text-slate-600 uppercase tracking-wide mr-1" aria-label="Main Navigation">
-                        <a href="#categories" class="hover:text-brand-green transition">Catalog</a>
-                        <a href="#prescription-section" class="hover:text-brand-green transition">Prescription</a>
-                        <a href="#surgical-section" class="hover:text-brand-green transition">Surgical Supplies</a>
-                        <a href="#store-info" class="hover:text-brand-green transition">Store Info</a>
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-[13px] font-semibold text-slate-700 tracking-normal mr-1" aria-label="Main Navigation">
+                        <a href="#categories" class="hover:text-brand-green transition-colors py-1">Catalog</a>
+                        <a href="#prescription-section" class="hover:text-brand-green transition-colors py-1">Prescription</a>
+                        <a href="#surgical-section" class="hover:text-brand-green transition-colors py-1">Surgical Supplies</a>
+                        <a href="#store-info" class="hover:text-brand-green transition-colors py-1">Store Info</a>
                     </nav>
 
                     <!-- Fast Prescription Modal Trigger -->
-                    <button onclick="openPrescriptionModal()" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl border border-brand-green/30 bg-brand-greenLight text-brand-green font-bold text-xs uppercase tracking-wider hover:bg-brand-green hover:text-white transition shadow-subtle">
+                    <button onclick="openPrescriptionModal()" class="hidden sm:inline-flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-xl border border-brand-green/30 bg-brand-greenLight/70 text-brand-green font-semibold text-xs uppercase tracking-wider hover:bg-brand-green hover:text-white transition shadow-subtle shrink-0">
                         <i class="fa-solid fa-file-prescription text-sm"></i>
                         <span>Order Parchi</span>
                     </button>
@@ -282,7 +282,7 @@
                     <a href="https://wa.me/923338448427?text=Assalam-o-Alaikum%20Umer%20Din%20Pharmacy!%20Mujhe%20medicine%20order%20karni%20hai." 
                        target="_blank" 
                        rel="noopener noreferrer"
-                       class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wide transition shadow-sm"
+                       class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-semibold text-xs tracking-wide transition shadow-sm hover:shadow shrink-0"
                        aria-label="Direct WhatsApp Contact 0333 8448427">
                         <i class="fa-brands fa-whatsapp text-base text-emerald-300"></i>
                         <span class="hidden sm:inline">0333 8448427</span>
@@ -290,43 +290,53 @@
                     </a>
 
                     <!-- Mobile Drawer Toggle -->
-                    <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-lg transition" aria-label="Toggle navigation menu" id="mobile-menu-btn">
-                        <i class="fa-solid fa-bars text-xl"></i>
+                    <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-slate-700 hover:text-brand-green hover:bg-slate-100 rounded-xl transition shrink-0" aria-label="Toggle navigation menu" id="mobile-menu-btn">
+                        <i class="fa-solid fa-bars text-lg sm:text-xl"></i>
                     </button>
                 </div>
 
             </div>
 
-            <!-- Mobile Search Bar -->
-            <div class="md:hidden pb-3">
+            <!-- Mobile Search Bar (Compact & Integrated) -->
+            <div class="md:hidden pb-3 pt-0">
                 <div class="relative">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
                     <input type="text" 
+                           id="mobile-search"
                            onkeyup="handleSearchFilter(this.value)" 
                            placeholder="Search medicines, surgical, baby care..." 
-                           class="w-full pl-9 pr-4 py-2 bg-slate-100 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-brand-green focus:bg-white"
+                           class="w-full pl-9 pr-8 py-2 bg-slate-100 border border-slate-200 rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green focus:bg-white transition"
                            aria-label="Mobile search items">
+                    <button onclick="clearSearch()" id="clear-mobile-search-btn" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1 transition" aria-label="Clear mobile search">
+                        <i class="fa-solid fa-circle-xmark text-sm"></i>
+                    </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Menu Drawer -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-5 py-4 space-y-3 shadow-card">
-            <a href="#categories" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-brand-green border-b border-slate-100">
-                <i class="fa-solid fa-pills text-brand-green mr-2 text-xs"></i> Browse Medical Catalog
-            </a>
-            <a href="#prescription-section" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-brand-green border-b border-slate-100">
-                <i class="fa-solid fa-file-prescription text-brand-green mr-2 text-xs"></i> Doctor Prescription (Parchi) Order
-            </a>
-            <a href="#surgical-section" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-brand-green border-b border-slate-100">
-                <i class="fa-solid fa-stethoscope text-brand-green mr-2 text-xs"></i> Hospital & Surgical Supplies
-            </a>
-            <a href="#store-info" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-brand-green border-b border-slate-100">
-                <i class="fa-solid fa-location-dot text-brand-green mr-2 text-xs"></i> Store Timings & Address
-            </a>
+        <!-- Mobile Menu Drawer (Refined Healthcare Styling) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200/80 px-4 py-4 space-y-2 shadow-card">
+            <nav class="space-y-1" aria-label="Mobile Navigation">
+                <a href="#categories" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
+                    <span class="w-8 h-8 rounded-lg bg-emerald-100/70 text-brand-green flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-pills"></i></span>
+                    <span>Browse Medical Catalog</span>
+                </a>
+                <a href="#prescription-section" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
+                    <span class="w-8 h-8 rounded-lg bg-emerald-100/70 text-brand-green flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-file-prescription"></i></span>
+                    <span>Doctor Prescription (Parchi) Order</span>
+                </a>
+                <a href="#surgical-section" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
+                    <span class="w-8 h-8 rounded-lg bg-red-100/70 text-brand-red flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-stethoscope"></i></span>
+                    <span>Hospital &amp; Surgical Supplies</span>
+                </a>
+                <a href="#store-info" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
+                    <span class="w-8 h-8 rounded-lg bg-blue-100/70 text-brand-blue flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-location-dot"></i></span>
+                    <span>Store Timings &amp; Address</span>
+                </a>
+            </nav>
             
-            <div class="pt-2 flex flex-col gap-2">
-                <button onclick="openPrescriptionModal(); toggleMobileMenu();" class="w-full py-2.5 bg-brand-green text-white font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+            <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+                <button onclick="openPrescriptionModal(); toggleMobileMenu();" class="w-full py-2.5 bg-brand-green hover:bg-brand-greenDark text-white font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
                     <i class="fa-solid fa-camera"></i> Send Doctor Prescription
                 </button>
                 <a href="tel:0537517129" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
@@ -340,69 +350,77 @@
     <main class="flex-grow">
 
         <!-- 3. FULL-WIDTH PHARMACY HERO SECTION -->
-        <section class="relative bg-slate-900 border-b border-slate-200/80 min-h-[520px] sm:min-h-[580px] lg:min-h-[620px] flex items-center overflow-hidden">
+        <section class="relative bg-slate-900 border-b border-slate-200/80 min-h-[500px] sm:min-h-[550px] lg:min-h-[590px] flex items-center overflow-hidden">
             
             <!-- Full-Width Pharmacy Interior Background Image Layer -->
             <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
                 <img src="assets/images/pharmacy-hero.webp" 
                      alt="Modern Pharmacy Interior and Pharmacist" 
-                     class="w-full h-full object-cover object-[80%_center] sm:object-[75%_center] md:object-[70%_center] lg:object-right filter contrast-[1.02]"
+                     class="w-full h-full object-cover object-[82%_center] sm:object-[78%_center] md:object-[72%_center] lg:object-right filter contrast-[1.02]"
                      width="1672" height="941"
                      fetchpriority="high">
                 
                 <!-- Directional Gradient Overlays for High Legibility Without Washing Out the Staff Photo -->
-                <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 sm:via-white/90 md:via-white/80 lg:via-white/65 to-transparent"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent sm:hidden"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 sm:via-white/90 md:via-white/75 lg:via-white/55 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-white/95 via-white/80 to-transparent sm:hidden"></div>
             </div>
 
             <!-- Hero Foreground Content (Left Aligned with Balanced Spacing) -->
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 w-full">
-                <div class="max-w-2xl space-y-6 text-left">
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16 w-full">
+                <div class="max-w-2xl space-y-5 text-left">
                     
                     <!-- Location & Trust Pill -->
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-greenLight border border-emerald-200/90 text-brand-green text-xs font-bold tracking-wide shadow-subtle backdrop-blur-sm">
-                        <i class="fa-solid fa-location-dot text-brand-red"></i>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50/90 border border-emerald-200/90 text-brand-green text-xs font-semibold tracking-wide shadow-subtle backdrop-blur-sm">
+                        <i class="fa-solid fa-location-dot text-brand-red text-xs"></i>
                         <span>Main G.T. Road, Near Bank of Punjab, Lalamusa</span>
                     </div>
 
                     <!-- Primary Headline -->
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.14] font-display">
+                    <h1 class="text-3xl sm:text-4xl lg:text-[44px] font-black text-slate-900 tracking-tight leading-[1.16] font-display">
                         Lalamusa’s Trusted <br class="hidden sm:inline">
                         <span class="text-brand-green">Pharmacy &amp; Surgical</span> Superstore.
                     </h1>
 
                     <!-- Subtitle / Value Copy -->
-                    <p class="text-slate-700 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
+                    <p class="text-slate-700 text-sm sm:text-[15px] leading-relaxed max-w-xl font-normal">
                         Doctor ke nuskhey (prescription) ki parchi WhatsApp karein aur Lalamusa city mein apne ghar par 
-                        <strong class="text-slate-900 font-bold bg-emerald-100/70 px-1.5 py-0.5 rounded">100% Asal DRAP medicines</strong> hasil karein. Temperature-controlled insulins, certified hospital surgical items aur baby care ki complete range.
+                        <strong class="text-slate-900 font-semibold bg-emerald-100/70 px-1.5 py-0.5 rounded">100% Asal DRAP medicines</strong> hasil karein. Temperature-controlled insulins, certified hospital surgical items aur baby care ki complete range.
                     </p>
 
                     <!-- Primary Action Buttons (Dual CTA) -->
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
-                        <button onclick="openPrescriptionModal()" class="px-6 py-3.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition shadow-card flex items-center justify-center gap-2.5">
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+                        <button onclick="openPrescriptionModal()" class="px-5 sm:px-6 py-3 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition shadow-sm hover:shadow-card flex items-center justify-center gap-2.5">
                             <i class="fa-solid fa-camera text-sm"></i>
                             <span>Send Prescription Parchi</span>
                         </button>
 
-                        <a href="#categories" class="px-6 py-3.5 rounded-xl bg-white/95 hover:bg-white text-slate-800 font-bold text-xs uppercase tracking-wider border border-slate-300 hover:border-brand-green transition flex items-center justify-center gap-2 shadow-subtle backdrop-blur-sm">
+                        <a href="#categories" class="px-5 sm:px-6 py-3 rounded-xl bg-white/95 hover:bg-white text-slate-800 font-bold text-xs uppercase tracking-wider border border-slate-300 hover:border-brand-green transition flex items-center justify-center gap-2 shadow-subtle backdrop-blur-sm">
                             <i class="fa-solid fa-boxes-stacked text-brand-green"></i>
                             <span>Browse Catalog</span>
                         </a>
                     </div>
 
-                    <!-- Trust Pillars Grid -->
-                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-300/80 max-w-lg">
-                        <div>
-                            <span class="block text-xl sm:text-2xl font-black text-brand-green font-display">100%</span>
-                            <span class="text-[11px] font-semibold text-slate-600 uppercase tracking-tight block">DRAP Original</span>
+                    <!-- Compact Service Benefits Strip (Realistic & Value-Focused) -->
+                    <div class="pt-5 border-t border-slate-300/70 flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-5 max-w-xl">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-7 h-7 rounded-lg bg-emerald-100 text-brand-green flex items-center justify-center shrink-0 text-xs">
+                                <i class="fa-solid fa-pills"></i>
+                            </div>
+                            <span class="text-xs sm:text-[13px] font-bold text-slate-800 tracking-tight">Genuine Medicine Inquiries</span>
                         </div>
-                        <div class="border-l border-slate-300/80 pl-4">
-                            <span class="block text-xl sm:text-2xl font-black text-slate-900 font-display">Free</span>
-                            <span class="text-[11px] font-semibold text-slate-600 uppercase tracking-tight block">Lalamusa Delivery</span>
+                        <div class="hidden sm:block w-px h-5 bg-slate-300/80"></div>
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-7 h-7 rounded-lg bg-blue-100 text-brand-blue flex items-center justify-center shrink-0 text-xs">
+                                <i class="fa-solid fa-file-prescription"></i>
+                            </div>
+                            <span class="text-xs sm:text-[13px] font-bold text-slate-800 tracking-tight">Prescription Assistance</span>
                         </div>
-                        <div class="border-l border-slate-300/80 pl-4">
-                            <span class="block text-xl sm:text-2xl font-black text-brand-blue font-display">Daily</span>
-                            <span class="text-[11px] font-semibold text-slate-600 uppercase tracking-tight block">Qualified Staff</span>
+                        <div class="hidden sm:block w-px h-5 bg-slate-300/80"></div>
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-7 h-7 rounded-lg bg-emerald-100 text-brand-green flex items-center justify-center shrink-0 text-xs">
+                                <i class="fa-solid fa-truck-medical"></i>
+                            </div>
+                            <span class="text-xs sm:text-[13px] font-bold text-slate-800 tracking-tight">Local Delivery Service</span>
                         </div>
                     </div>
 
@@ -412,7 +430,7 @@
         </section>
 
         <!-- 4. CONTINUOUS LOOPING CATEGORY SLIDER -->
-        <section class="py-6 sm:py-8 bg-white border-b border-slate-200 overflow-hidden relative" aria-label="Product categories carousel">
+        <section class="py-6 sm:py-7 bg-white border-b border-slate-200 overflow-hidden relative" aria-label="Product categories carousel">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 
                 <!-- Side Fade Gradients for Visual Polish -->
@@ -425,13 +443,13 @@
                      tabindex="0"
                      role="region"
                      aria-label="Popular medical categories carousel">
-                    <div id="category-slider-track" class="flex gap-3 will-change-transform py-1 w-max">
+                    <div id="category-slider-track" class="flex gap-3.5 sm:gap-4 will-change-transform py-1.5 w-max">
                         
                         <!-- ORIGINAL 6 CATEGORY CARDS -->
                         <!-- Card 1: Medicines -->
                         <button type="button" onclick="selectCategoryAndScroll('medicines')" 
-                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
-                            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-pills"></i>
                             </div>
                             <div>
@@ -442,8 +460,8 @@
 
                         <!-- Card 2: Surgical Supplies -->
                         <button type="button" onclick="selectCategoryAndScroll('surgical')" 
-                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
-                            <div class="w-11 h-11 rounded-xl bg-red-100 text-brand-red flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-red-100 text-brand-red flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-stethoscope"></i>
                             </div>
                             <div>
@@ -454,8 +472,8 @@
 
                         <!-- Card 3: Baby Nutrition -->
                         <button type="button" onclick="selectCategoryAndScroll('babycare')" 
-                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
-                            <div class="w-11 h-11 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-baby"></i>
                             </div>
                             <div>
@@ -466,8 +484,8 @@
 
                         <!-- Card 4: Cosmetics & Skin -->
                         <button type="button" onclick="selectCategoryAndScroll('cosmetics')" 
-                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
-                            <div class="w-11 h-11 rounded-xl bg-pink-100 text-pink-700 flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-pink-100 text-pink-700 flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-pump-soap"></i>
                             </div>
                             <div>
@@ -478,8 +496,8 @@
 
                         <!-- Card 5: Diagnostics -->
                         <button type="button" onclick="selectCategoryAndScroll('surgical')" 
-                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
-                            <div class="w-11 h-11 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-heart-pulse"></i>
                             </div>
                             <div>
@@ -490,8 +508,8 @@
 
                         <!-- Card 6: Patient Mobility -->
                         <button type="button" onclick="selectCategoryAndScroll('surgical')" 
-                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
-                            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-wheelchair"></i>
                             </div>
                             <div>
@@ -503,8 +521,8 @@
                         <!-- DUPLICATED CLONES (For Seamless Infinite Loop - Screen-Reader & Tab Hidden) -->
                         <!-- Clone 1 -->
                         <button type="button" onclick="selectCategoryAndScroll('medicines')" tabindex="-1" aria-hidden="true"
-                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
-                            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-pills"></i>
                             </div>
                             <div>
@@ -515,8 +533,8 @@
 
                         <!-- Clone 2 -->
                         <button type="button" onclick="selectCategoryAndScroll('surgical')" tabindex="-1" aria-hidden="true"
-                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
-                            <div class="w-11 h-11 rounded-xl bg-red-100 text-brand-red flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-red-100 text-brand-red flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-stethoscope"></i>
                             </div>
                             <div>
@@ -527,8 +545,8 @@
 
                         <!-- Clone 3 -->
                         <button type="button" onclick="selectCategoryAndScroll('babycare')" tabindex="-1" aria-hidden="true"
-                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
-                            <div class="w-11 h-11 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-baby"></i>
                             </div>
                             <div>
@@ -539,8 +557,8 @@
 
                         <!-- Clone 4 -->
                         <button type="button" onclick="selectCategoryAndScroll('cosmetics')" tabindex="-1" aria-hidden="true"
-                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
-                            <div class="w-11 h-11 rounded-xl bg-pink-100 text-pink-700 flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-pink-100 text-pink-700 flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-pump-soap"></i>
                             </div>
                             <div>
@@ -551,8 +569,8 @@
 
                         <!-- Clone 5 -->
                         <button type="button" onclick="selectCategoryAndScroll('surgical')" tabindex="-1" aria-hidden="true"
-                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
-                            <div class="w-11 h-11 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-heart-pulse"></i>
                             </div>
                             <div>
@@ -563,8 +581,8 @@
 
                         <!-- Clone 6 -->
                         <button type="button" onclick="selectCategoryAndScroll('surgical')" tabindex="-1" aria-hidden="true"
-                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
-                            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-wheelchair"></i>
                             </div>
                             <div>
@@ -580,104 +598,104 @@
         </section>
 
         <!-- 5. PRESCRIPTION DISPENSING SECTION (Clean, Honest WhatsApp Workflow) -->
-        <section id="prescription-section" class="py-14 bg-slate-50">
+        <section id="prescription-section" class="py-10 sm:py-12 lg:py-14 bg-slate-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="bg-gradient-to-br from-brand-green to-brand-greenDark rounded-3xl p-6 sm:p-10 text-white shadow-card relative overflow-hidden">
+                <div class="bg-gradient-to-br from-[#0D6838] via-[#0B5C31] to-[#084826] rounded-3xl p-6 sm:p-8 lg:p-10 text-white shadow-card border border-emerald-700/40 relative overflow-hidden">
                     <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
 
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
                         
                         <!-- Left: How Prescription Handover Works -->
-                        <div class="lg:col-span-6 space-y-5">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-emerald-200 text-xs font-bold uppercase tracking-wider">
-                                <i class="fa-solid fa-shield-halved"></i> 100% Genuine Prescription Dispensing
+                        <div class="lg:col-span-6 space-y-4 sm:space-y-5">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-emerald-200 text-xs font-semibold tracking-wide border border-white/10 backdrop-blur-sm">
+                                <i class="fa-solid fa-shield-halved text-xs"></i> <span>Prescription Verification Service</span>
                             </div>
 
-                            <h2 class="text-2xl sm:text-3xl font-black tracking-tight font-display">
+                            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight font-display">
                                 Doctor Ki Parchi Se Dawai Mangwayein
                             </h2>
 
-                            <p class="text-emerald-100 text-xs sm:text-sm leading-relaxed">
+                            <p class="text-emerald-100/90 text-xs sm:text-sm leading-relaxed max-w-lg">
                                 Apne doctor ke prescription slip ki saaf tasweer lein aur hamare registered pharmacist ko WhatsApp par send karein. Aapka order verify karke sealed packaging mein deliver kiya jayega.
                             </p>
 
-                            <!-- The 3 Steps -->
-                            <div class="space-y-3.5 pt-1">
-                                <div class="flex items-start gap-3">
-                                    <div class="w-7 h-7 rounded-full bg-white text-brand-green font-black text-xs flex items-center justify-center shrink-0 shadow">
+                            <!-- Compact Standardized 3 Steps -->
+                            <div class="space-y-2.5 pt-1">
+                                <div class="flex items-start gap-3 p-2.5 rounded-xl bg-white/5 border border-white/10">
+                                    <div class="w-6 h-6 rounded-full bg-white text-brand-green font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                                         1
                                     </div>
                                     <div class="text-xs">
-                                        <strong class="text-white text-sm block">Parchi Ki Photo Khainchein</strong>
-                                        <span class="text-emerald-200">Doctor ke prescription slip ya medicine ke box ki saaf photo tayyar karein.</span>
+                                        <strong class="text-white text-sm font-bold block mb-0.5">Parchi Ki Photo Khainchein</strong>
+                                        <span class="text-emerald-100/80 leading-normal block">Doctor ke prescription slip ya medicine packaging ki saaf photo tayyar karein.</span>
                                     </div>
                                 </div>
 
-                                <div class="flex items-start gap-3">
-                                    <div class="w-7 h-7 rounded-full bg-white text-brand-green font-black text-xs flex items-center justify-center shrink-0 shadow">
+                                <div class="flex items-start gap-3 p-2.5 rounded-xl bg-white/5 border border-white/10">
+                                    <div class="w-6 h-6 rounded-full bg-white text-brand-green font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                                         2
                                     </div>
                                     <div class="text-xs">
-                                        <strong class="text-white text-sm block">Pharmacist Verification</strong>
-                                        <span class="text-emerald-200">Hamara qualified pharmacist dosage, manufacturer aur expiry verify karega.</span>
+                                        <strong class="text-white text-sm font-bold block mb-0.5">Pharmacist Verification</strong>
+                                        <span class="text-emerald-100/80 leading-normal block">Hamara staff dosage, manufacturer aur expiry verify karega.</span>
                                     </div>
                                 </div>
 
-                                <div class="flex items-start gap-3">
-                                    <div class="w-7 h-7 rounded-full bg-white text-brand-green font-black text-xs flex items-center justify-center shrink-0 shadow">
+                                <div class="flex items-start gap-3 p-2.5 rounded-xl bg-white/5 border border-white/10">
+                                    <div class="w-6 h-6 rounded-full bg-white text-brand-green font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                                         3
                                     </div>
                                     <div class="text-xs">
-                                        <strong class="text-white text-sm block">Doorstep Delivery in Lalamusa</strong>
-                                        <span class="text-emerald-200">Aapke ghar tak sealed packaging aur Cash on Delivery (COD) par delivery.</span>
+                                        <strong class="text-white text-sm font-bold block mb-0.5">Doorstep Delivery in Lalamusa</strong>
+                                        <span class="text-emerald-100/80 leading-normal block">Aapke ghar tak sealed packaging aur Cash on Delivery (COD) par delivery.</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="pt-2 text-[11px] text-emerald-200/90 flex items-center gap-2">
+                            <div class="pt-1 text-[11px] text-emerald-200/90 flex items-center gap-2">
                                 <i class="fa-solid fa-lock text-emerald-300"></i>
-                                <span>Patient privacy note: Prescriptions are handled strictly confidentially.</span>
+                                <span>Prescriptions are handled confidentially by pharmacy staff.</span>
                             </div>
                         </div>
 
                         <!-- Right: Direct WhatsApp Order Form -->
                         <div class="lg:col-span-6">
-                            <div class="bg-white rounded-2xl p-6 sm:p-7 text-slate-800 shadow-floating space-y-4">
+                            <div class="bg-white rounded-2xl p-5 sm:p-7 text-slate-800 shadow-card border border-slate-100 space-y-3.5">
                                 <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                                     <div>
                                         <h3 class="text-base font-bold text-slate-900">Direct Prescription Dispatch</h3>
-                                        <p class="text-[11px] text-slate-500">Lalamusa Free Delivery Desk</p>
+                                        <p class="text-[11px] text-slate-500">Lalamusa Delivery Desk</p>
                                     </div>
-                                    <span class="text-xs bg-emerald-50 text-emerald-700 font-extrabold px-2.5 py-1 rounded-md border border-emerald-200">
-                                        Direct Pharmacist
+                                    <span class="text-xs bg-emerald-50 text-brand-green font-bold px-2.5 py-1 rounded-lg border border-emerald-200/70">
+                                        WhatsApp Order
                                     </span>
                                 </div>
 
                                 <div class="space-y-3">
                                     <div>
-                                        <label for="presc-name" class="block text-xs font-bold text-slate-700 mb-1">Customer Name (Aap Ka Naam)</label>
-                                        <input type="text" id="presc-name" placeholder="e.g. Tariq Mehmood" class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green">
+                                        <label for="presc-name" class="block text-xs font-semibold text-slate-700 mb-1">Customer Name (Aap Ka Naam)</label>
+                                        <input type="text" id="presc-name" placeholder="e.g. Tariq Mehmood" class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green focus:bg-white transition text-slate-800 placeholder-slate-400">
                                     </div>
 
                                     <div>
-                                        <label for="presc-address" class="block text-xs font-bold text-slate-700 mb-1">Lalamusa Delivery Address</label>
-                                        <input type="text" id="presc-address" placeholder="e.g. Mohalla Islam Pura / Near City High School" class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green">
+                                        <label for="presc-address" class="block text-xs font-semibold text-slate-700 mb-1">Lalamusa Delivery Address</label>
+                                        <input type="text" id="presc-address" placeholder="e.g. Mohalla Islam Pura / Near City High School" class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green focus:bg-white transition text-slate-800 placeholder-slate-400">
                                     </div>
 
                                     <div>
-                                        <label for="presc-details" class="block text-xs font-bold text-slate-700 mb-1">Medicine Details / Notes (Optional)</label>
-                                        <textarea id="presc-details" rows="2" placeholder="Agar medicines ke naam maloom hain to likhein, warna WhatsApp par seedha photo attach kar dein..." class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
+                                        <label for="presc-details" class="block text-xs font-semibold text-slate-700 mb-1">Medicine Details / Notes (Optional)</label>
+                                        <textarea id="presc-details" rows="2" placeholder="Agar medicines ke naam maloom hain to likhein, warna WhatsApp par seedha photo attach kar dein..." class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green focus:bg-white transition text-slate-800 placeholder-slate-400 resize-none"></textarea>
                                     </div>
 
-                                    <div class="text-[11px] text-slate-500 bg-slate-50 p-2.5 rounded-xl border border-slate-200/80 flex items-start gap-2">
-                                        <i class="fa-solid fa-circle-info text-brand-green mt-0.5"></i>
+                                    <div class="text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-200/80 flex items-start gap-2.5 leading-relaxed">
+                                        <i class="fa-solid fa-circle-info text-brand-green mt-0.5 shrink-0 text-xs"></i>
                                         <span>Clicking opens WhatsApp with your pre-filled details. Please attach your prescription slip photo in the chat.</span>
                                     </div>
 
-                                    <button onclick="sendPrescriptionDirect()" class="w-full py-3.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-extrabold text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-sm">
+                                    <button onclick="sendPrescriptionDirect()" class="w-full py-3 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-sm hover:shadow">
                                         <i class="fa-brands fa-whatsapp text-lg text-emerald-300"></i>
-                                        <span>Open WhatsApp & Forward Prescription</span>
+                                        <span>Open WhatsApp &amp; Forward Prescription</span>
                                     </button>
                                     
                                     <p class="text-[11px] text-slate-400 text-center font-medium">
@@ -1494,13 +1512,19 @@
             });
         }
 
-        // Catalog Search Filter Engine
+        // Catalog Search Filter Engine (Desktop & Mobile Unified)
         function handleSearchFilter(query) {
             const q = query.trim().toLowerCase();
             const clearBtn = document.getElementById('clear-search-btn');
-            if (clearBtn) {
-                clearBtn.classList.toggle('hidden', q === '');
-            }
+            const clearMobileBtn = document.getElementById('clear-mobile-search-btn');
+            if (clearBtn) clearBtn.classList.toggle('hidden', q === '');
+            if (clearMobileBtn) clearMobileBtn.classList.toggle('hidden', q === '');
+
+            // Synchronize both input values if typed into one
+            const globalInput = document.getElementById('global-search');
+            const mobileInput = document.getElementById('mobile-search');
+            if (globalInput && globalInput.value !== query) globalInput.value = query;
+            if (mobileInput && mobileInput.value !== query) mobileInput.value = query;
 
             const products = document.querySelectorAll('.product-item');
             products.forEach(item => {
@@ -1515,11 +1539,15 @@
         }
 
         function clearSearch() {
-            const input = document.getElementById('global-search');
-            if (input) {
-                input.value = '';
-                handleSearchFilter('');
-                input.focus();
+            const globalInput = document.getElementById('global-search');
+            const mobileInput = document.getElementById('mobile-search');
+            if (globalInput) globalInput.value = '';
+            if (mobileInput) mobileInput.value = '';
+            handleSearchFilter('');
+            if (window.innerWidth >= 768 && globalInput) {
+                globalInput.focus();
+            } else if (mobileInput) {
+                mobileInput.focus();
             }
         }
 
@@ -1571,7 +1599,7 @@
             let dragDistance = 0;
             let resumeTimeout = null;
             let animationFrameId = null;
-            const scrollSpeed = 0.65; // pixels per animation frame (~40px/sec at 60fps)
+            const scrollSpeed = 0.55; // Gentle, smooth motion (~33px/sec at 60fps)
 
             let prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
