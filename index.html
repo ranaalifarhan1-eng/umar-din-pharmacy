@@ -358,7 +358,7 @@
     <main class="flex-grow">
 
         <!-- 3. FULL-WIDTH PHARMACY HERO SECTION -->
-        <section class="relative bg-slate-900 border-b border-slate-200/80 min-h-[500px] sm:min-h-[550px] lg:min-h-[590px] flex items-center overflow-hidden">
+        <section class="relative bg-[#EAF6EF] border-b border-slate-200/80 min-h-[500px] sm:min-h-[550px] lg:min-h-[590px] flex items-center overflow-hidden">
             
             <!-- Full-Width Pharmacy Interior Background Image Layer -->
             <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
@@ -368,9 +368,10 @@
                      width="1672" height="941"
                      fetchpriority="high">
                 
-                <!-- Directional Gradient Overlays for High Legibility Without Washing Out the Staff Photo -->
-                <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 sm:via-white/90 md:via-white/75 lg:via-white/55 to-transparent"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-white/95 via-white/80 to-transparent sm:hidden"></div>
+                <!-- Refined Soft Pharmacy-Green Gradient Overlays:
+                     Left (#EAF6EF) -> Middle (#F4FAF6) -> Right (Transparent natural photography) -->
+                <div class="absolute inset-0 bg-[linear-gradient(to_right,#EAF6EF_0%,#EAF6EF_88%,rgba(244,250,246,0.75)_100%)] sm:bg-[linear-gradient(to_right,#EAF6EF_0%,#EAF6EF_45%,#F4FAF6_62%,rgba(244,250,246,0.25)_72%,transparent_82%)] lg:bg-[linear-gradient(to_right,#EAF6EF_0%,#EAF6EF_40%,#F4FAF6_55%,rgba(244,250,246,0.15)_66%,transparent_75%)]"></div>
+                <div class="absolute inset-0 bg-[linear-gradient(to_top,#EAF6EF_0%,rgba(244,250,246,0.5)_40%,transparent_100%)] sm:hidden"></div>
             </div>
 
             <!-- Hero Foreground Content (Left Aligned with Balanced Spacing) -->
