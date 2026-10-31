@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umer Din Pharmacy & Surgical | Lalamusa - Official Store & Online Ordering</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans (Modern Medical Standard) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#0D6838',       /* Physical Signboard Green */
+                            greenDark: '#084826',
+                            greenLight: '#EBF7F0',
+                            greenSubtle: '#F2FAF5',
+                            red: '#E02424',         /* Medical Red Cross */
+                            redDark: '#BC1C1C',
+                            redLight: '#FDF2F2',
+                            blue: '#1A365D',        /* "Cosmetics & General" navy */
+                            dark: '#0B1320',
+                            slate: '#334155',
+                            border: '#E2E8F0',
+                            cardBg: '#FFFFFF',
+                        }
+                    },
+                    boxShadow: {
+                        'subtle': '0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03)',
+                        'card': '0 4px 18px -2px rgba(13, 104, 56, 0.06), 0 2px 8px -2px rgba(0,0,0,0.04)',
+                        'hover': '0 12px 30px -4px rgba(13, 104, 56, 0.12), 0 4px 12px -2px rgba(0,0,0,0.05)',
+                        'floating': '0 20px 40px -10px rgba(0,0,0,0.14)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 5px;
+            width: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #CBD5E1;
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+        .bg-medical-grid {
+            background-size: 32px 32px;
+            background-image: linear-gradient(to right, rgba(13, 104, 56, 0.04) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(13, 104, 56, 0.04) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-[#F8FAFC] font-sans text-slate-800 antialiased selection:bg-emerald-100 selection:text-emerald-900">
+
+    <!-- 1. TOP ANNOUNCEMENT / UTILITY BAR -->
+    <div class="bg-brand-dark text-white text-[12px] sm:text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            
+            <div class="flex items-center gap-2 text-center md:text-left flex-wrap justify-center">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand-red text-white font-bold text-[10px] uppercase tracking-wider">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+                    Free Delivery
+                </span>
+                <span class="text-slate-300">
+                    Lalamusa City & Surrounding Areas | <strong class="text-white font-medium">100% Asal Adviyat & Hospital Surgical</strong>
+                </span>
+            </div>
+
+            <div class="flex items-center gap-4 text-slate-300">
+                <div class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-clock text-emerald-400"></i>
+                    <span>Store Open: 8:00 AM – 11:30 PM (Daily)</span>
+                </div>
+                <span class="text-slate-700 hidden sm:inline">|</span>
+                <a href="tel:0537517129" class="hover:text-white transition flex items-center gap-1.5 text-slate-300">
+                    <i class="fa-solid fa-phone text-brand-red"></i> 
+                    <span class="font-bold text-white">0537 517129</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 2. MAIN HEADER & DIRECTORY NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 gap-4">
+                
+                <!-- Brand Logo (Reflecting Storefront Signage) -->
+                <a href="#" class="flex items-center gap-3 shrink-0 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green flex items-center justify-center text-white shadow-md shadow-brand-green/20 relative group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-plus text-2xl font-black text-brand-red bg-white w-7 h-7 rounded-lg flex items-center justify-center shadow-inner"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl sm:text-2xl font-black tracking-tight text-brand-green uppercase font-display leading-tight">
+                                UMER DIN
+                            </span>
+                            <span class="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-brand-redLight text-brand-red border border-red-200">
+                                Pharmacy
+                            </span>
+                        </div>
+                        <p class="text-[11px] font-bold text-slate-500 tracking-wider uppercase">
+                            Surgical & Cosmetics · <span class="text-brand-blue font-extrabold">Lalamusa</span>
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Desktop Search Bar -->
+                <div class="hidden md:flex flex-1 max-w-md mx-4 relative">
+                    <div class="w-full relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        <input type="text" id="global-search" onkeyup="handleSearchFilter(this.value)" placeholder="Dawai, BP Monitor, Baby Milk, ya item search karein..." class="w-full pl-10 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-brand-green focus:bg-white transition">
+                        <button onclick="clearSearch()" id="clear-search-btn" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Navigation Links & WhatsApp CTA -->
+                <div class="flex items-center gap-3">
+                    <nav class="hidden xl:flex items-center gap-6 text-xs font-bold text-slate-600 uppercase tracking-wide mr-2">
+                        <a href="#categories" class="hover:text-brand-green transition">Catalog</a>
+                        <a href="#prescription-section" class="hover:text-brand-green transition">Parchi Order</a>
+                        <a href="#surgical-section" class="hover:text-brand-green transition">Surgical Supplies</a>
+                        <a href="#store-info" class="hover:text-brand-green transition">Store Location</a>
+                    </nav>
+
+                    <button onclick="openPrescriptionModal()" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl border border-brand-green/30 bg-brand-greenLight text-brand-green font-bold text-xs uppercase tracking-wider hover:bg-brand-green hover:text-white transition">
+                        <i class="fa-solid fa-file-prescription text-sm"></i>
+                        <span>Upload Parchi</span>
+                    </button>
+
+                    <a href="https://wa.me/923338448427?text=Assalam-o-Alaikum%20Umer%20Din%20Pharmacy!%20Mujhe%20medicine%20order%20karni%20hai." target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm transition shadow-md shadow-emerald-600/20 uppercase tracking-wide">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>0333 8448427</span>
+                    </a>
+
+                    <!-- Mobile Drawer Toggle -->
+                    <button onclick="toggleMobileMenu()" class="xl:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Mobile Search Bar -->
+            <div class="md:hidden pb-3">
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                    <input type="text" onkeyup="handleSearchFilter(this.value)" placeholder="Search medicines, surgical, baby care..." class="w-full pl-9 pr-4 py-2 bg-slate-100 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-brand-green">
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-slate-200 px-5 py-4 space-y-3">
+            <a href="#categories" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 border-b border-slate-100">Browse Catalog</a>
+            <a href="#prescription-section" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 border-b border-slate-100">Doctor Prescription (Parchi) Order</a>
+            <a href="#surgical-section" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 border-b border-slate-100">Hospital & Surgical Supplies</a>
+            <a href="#store-info" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700">Store Timings & Address</a>
+            <button onclick="openPrescriptionModal(); toggleMobileMenu();" class="w-full py-3 bg-brand-green text-white font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                <i class="fa-solid fa-camera"></i> Upload Prescription Parchi
+            </button>
+        </div>
+    </header>
+
+    <!-- 3. CLEAN & SPACIOUS HERO SECTION (Right Box Removed - Background Ready for Staff Photo) -->
+    <section class="relative bg-white border-b border-slate-200 overflow-hidden min-h-[520px] lg:min-h-[580px] flex items-center">
+        
+        <!-- Background Layer: Pharmacy Staff Image with Soft Gradient Mask for Text Readability -->
+        <!-- NOTE: Aap apni generated pharmacy staff image ka URL niche 'src' ya background mein laga sakte hain -->
+        <div class="absolute inset-0 pointer-events-none z-0">
+            <!-- Medical grid texture background -->
+            <div class="absolute inset-0 bg-medical-grid opacity-60"></div>
+
+            <!-- Pharmacy Staff Image Placeholder Container (Right Side Focus) -->
+            <div class="absolute right-0 top-0 bottom-0 w-full lg:w-7/12 h-full opacity-30 lg:opacity-85 mix-blend-multiply overflow-hidden pointer-events-none">
+                <img id="hero-staff-image" 
+                     src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=1400&q=80" 
+                     alt="Umer Din Pharmacy Staff Lalamusa" 
+                     class="w-full h-full object-cover object-center lg:object-right filter contrast-[1.02]">
+            </div>
+
+            <!-- Soft Gradient Overlays (Ensures text stays 100% crisp & legible across all screens) -->
+            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 lg:via-white/85 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent hidden sm:block"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 w-full">
+            
+            <!-- Left-Aligned Clean & Focused Content -->
+            <div class="max-w-2xl space-y-6 text-left">
+                
+                <!-- Location Pill Badge -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-greenLight border border-emerald-200 text-brand-green text-xs font-bold tracking-wide shadow-sm">
+                    <i class="fa-solid fa-location-dot text-brand-red"></i>
+                    <span>Main G.T. Road, Near Bank of Punjab, Lalamusa</span>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-dark tracking-tight leading-[1.12] font-display">
+                    Lalamusa’s Trusted <br>
+                    <span class="text-brand-green">Pharmacy, Surgical</span> <br class="hidden sm:inline">
+                    & Health Superstore.
+                </h1>
+
+                <!-- Sub-Text -->
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
+                    Doctor ke nuskhey (prescription) ki parchi WhatsApp karein aur Lalamusa mein apne ghar par 
+                    <strong class="text-slate-900 font-bold bg-amber-100/80 px-1 py-0.5 rounded">100% Asal medicines</strong> hasil karein. Temperature-controlled insulins, certified hospital surgical items aur baby care ki complete range.
+                </p>
+
+                <!-- Action CTAs -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+                    <button onclick="openPrescriptionModal()" class="px-6 py-3.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition shadow-card flex items-center justify-center gap-2.5">
+                        <i class="fa-solid fa-camera text-base"></i>
+                        <span>Send Prescription Parchi</span>
+                    </button>
+
+                    <a href="https://wa.me/923338448427?text=Assalam-o-Alaikum%2C%20mujhe%20dawai%20order%20karni%20hai." target="_blank" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-2.5 shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                        <span>Chat with Pharmacist</span>
+                    </a>
+
+                    <a href="tel:0537517129" class="px-4 py-3.5 rounded-xl border border-slate-300 bg-white/80 hover:bg-white text-slate-700 font-bold text-xs uppercase tracking-wider hover:border-slate-400 transition flex items-center justify-center gap-2 shadow-sm">
+                        <i class="fa-solid fa-phone text-brand-red"></i>
+                        <span>0537 517129</span>
+                    </a>
+                </div>
+
+                <!-- Trust Indicators Bar -->
+                <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200/80 max-w-lg">
+                    <div>
+                        <span class="block text-2xl font-black text-brand-green font-display">100%</span>
+                        <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-tight">DRAP Original Stock</span>
+                    </div>
+                    <div class="border-l border-slate-200 pl-4">
+                        <span class="block text-2xl font-black text-brand-dark font-display">Rs. 0</span>
+                        <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-tight">Free Delivery Lalamusa</span>
+                    </div>
+                    <div class="border-l border-slate-200 pl-4">
+                        <span class="block text-2xl font-black text-brand-blue font-display">Daily</span>
+                        <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-tight">Qualified Pharmacist</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. QUICK CATEGORY HUBS (Clean, Flat, Standardized) -->
+    <section class="py-8 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                
+                <!-- Category 1 -->
+                <button onclick="filterCatalog('medicines', document.querySelector('[data-filter=medicines]'))" class="p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 transition text-center flex flex-col items-center gap-2 group">
+                    <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg group-hover:scale-110 transition">
+                        <i class="fa-solid fa-pills"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-slate-800 block">Medicines</span>
+                        <span class="text-[10px] text-slate-500">All Formulations</span>
+                    </div>
+                </button>
+
+                <!-- Category 2 -->
+                <button onclick="filterCatalog('surgical', document.querySelector('[data-filter=surgical]'))" class="p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 transition text-center flex flex-col items-center gap-2 group">
+                    <div class="w-11 h-11 rounded-xl bg-red-100 text-brand-red flex items-center justify-center text-lg group-hover:scale-110 transition">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-slate-800 block">Surgical Supplies</span>
+                        <span class="text-[10px] text-slate-500">Equipment & Tools</span>
+                    </div>
+                </button>
+
+                <!-- Category 3 -->
+                <button onclick="filterCatalog('babycare', document.querySelector('[data-filter=babycare]'))" class="p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 transition text-center flex flex-col items-center gap-2 group">
+                    <div class="w-11 h-11 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-lg group-hover:scale-110 transition">
+                        <i class="fa-solid fa-baby"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-slate-800 block">Baby Care</span>
+                        <span class="text-[10px] text-slate-500">Formula & Diapers</span>
+                    </div>
+                </button>
+
+                <!-- Category 4 -->
+                <button onclick="filterCatalog('cosmetics', document.querySelector('[data-filter=cosmetics]'))" class="p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 transition text-center flex flex-col items-center gap-2 group">
+                    <div class="w-11 h-11 rounded-xl bg-pink-100 text-pink-700 flex items-center justify-center text-lg group-hover:scale-110 transition">
+                        <i class="fa-solid fa-pump-soap"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-slate-800 block">Cosmetics & Skin</span>
+                        <span class="text-[10px] text-slate-500">Dermatological</span>
+                    </div>
+                </button>
+
+                <!-- Category 5 -->
+                <button onclick="filterCatalog('medicines', document.querySelector('[data-filter=medicines]'))" class="p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 transition text-center flex flex-col items-center gap-2 group">
+                    <div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-lg group-hover:scale-110 transition">
+                        <i class="fa-solid fa-capsules"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-slate-800 block">Multivitamins</span>
+                        <span class="text-[10px] text-slate-500">Nutrifactor & D3</span>
+                    </div>
+                </button>
+
+                <!-- Category 6 -->
+                <button onclick="filterCatalog('surgical', document.querySelector('[data-filter=surgical]'))" class="p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 transition text-center flex flex-col items-center gap-2 group">
+                    <div class="w-11 h-11 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-lg group-hover:scale-110 transition">
+                        <i class="fa-solid fa-wheelchair"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-slate-800 block">Patient Mobility</span>
+                        <span class="text-[10px] text-slate-500">Wheelchairs & Aid</span>
+                    </div>
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. STANDARDIZED PRESCRIPTION UPLOAD STUDIO (High Converting, Professional Flow) -->
+    <section id="prescription-section" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="bg-gradient-to-br from-brand-green to-brand-greenDark rounded-3xl p-6 sm:p-10 text-white shadow-card relative overflow-hidden">
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                    
+                    <!-- Left: How it works in 3 clear steps -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-emerald-200 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-shield-halved"></i> 100% Genuine Prescription Dispensing
+                        </div>
+
+                        <h2 class="text-2xl sm:text-3xl font-black tracking-tight font-display">
+                            Doctor Ki Parchi Se Dawai Mangwayein
+                        </h2>
+
+                        <p class="text-emerald-100 text-xs sm:text-sm leading-relaxed">
+                            Aapko lambi list likhne ki zaroorat nahi. Apne doctor ke nuskhey ki tasweer lein aur hamare registered pharmacist ko WhatsApp par forward karein.
+                        </p>
+
+                        <!-- The 3 Steps -->
+                        <div class="space-y-3.5 pt-2">
+                            <div class="flex items-start gap-3">
+                                <div class="w-7 h-7 rounded-full bg-white text-brand-green font-black text-xs flex items-center justify-center shrink-0 shadow">
+                                    1
+                                </div>
+                                <div class="text-xs">
+                                    <strong class="text-white text-sm block">Parchi Ki Photo Khainchein</strong>
+                                    <span class="text-emerald-200">Doctor ke prescription slip ya medicine ke box ki saaf photo lein.</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="w-7 h-7 rounded-full bg-white text-brand-green font-black text-xs flex items-center justify-center shrink-0 shadow">
+                                    2
+                                </div>
+                                <div class="text-xs">
+                                    <strong class="text-white text-sm block">Pharmacist Verification</strong>
+                                    <span class="text-emerald-200">Hamara qualified pharmacist dosage, manufacturer aur expiry verify karega.</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="w-7 h-7 rounded-full bg-white text-brand-green font-black text-xs flex items-center justify-center shrink-0 shadow">
+                                    3
+                                </div>
+                                <div class="text-xs">
+                                    <strong class="text-white text-sm block">Free Doorstep Delivery in Lalamusa</strong>
+                                    <span class="text-emerald-200">Aapke ghar tak sealed packaging aur Cash on Delivery (COD) par delivery.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Fast WhatsApp Order Form Card -->
+                    <div class="lg:col-span-6">
+                        <div class="bg-white rounded-2xl p-6 sm:p-7 text-slate-800 shadow-floating space-y-4">
+                            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                                <div>
+                                    <h3 class="text-base font-bold text-slate-900">Direct Prescription Dispatch</h3>
+                                    <p class="text-[11px] text-slate-500">Lalamusa Free Delivery Desk</p>
+                                </div>
+                                <span class="text-xs bg-emerald-50 text-emerald-700 font-extrabold px-2.5 py-1 rounded-md border border-emerald-200">
+                                    Direct Pharmacist
+                                </span>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">Aap Ka Naam (Customer Name)</label>
+                                    <input type="text" id="presc-name" placeholder="e.g. Tariq Mehmood" class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">Lalamusa Delivery Area / Address</label>
+                                    <input type="text" id="presc-address" placeholder="e.g. Mohalla Islam Pura / Near City High School" class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">Dawaiyon Ke Naam (Ya parchi photo bhej rahe hain)</label>
+                                    <textarea id="presc-details" rows="2" placeholder="Agar dawai ke naam maloom hain to likhein, warna parchi ki photo WhatsApp par send kar dein..." class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
+                                </div>
+
+                                <button onclick="sendPrescriptionDirect()" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-sm">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                                    <span>WhatsApp Par Parchi Forward Karein</span>
+                                </button>
+                                
+                                <p class="text-[11px] text-slate-400 text-center font-medium">
+                                    Call assistance ke liye direct dial karein: <strong class="text-slate-700">0333 8448427</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. STANDARDIZED PRODUCT CATALOG (Clean Packshot Cards with Real Healthcare Specs) -->
+    <section id="categories" class="py-12 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header & Filter Controls -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-green">Verified Inventory</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-brand-dark tracking-tight font-display mt-0.5">
+                        In-Stock Products at Lalamusa Store
+                    </h2>
+                    <p class="text-slate-500 text-xs sm:text-sm mt-0.5">Har item 100% original, sealed packaging aur valid batch ke sath mojood hai.</p>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex items-center gap-1.5 overflow-x-auto pb-1 custom-scrollbar">
+                    <button onclick="filterCatalog('all', this)" class="cat-pill active px-3.5 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider transition bg-brand-green text-white shadow-sm whitespace-nowrap">
+                        All Items
+                    </button>
+                    <button data-filter="medicines" onclick="filterCatalog('medicines', this)" class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider transition bg-white text-slate-600 border border-slate-200 hover:border-brand-green whitespace-nowrap">
+                        Medicines
+                    </button>
+                    <button data-filter="surgical" onclick="filterCatalog('surgical', this)" class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider transition bg-white text-slate-600 border border-slate-200 hover:border-brand-green whitespace-nowrap">
+                        Surgical
+                    </button>
+                    <button data-filter="babycare" onclick="filterCatalog('babycare', this)" class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider transition bg-white text-slate-600 border border-slate-200 hover:border-brand-green whitespace-nowrap">
+                        Baby Care
+                    </button>
+                    <button data-filter="cosmetics" onclick="filterCatalog('cosmetics', this)" class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider transition bg-white text-slate-600 border border-slate-200 hover:border-brand-green whitespace-nowrap">
+                        Cosmetics
+                    </button>
+                </div>
+            </div>
+
+            <!-- Standardized Product Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="products-grid">
+                
+                <!-- Product 1: Omron Digital BP Monitor -->
+                <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-hover hover:border-emerald-300 transition-all duration-200" data-category="surgical" data-title="Omron M2 Digital Blood Pressure Monitor BP Apparatus">
+                    <div>
+                        <!-- Header specs -->
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-red-50 text-brand-red border border-red-200">
+                                Surgical Diagnostic
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-400">OMRON HEALTHCARE</span>
+                        </div>
+
+                        <!-- Clean Packshot Illustration Box -->
+                        <div class="h-36 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3">
+                            <div class="text-center p-3">
+                                <i class="fa-solid fa-heart-pulse text-4xl text-brand-red mb-1"></i>
+                                <span class="block text-[11px] font-extrabold text-slate-800">OMRON M2 BASIC</span>
+                                <span class="text-[9px] text-slate-500 uppercase tracking-widest font-semibold">Automatic BP Cuff</span>
+                            </div>
+                            <span class="absolute bottom-2 right-2 text-[9px] bg-white border border-slate-200 px-1.5 py-0.5 rounded text-slate-600 font-bold">
+                                3-Yr Warranty
+                            </span>
+                        </div>
+
+                        <h3 class="text-sm font-bold text-slate-900 leading-snug">Digital BP Monitor (Omron M2)</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Clinical precision automatic blood pressure and pulse rate monitor. Large LCD display with memory.</p>
+
+                        <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <span class="text-emerald-700 font-bold flex items-center gap-1">
+                                <i class="fa-solid fa-circle-check text-[10px]"></i> In Stock
+                            </span>
+                            <span class="text-slate-500 font-semibold">Diagnostic Box</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-3">
+                        <button onclick="orderViaWhatsApp('Digital BP Monitor (Omron M2)', 'Surgical')" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2: Accu-Chek Instant Glucometer -->
+                <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-hover hover:border-emerald-300 transition-all duration-200" data-category="surgical" data-title="Accu-Chek Instant Blood Glucose Sugar Meter Roche Strips">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-blue-50 text-brand-blue border border-blue-200">
+                                Diabetes Care
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-400">ROCHE GERMANY</span>
+                        </div>
+
+                        <div class="h-36 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3">
+                            <div class="text-center p-3">
+                                <i class="fa-solid fa-droplet text-4xl text-brand-red mb-1"></i>
+                                <span class="block text-[11px] font-extrabold text-slate-800">ACCU-CHEK INSTANT</span>
+                                <span class="text-[9px] text-slate-500 uppercase tracking-widest font-semibold">Meter + 50 Strips</span>
+                            </div>
+                            <span class="absolute bottom-2 right-2 text-[9px] bg-white border border-slate-200 px-1.5 py-0.5 rounded text-slate-600 font-bold">
+                                Fresh Batch
+                            </span>
+                        </div>
+
+                        <h3 class="text-sm font-bold text-slate-900 leading-snug">Accu-Chek Instant Sugar Kit</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Fast 4-second blood sugar testing device with lancets and fresh expiry 50 strips bottle.</p>
+
+                        <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <span class="text-emerald-700 font-bold flex items-center gap-1">
+                                <i class="fa-solid fa-circle-check text-[10px]"></i> 100% Genuine
+                            </span>
+                            <span class="text-slate-500 font-semibold">Official Roche</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-3">
+                        <button onclick="orderViaWhatsApp('Accu-Chek Instant Sugar Meter Kit', 'Surgical')" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3: Cold-Chain Insulins -->
+                <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-hover hover:border-emerald-300 transition-all duration-200" data-category="medicines" data-title="Insulin Pens Lantus Novomix Mixtard Cold Chain Storage 2C-8C">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-emerald-50 text-brand-green border border-emerald-200">
+                                2°C – 8°C Cold Chain
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-400">SANOFI / NOVO</span>
+                        </div>
+
+                        <div class="h-36 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3">
+                            <div class="text-center p-3">
+                                <i class="fa-solid fa-syringe text-4xl text-brand-green mb-1"></i>
+                                <span class="block text-[11px] font-extrabold text-slate-800">LANTUS / MIXTARD</span>
+                                <span class="text-[9px] text-slate-500 uppercase tracking-widest font-semibold">100 IU/ml Solostar Pen</span>
+                            </div>
+                            <span class="absolute bottom-2 right-2 text-[9px] bg-blue-100 text-brand-blue font-bold px-1.5 py-0.5 rounded">
+                                <i class="fa-solid fa-snowflake"></i> Ice Pack
+                            </span>
+                        </div>
+
+                        <h3 class="text-sm font-bold text-slate-900 leading-snug">Insulin Pens (Lantus / Mixtard)</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Temperature-controlled storage with dedicated ice-pack delivery box across Lalamusa city.</p>
+
+                        <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <span class="text-blue-700 font-bold flex items-center gap-1">
+                                <i class="fa-solid fa-shield text-[10px]"></i> Cold Guaranteed
+                            </span>
+                            <span class="text-slate-500 font-semibold">100% Genuine</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-3">
+                        <button onclick="orderViaWhatsApp('Insulin Pens (Lantus/Mixtard)', 'Medicines')" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4: Foldable Wheelchair & Commode -->
+                <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-hover hover:border-emerald-300 transition-all duration-200" data-category="surgical" data-title="Foldable Wheelchair Commode Chair Patient Rehab Mobility Aid">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200">
+                                Patient Mobility
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-400">SURGICAL REHAB</span>
+                        </div>
+
+                        <div class="h-36 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3">
+                            <div class="text-center p-3">
+                                <i class="fa-solid fa-wheelchair text-4xl text-brand-dark mb-1"></i>
+                                <span class="block text-[11px] font-extrabold text-slate-800">FOLDABLE WHEELCHAIR</span>
+                                <span class="text-[9px] text-slate-500 uppercase tracking-widest font-semibold">Heavy Duty Chrome Frame</span>
+                            </div>
+                            <span class="absolute bottom-2 right-2 text-[9px] bg-white border border-slate-200 px-1.5 py-0.5 rounded text-slate-600 font-bold">
+                                Brakes & Footrest
+                            </span>
+                        </div>
+
+                        <h3 class="text-sm font-bold text-slate-900 leading-snug">Foldable Wheelchair & Commode</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Durable chrome-plated foldable transit chair for elder patient recovery and indoor mobility.</p>
+
+                        <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <span class="text-emerald-700 font-bold flex items-center gap-1">
+                                <i class="fa-solid fa-truck text-[10px]"></i> Ready Stock
+                            </span>
+                            <span class="text-slate-500 font-semibold">Free Delivery</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-3">
+                        <button onclick="orderViaWhatsApp('Foldable Wheelchair / Commode', 'Surgical')" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5: Infant Formula Milk (Morinaga / Lactogen) -->
+                <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-hover hover:border-emerald-300 transition-all duration-200" data-category="babycare" data-title="Morinaga BF Lactogen Baby Milk Formula Diapers Molfix Pampers">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-purple-50 text-purple-700 border border-purple-200">
+                                Baby Nutrition
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-400">MORINAGA / NESTLE</span>
+                        </div>
+
+                        <div class="h-36 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3">
+                            <div class="text-center p-3">
+                                <i class="fa-solid fa-baby-carriage text-4xl text-purple-600 mb-1"></i>
+                                <span class="block text-[11px] font-extrabold text-slate-800">MORINAGA BF-1 / BF-2</span>
+                                <span class="text-[9px] text-slate-500 uppercase tracking-widest font-semibold">400g / 900g Sealed Tin</span>
+                            </div>
+                            <span class="absolute bottom-2 right-2 text-[9px] bg-white border border-slate-200 px-1.5 py-0.5 rounded text-slate-600 font-bold">
+                                Fresh Batch
+                            </span>
+                        </div>
+
+                        <h3 class="text-sm font-bold text-slate-900 leading-snug">Morinaga BF, Lactogen & Cerelac</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Complete infant milk stages (1, 2, 3), Cerelac cereals aur branded baby diapers (Molfix/Canbebe).</p>
+
+                        <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <span class="text-emerald-700 font-bold flex items-center gap-1">
+                                <i class="fa-solid fa-shield-check text-[10px]"></i> Sealed Packaging
+                            </span>
+                            <span class="text-slate-500 font-semibold">Official Distributor</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-3">
+                        <button onclick="orderViaWhatsApp('Baby Formula Milk & Diapers', 'Baby Care')" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 6: Medicated Sunblocks & Serums -->
+                <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-hover hover:border-emerald-300 transition-all duration-200" data-category="cosmetics" data-title="SpectraBlock CeraVe Sunblock Hyaluronic Acid Skin Serums Whitening Cream">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-pink-50 text-pink-700 border border-pink-200">
+                                Dermatology
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-400">MEDICATED SKINCARE</span>
+                        </div>
+
+                        <div class="h-36 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3">
+                            <div class="text-center p-3">
+                                <i class="fa-solid fa-spa text-4xl text-pink-500 mb-1"></i>
+                                <span class="block text-[11px] font-extrabold text-slate-800">SUNBLOCK & SERUMS</span>
+                                <span class="text-[9px] text-slate-500 uppercase tracking-widest font-semibold">SPF 60+ / Vitamin C / CeraVe</span>
+                            </div>
+                            <span class="absolute bottom-2 right-2 text-[9px] bg-white border border-slate-200 px-1.5 py-0.5 rounded text-slate-600 font-bold">
+                                100% Original
+                            </span>
+                        </div>
+
+                        <h3 class="text-sm font-bold text-slate-900 leading-snug">Medicated Sunblocks & Skin Serums</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Dermatologist-prescribed sunblocks (SpectraBlock, Solaris), acne cleansers aur authentic repair serums.</p>
+
+                        <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <span class="text-emerald-700 font-bold flex items-center gap-1">
+                                <i class="fa-solid fa-check text-[10px]"></i> Asal Cosmetic Stock
+                            </span>
+                            <span class="text-slate-500 font-semibold">Derm Approved</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-3">
+                        <button onclick="orderViaWhatsApp('Medicated Sunblocks & Serums', 'Cosmetics')" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 7: Nutrifactor Multivitamins & Wellness -->
+                <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-hover hover:border-emerald-300 transition-all duration-200" data-category="medicines" data-title="Nutrifactor Biotin Calcium D3 Multivitamins Fish Oil Omega 3 Supplements">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-emerald-50 text-brand-green border border-emerald-200">
+                                Dietary Supplements
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-400">NUTRIFACTOR PK</span>
+                        </div>
+
+                        <div class="h-36 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3">
+                            <div class="text-center p-3">
+                                <i class="fa-solid fa-capsules text-4xl text-amber-500 mb-1"></i>
+                                <span class="block text-[11px] font-extrabold text-slate-800">NUTRIFACTOR RANGE</span>
+                                <span class="text-[9px] text-slate-500 uppercase tracking-widest font-semibold">Biotin Plus / Vitamax / C-1000</span>
+                            </div>
+                            <span class="absolute bottom-2 right-2 text-[9px] bg-white border border-slate-200 px-1.5 py-0.5 rounded text-slate-600 font-bold">
+                                DRAP Registered
+                            </span>
+                        </div>
+
+                        <h3 class="text-sm font-bold text-slate-900 leading-snug">Nutrifactor Multivitamins & Calcium</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Biotin Plus, Omega-3 Fish Oil, Vitamin C-1000, Calcium D3 aur daily immune health capsules.</p>
+
+                        <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <span class="text-emerald-700 font-bold flex items-center gap-1">
+                                <i class="fa-solid fa-certificate text-[10px]"></i> Sealed Bottle
+                            </span>
+                            <span class="text-slate-500 font-semibold">Fresh Expiry</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-3">
+                        <button onclick="orderViaWhatsApp('Nutrifactor Multivitamins', 'Medicines')" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 8: Compressor Nebulizer Machine -->
+                <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-hover hover:border-emerald-300 transition-all duration-200" data-category="surgical" data-title="Compressor Nebulizer Machine Asthma Chest Breathing Device Surgical">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-red-50 text-brand-red border border-red-200">
+                                Respiratory Care
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-400">SURGICAL MEDICAL</span>
+                        </div>
+
+                        <div class="h-36 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3">
+                            <div class="text-center p-3">
+                                <i class="fa-solid fa-lungs text-4xl text-brand-red mb-1"></i>
+                                <span class="block text-[11px] font-extrabold text-slate-800">COMPRESSOR NEBULIZER</span>
+                                <span class="text-[9px] text-slate-500 uppercase tracking-widest font-semibold">Child + Adult Mask Kit</span>
+                            </div>
+                            <span class="absolute bottom-2 right-2 text-[9px] bg-white border border-slate-200 px-1.5 py-0.5 rounded text-slate-600 font-bold">
+                                1-Yr Warranty
+                            </span>
+                        </div>
+
+                        <h3 class="text-sm font-bold text-slate-900 leading-snug">Compressor Nebulizer Machine</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Asthma, allergy aur chest congestion ke liye heavy-duty aerosol nebulizer with complete tubing set.</p>
+
+                        <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <span class="text-emerald-700 font-bold flex items-center gap-1">
+                                <i class="fa-solid fa-shield-halved text-[10px]"></i> Tested & Verified
+                            </span>
+                            <span class="text-slate-500 font-semibold">Full Mask Kit</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-3">
+                        <button onclick="orderViaWhatsApp('Compressor Nebulizer Machine', 'Surgical')" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Custom Inquiry Banner -->
+            <div class="mt-10 bg-brand-dark rounded-2xl p-6 sm:p-7 text-white flex flex-col md:flex-row items-center justify-between gap-4 border border-slate-800 shadow-card">
+                <div class="space-y-1 text-center md:text-left">
+                    <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider">Unlisted Items & Formulations</span>
+                    <h3 class="text-base sm:text-lg font-bold">Koi dawai ya surgical item jo yahan show nahi ho raha?</h3>
+                    <p class="text-xs text-slate-400">Hamare pas Lalamusa store mein pure stock ka record mojood hai. Bas WhatsApp par naam send karein.</p>
+                </div>
+                <a href="https://wa.me/923338448427?text=Assalam-o-Alaikum%20Umer%20Din%20Pharmacy!%20Mujhe%20ek%20product%20ki%20availability%20maloom%20karni%20hai." target="_blank" class="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition whitespace-nowrap flex items-center gap-2 shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Par Poochhein
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 7. SURGICAL & CLINICAL SUPPLIES DIRECTORY -->
+    <section id="surgical-section" class="py-14 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <div class="lg:col-span-7 space-y-5">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 text-brand-red text-xs font-bold uppercase tracking-wider border border-red-200">
+                        <i class="fa-solid fa-hospital-user"></i> Hospital & Clinic Grade Supplies
+                    </div>
+
+                    <h2 class="text-2xl sm:text-3xl font-black text-brand-dark tracking-tight font-display">
+                        Complete Surgical Equipment & Patient Recovery Supplies in Lalamusa
+                    </h2>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Umer Din Pharmacy & Surgical clinics, general practitioners, nursing homes aur gharelu mareezon ke liye authentic hospital disposable aur diagnostic saman faraham karta hai.
+                    </p>
+
+                    <!-- Clean 4-Grid Surgical Categories -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                        
+                        <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50 flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-red-100 text-brand-red flex items-center justify-center shrink-0 text-sm">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900">Diagnostics & Monitoring</h4>
+                                <p class="text-[11px] text-slate-500 leading-tight mt-0.5">Digital & Mercury BP Apparatus, Sugar Meters, Pulse Oximeters, Digital Thermometers.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50 flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-emerald-100 text-brand-green flex items-center justify-center shrink-0 text-sm">
+                                <i class="fa-solid fa-wheelchair"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900">Patient Mobility & Comfort</h4>
+                                <p class="text-[11px] text-slate-500 leading-tight mt-0.5">Foldable Wheelchairs, Commode Chairs, Walking Sticks, Crutches, Air Mattresses.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50 flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-blue-100 text-brand-blue flex items-center justify-center shrink-0 text-sm">
+                                <i class="fa-solid fa-syringe"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900">Clinical Disposables</h4>
+                                <p class="text-[11px] text-slate-500 leading-tight mt-0.5">Syringes (all gauges), IV Cannulas, Drip Sets, Examination Gloves, Urine Bags.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50 flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 text-sm">
+                                <i class="fa-solid fa-bandage"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900">Wound Care & Dressing</h4>
+                                <p class="text-[11px] text-slate-500 leading-tight mt-0.5">Sterile Gauze, Crepe Bandages, Surgical Micropore Tapes, Pyodine, Cotton Rolls.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="pt-2 flex items-center gap-4 text-xs font-bold">
+                        <a href="tel:0537517129" class="text-brand-green hover:underline flex items-center gap-1.5">
+                            <i class="fa-solid fa-phone"></i> Surgical Bulk Orders: 0537 517129
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Emergency Dispatch Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-brand-dark rounded-3xl p-7 text-white shadow-card border border-slate-800 space-y-5">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-extrabold text-brand-red bg-red-950/70 border border-red-800 px-3 py-1 rounded-full uppercase tracking-wider">
+                                Urgent Dispatch Desk
+                            </span>
+                            <i class="fa-solid fa-truck-medical text-2xl text-emerald-400"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-black font-display">Emergency Injections & Surgical Supplies</h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Ghar par mareez ke liye drip sets, cannula, emergency antibiotics ya glucose IV solutions foran delivery ke liye dastiyab hain.
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-900/90 rounded-2xl p-4 border border-slate-800 space-y-2 text-xs">
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-400">Delivery Status:</span>
+                                <span class="text-emerald-400 font-bold">Lalamusa Immediate Rider</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-400">Location Landmark:</span>
+                                <span class="text-white font-medium">Near Bank of Punjab, G.T. Road</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 pt-2">
+                            <a href="tel:03338448427" class="py-3 rounded-xl bg-white text-slate-950 font-bold text-xs uppercase tracking-wider hover:bg-slate-100 transition flex items-center justify-center gap-1.5 shadow">
+                                <i class="fa-solid fa-phone text-brand-red"></i> 0333 8448427
+                            </a>
+                            <a href="https://wa.me/923338448427?text=Assalam-o-Alaikum%2C%20Emergency%20surgical%20medicine%20chahiye." target="_blank" class="py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 8. PHYSICAL STORE LOCATION & ACCESSIBILITY (Standardized, Real Details) -->
+    <section id="store-info" class="py-14 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                
+                <!-- Contact & Timings Overview -->
+                <div class="lg:col-span-5 bg-white rounded-3xl p-7 border border-slate-200 shadow-card flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div>
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green">Physical Location</span>
+                            <h3 class="text-2xl font-black text-brand-dark font-display mt-0.5">Umer Din Pharmacy</h3>
+                            <p class="text-xs text-slate-500">& Surgical Supplies · Cosmetics & General Items</p>
+                        </div>
+
+                        <div class="space-y-4 text-xs">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-red-50 text-brand-red flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 block text-xs">Physical Address</strong>
+                                    <p class="text-slate-600 mt-0.5 leading-relaxed">
+                                        Main G.T. Road, Near Bank of Punjab (BOP), <br>
+                                        Lalamusa, District Gujrat, Punjab, Pakistan.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-50 text-brand-green flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 block text-xs">Landline Contact</strong>
+                                    <a href="tel:0537517129" class="text-slate-700 font-bold hover:text-brand-green transition">
+                                        0537 517129
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-50 text-brand-green flex items-center justify-center shrink-0">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 block text-xs">Mobile & WhatsApp (Direct Pharmacist)</strong>
+                                    <a href="https://wa.me/923338448427" target="_blank" class="text-emerald-700 font-bold hover:underline">
+                                        0333 8448427
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 block text-xs">Store Hours & Home Delivery</strong>
+                                    <p class="text-slate-600 mt-0.5">
+                                        Monday to Sunday: Open Daily (8:00 AM – 11:30 PM) <br>
+                                        <span class="text-emerald-700 font-semibold">Free Delivery Active Throughout the Day</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-slate-100">
+                        <a href="https://maps.google.com/?q=Main+GT+Road+Near+Bank+of+Punjab+Lalamusa" target="_blank" class="w-full py-3 bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider rounded-xl transition flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-diamond-turn-right"></i>
+                            <span>Open Google Maps Directions</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Clean Landmark & Parking Guide -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-7 border border-slate-200 shadow-card flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                            <div>
+                                <h4 class="text-base font-bold text-slate-900">How to Reach Our Store</h4>
+                                <p class="text-xs text-slate-500">Main G.T. Road par asani se accessible location</p>
+                            </div>
+                            <span class="text-[11px] bg-emerald-50 text-emerald-700 font-bold px-3 py-1 rounded-full border border-emerald-200">
+                                Front Parking Available
+                            </span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-5">
+                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80">
+                                <div class="text-brand-red font-bold text-xs flex items-center gap-1.5 mb-1">
+                                    <i class="fa-solid fa-building-columns"></i> Near Bank of Punjab (BOP)
+                                </div>
+                                <p class="text-[11px] text-slate-600 leading-relaxed">
+                                    Main G.T. Road par Bank of Punjab ki branch ke bilkul sath hamara signboard nazar aa jayega.
+                                </p>
+                            </div>
+
+                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80">
+                                <div class="text-brand-green font-bold text-xs flex items-center gap-1.5 mb-1">
+                                    <i class="fa-solid fa-road"></i> Direct G.T. Road Front
+                                </div>
+                                <p class="text-[11px] text-slate-600 leading-relaxed">
+                                    Cars aur motorcycle park karne ke liye shop ke aage dedicated open space mojood hai.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Map Card -->
+                        <div class="w-full h-48 bg-slate-100 rounded-2xl border border-slate-200 flex flex-col items-center justify-center text-center p-6 relative overflow-hidden">
+                            <div class="w-10 h-10 rounded-full bg-brand-red text-white flex items-center justify-center text-base font-bold shadow-md mb-2">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <strong class="text-sm font-bold text-slate-900">UMER DIN PHARMACY & SURGICAL</strong>
+                            <span class="text-xs text-slate-500 mt-0.5">Main G.T. Road, Near Bank of Punjab, Lalamusa</span>
+                            
+                            <a href="https://maps.google.com/?q=Main+GT+Road+Near+Bank+of+Punjab+Lalamusa" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-brand-green hover:underline">
+                                <span>Navigate with Google Maps</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <p class="text-[11px] text-slate-400 text-center mt-4">
+                        Free delivery applies across all sectors, mohallas and adjoining link roads of Lalamusa city.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer class="bg-brand-dark text-white pt-12 pb-8 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
+                
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-lg bg-brand-green flex items-center justify-center text-white font-black text-xs">
+                            +
+                        </div>
+                        <span class="text-base font-black tracking-tight font-display">UMER DIN PHARMACY</span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Your Health, Our Priority. 100% original medicines, baby nutrition, dermatological cosmetics, and hospital surgical equipment in Lalamusa.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-white">Store Range</h4>
+                    <ul class="space-y-1.5 text-slate-400">
+                        <li>General & Prescription Medicines</li>
+                        <li>Surgical Tools & Hospital Disposables</li>
+                        <li>Infant Milk Formula & Baby Care</li>
+                        <li>Medicated Sunblocks & Cosmetics</li>
+                        <li>Nutrifactor & Dietary Supplements</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-2">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-white">Contact & Address</h4>
+                    <ul class="space-y-1.5 text-slate-400">
+                        <li><strong class="text-slate-200">Landline:</strong> 0537 517129</li>
+                        <li><strong class="text-slate-200">WhatsApp:</strong> 0333 8448427</li>
+                        <li><strong class="text-slate-200">Location:</strong> Main G.T. Road, Lalamusa</li>
+                        <li><strong class="text-slate-200">Delivery:</strong> Free across Lalamusa city</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-white">Order via WhatsApp</h4>
+                    <p class="text-slate-400 text-xs">
+                        Doctor ke nuskhey ki parchi ya medicine ka naam foran WhatsApp par send karein:
+                    </p>
+                    <a href="https://wa.me/923338448427?text=Assalam-o-Alaikum%2C%20mujhe%20dawai%20mangwani%20hai." target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wide transition shadow">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> 0333 8448427
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500 text-[11px]">
+                <p>&copy; <span id="current-year"></span> Umer Din Pharmacy & Surgical — Lalamusa. All Rights Reserved.</p>
+                <div class="flex items-center gap-3">
+                    <span>100% Genuine DRAP Approved</span>
+                    <span>·</span>
+                    <span>Free Home Delivery Lalamusa</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 10. FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/923338448427?text=Assalam-o-Alaikum%20Umer%20Din%20Pharmacy!%20Mujhe%20medicine%20order%20karni%20hai." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-full shadow-2xl flex items-center gap-2 transition-transform hover:scale-105 border-2 border-white group">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="font-bold text-xs uppercase tracking-wider hidden sm:inline">Order on WhatsApp</span>
+    </a>
+
+    <!-- 11. PRESCRIPTION / PARCHI MODAL -->
+    <div id="prescription-modal" class="fixed inset-0 z-50 bg-brand-dark/70 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-7 relative shadow-2xl space-y-4">
+            
+            <button onclick="closePrescriptionModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="space-y-1">
+                <span class="text-[11px] font-bold text-brand-green uppercase tracking-wider">Fast Pharmacist Order</span>
+                <h3 class="text-xl font-black text-slate-900 font-display">Prescription / Order Details</h3>
+                <p class="text-xs text-slate-500">
+                    Apna naam aur pata likhein. Continue dabane par WhatsApp khul jayega jahan aap parchi ki photo send kar sakeinge:
+                </p>
+            </div>
+
+            <div class="space-y-3 pt-1">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Aap Ka Naam (Customer Name)</label>
+                    <input type="text" id="modal-name" placeholder="e.g. Muhammad Farooq" class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Lalamusa Delivery Address</label>
+                    <input type="text" id="modal-address" placeholder="e.g. Near G.T. Road / Railway Road, Lalamusa" class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Dawai / Item Note (Optional)</label>
+                    <textarea id="modal-note" rows="2" placeholder="Dawaiyon ke naam ya koi khas hidayat likhein..." class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
+                </div>
+
+                <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-xl flex items-center gap-2.5 text-xs text-brand-green">
+                    <i class="fa-solid fa-truck text-base shrink-0"></i>
+                    <span>Free Home Delivery across Lalamusa city. Payment on Delivery (Cash on Delivery).</span>
+                </div>
+
+                <button onclick="submitModalOrder()" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl transition flex items-center justify-center gap-2 shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Continue to WhatsApp & Send Parchi</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 12. JAVASCRIPT LOGIC (Interactive Filter & Search Engine) -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function openPrescriptionModal() {
+            const modal = document.getElementById('prescription-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closePrescriptionModal() {
+            const modal = document.getElementById('prescription-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Search Filter Engine
+        function handleSearchFilter(query) {
+            const q = query.trim().toLowerCase();
+            const clearBtn = document.getElementById('clear-search-btn');
+            if (clearBtn) {
+                clearBtn.classList.toggle('hidden', q === '');
+            }
+
+            const products = document.querySelectorAll('.product-item');
+            products.forEach(item => {
+                const title = (item.getAttribute('data-title') || '').toLowerCase();
+                const text = item.innerText.toLowerCase();
+                if (title.includes(q) || text.includes(q)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function clearSearch() {
+            const input = document.getElementById('global-search');
+            if (input) {
+                input.value = '';
+                handleSearchFilter('');
+            }
+        }
+
+        // Category Filter Tabs
+        function filterCatalog(category, btnElement) {
+            const pills = document.querySelectorAll('.cat-pill');
+            pills.forEach(pill => {
+                pill.classList.remove('bg-brand-green', 'text-white', 'shadow-sm');
+                pill.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            });
+
+            if (btnElement) {
+                btnElement.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                btnElement.classList.add('bg-brand-green', 'text-white', 'shadow-sm');
+            }
+
+            const products = document.querySelectorAll('.product-item');
+            products.forEach(prod => {
+                if (category === 'all' || prod.getAttribute('data-category') === category) {
+                    prod.style.display = 'flex';
+                } else {
+                    prod.style.display = 'none';
+                }
+            });
+        }
+
+        // WhatsApp direct catalog order
+        function orderViaWhatsApp(itemName, category) {
+            const message = `Assalam-o-Alaikum Umer Din Pharmacy!\n\nMujhe aapki website se yeh item order karna hai:\n*Item:* ${itemName}\n*Category:* ${category}\n*Delivery:* Lalamusa\n\nBaraye meharbani iska price aur delivery time confirm kar dein. Shukriya!`;
+            window.open(`https://wa.me/923338448427?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Direct prescription form forwarder
+        function sendPrescriptionDirect() {
+            const name = document.getElementById('presc-name').value.trim() || 'Customer';
+            const address = document.getElementById('presc-address').value.trim() || 'Lalamusa';
+            const details = document.getElementById('presc-details').value.trim();
+
+            let msg = `*PRESCRIPTION ORDER - UMER DIN PHARMACY*\n\n`;
+            msg += `*Name:* ${name}\n`;
+            msg += `*Address:* ${address}\n`;
+            if (details) {
+                msg += `*Details/Medicines:* ${details}\n`;
+            } else {
+                msg += `*Note:* Main prescription (parchi) ki photo agle message mein bhej raha hoon.\n`;
+            }
+            msg += `\nFree Home Delivery Lalamusa. Please confirm order.`;
+            window.open(`https://wa.me/923338448427?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // Modal Form Forwarder
+        function submitModalOrder() {
+            const name = document.getElementById('modal-name').value.trim() || 'Customer';
+            const address = document.getElementById('modal-address').value.trim() || 'Lalamusa';
+            const note = document.getElementById('modal-note').value.trim();
+
+            let msg = `*NEW ORDER - UMER DIN PHARMACY LALAMUSA*\n\n`;
+            msg += `*Customer:* ${name}\n`;
+            msg += `*Delivery Location:* ${address}\n`;
+            if (note) {
+                msg += `*Requirement:* ${note}\n`;
+            } else {
+                msg += `*Note:* Parchi ki picture agle message mein attach kar raha hoon.\n`;
+            }
+            msg += `\nShukriya!`;
+            window.open(`https://wa.me/923338448427?text=${encodeURIComponent(msg)}`, '_blank');
+            closePrescriptionModal();
+        }
+    </script>
+</body>
+</html>
