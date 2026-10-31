@@ -134,6 +134,35 @@
             outline: 2px solid #0D6838;
             outline-offset: 2px;
         }
+
+        /* Category Carousel Responsive Card Widths */
+        .cat-slide-card {
+            flex: 0 0 calc((100% - 12px) / 1.75);
+            min-width: 170px;
+        }
+        @media (min-width: 640px) {
+            .cat-slide-card {
+                flex: 0 0 calc((100% - (2 * 12px)) / 3);
+            }
+        }
+        @media (min-width: 768px) {
+            .cat-slide-card {
+                flex: 0 0 calc((100% - (3 * 12px)) / 4);
+            }
+        }
+        @media (min-width: 1024px) {
+            .cat-slide-card {
+                flex: 0 0 calc((100% - (5 * 12px)) / 6);
+                min-width: 0;
+            }
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 
     <!-- Schema.org JSON-LD Structured Data for Local Pharmacy -->
@@ -310,209 +339,241 @@
     <!-- MAIN CONTENT AREA -->
     <main class="flex-grow">
 
-        <!-- 3. REFINED HERO SECTION (Clean, Modern, Conversion-Focused) -->
-        <section class="relative bg-gradient-to-b from-white via-emerald-50/20 to-slate-50 border-b border-slate-200/80 py-12 lg:py-20 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- 3. FULL-WIDTH PHARMACY HERO SECTION -->
+        <section class="relative bg-slate-900 border-b border-slate-200/80 min-h-[520px] sm:min-h-[580px] lg:min-h-[620px] flex items-center overflow-hidden">
+            
+            <!-- Full-Width Pharmacy Interior Background Image Layer -->
+            <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+                <img src="assets/images/pharmacy-hero.webp" 
+                     alt="Modern Pharmacy Interior and Pharmacist" 
+                     class="w-full h-full object-cover object-[80%_center] sm:object-[75%_center] md:object-[70%_center] lg:object-right filter contrast-[1.02]"
+                     width="1672" height="941"
+                     fetchpriority="high">
                 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Directional Gradient Overlays for High Legibility Without Washing Out the Staff Photo -->
+                <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 sm:via-white/90 md:via-white/80 lg:via-white/65 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent sm:hidden"></div>
+            </div>
+
+            <!-- Hero Foreground Content (Left Aligned with Balanced Spacing) -->
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 w-full">
+                <div class="max-w-2xl space-y-6 text-left">
                     
-                    <!-- Left: Clinical Value Proposition & CTAs -->
-                    <div class="lg:col-span-7 space-y-6 text-left">
-                        
-                        <!-- Location & Trust Pill -->
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-greenLight border border-emerald-200/80 text-brand-green text-xs font-bold tracking-wide shadow-subtle">
-                            <i class="fa-solid fa-location-dot text-brand-red"></i>
-                            <span>Main G.T. Road, Near Bank of Punjab, Lalamusa</span>
-                        </div>
-
-                        <!-- Primary Headline -->
-                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.15] font-display">
-                            Lalamusa’s Trusted <br class="hidden sm:inline">
-                            <span class="text-brand-green">Pharmacy & Surgical</span> Superstore.
-                        </h1>
-
-                        <!-- Subtitle / Value Copy -->
-                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
-                            Doctor ke nuskhey (prescription) ki parchi WhatsApp karein aur Lalamusa city mein apne ghar par 
-                            <strong class="text-slate-900 font-bold bg-emerald-100/60 px-1.5 py-0.5 rounded">100% Asal DRAP medicines</strong> hasil karein. Temperature-controlled insulins, certified hospital surgical items aur baby care ki complete range.
-                        </p>
-
-                        <!-- Primary Action Buttons -->
-                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
-                            <button onclick="openPrescriptionModal()" class="px-6 py-3.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition shadow-card flex items-center justify-center gap-2.5">
-                                <i class="fa-solid fa-camera text-sm"></i>
-                                <span>Send Prescription Parchi</span>
-                            </button>
-
-                            <a href="#categories" class="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs uppercase tracking-wider border border-slate-300 transition flex items-center justify-center gap-2 shadow-subtle">
-                                <i class="fa-solid fa-boxes-stacked text-brand-green"></i>
-                                <span>Browse Catalog</span>
-                            </a>
-                        </div>
-
-                        <!-- Trust Pillars Grid -->
-                        <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200/80 max-w-lg">
-                            <div>
-                                <span class="block text-xl sm:text-2xl font-black text-brand-green font-display">100%</span>
-                                <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-tight block">DRAP Original</span>
-                            </div>
-                            <div class="border-l border-slate-200 pl-4">
-                                <span class="block text-xl sm:text-2xl font-black text-slate-900 font-display">Free</span>
-                                <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-tight block">Lalamusa Delivery</span>
-                            </div>
-                            <div class="border-l border-slate-200 pl-4">
-                                <span class="block text-xl sm:text-2xl font-black text-brand-blue font-display">Daily</span>
-                                <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-tight block">Qualified Staff</span>
-                            </div>
-                        </div>
-
+                    <!-- Location & Trust Pill -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-greenLight border border-emerald-200/90 text-brand-green text-xs font-bold tracking-wide shadow-subtle backdrop-blur-sm">
+                        <i class="fa-solid fa-location-dot text-brand-red"></i>
+                        <span>Main G.T. Road, Near Bank of Punjab, Lalamusa</span>
                     </div>
 
-                    <!-- Right: Authentic Storefront & Service Card -->
-                    <div class="lg:col-span-5">
-                        <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-card space-y-5">
-                            
-                            <!-- Header with Brand Identification -->
-                            <div class="flex items-center justify-between pb-4 border-b border-slate-100">
-                                <div>
-                                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-brand-green">Community Healthcare</span>
-                                    <h2 class="text-base font-bold text-slate-900">Umer Din Pharmacy Services</h2>
-                                </div>
-                                <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-brand-green border border-emerald-200">
-                                    Open Today
-                                </span>
-                            </div>
+                    <!-- Primary Headline -->
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.14] font-display">
+                        Lalamusa’s Trusted <br class="hidden sm:inline">
+                        <span class="text-brand-green">Pharmacy &amp; Surgical</span> Superstore.
+                    </h1>
 
-                            <!-- Highlights List -->
-                            <div class="space-y-3.5 text-xs text-slate-600">
-                                <div class="flex items-start gap-3 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                                    <div class="w-8 h-8 rounded-lg bg-emerald-100 text-brand-green flex items-center justify-center shrink-0 text-sm">
-                                        <i class="fa-solid fa-snowflake"></i>
-                                    </div>
-                                    <div>
-                                        <strong class="text-slate-900 block font-bold text-xs">2°C – 8°C Cold Chain Assurance</strong>
-                                        <p class="text-[11px] text-slate-500 mt-0.5">Lantus, Mixtard aur sensitive insulins ice-pack box ke sath deliver hoti hain.</p>
-                                    </div>
-                                </div>
+                    <!-- Subtitle / Value Copy -->
+                    <p class="text-slate-700 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
+                        Doctor ke nuskhey (prescription) ki parchi WhatsApp karein aur Lalamusa city mein apne ghar par 
+                        <strong class="text-slate-900 font-bold bg-emerald-100/70 px-1.5 py-0.5 rounded">100% Asal DRAP medicines</strong> hasil karein. Temperature-controlled insulins, certified hospital surgical items aur baby care ki complete range.
+                    </p>
 
-                                <div class="flex items-start gap-3 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                                    <div class="w-8 h-8 rounded-lg bg-red-100 text-brand-red flex items-center justify-center shrink-0 text-sm">
-                                        <i class="fa-solid fa-truck-medical"></i>
-                                    </div>
-                                    <div>
-                                        <strong class="text-slate-900 block font-bold text-xs">Hospital Surgical & Patient Mobility</strong>
-                                        <p class="text-[11px] text-slate-500 mt-0.5">Wheelchairs, commodes, BP monitors, nebulizers, cannula aur drip sets.</p>
-                                    </div>
-                                </div>
+                    <!-- Primary Action Buttons (Dual CTA) -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
+                        <button onclick="openPrescriptionModal()" class="px-6 py-3.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition shadow-card flex items-center justify-center gap-2.5">
+                            <i class="fa-solid fa-camera text-sm"></i>
+                            <span>Send Prescription Parchi</span>
+                        </button>
 
-                                <div class="flex items-start gap-3 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                                    <div class="w-8 h-8 rounded-lg bg-blue-100 text-brand-blue flex items-center justify-center shrink-0 text-sm">
-                                        <i class="fa-solid fa-user-doctor"></i>
-                                    </div>
-                                    <div>
-                                        <strong class="text-slate-900 block font-bold text-xs">Doctor Prescription WhatsApp Desk</strong>
-                                        <p class="text-[11px] text-slate-500 mt-0.5">Photo bhejein, pharmacist se verify karwayein aur Cash on Delivery par mangwayein.</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <a href="#categories" class="px-6 py-3.5 rounded-xl bg-white/95 hover:bg-white text-slate-800 font-bold text-xs uppercase tracking-wider border border-slate-300 hover:border-brand-green transition flex items-center justify-center gap-2 shadow-subtle backdrop-blur-sm">
+                            <i class="fa-solid fa-boxes-stacked text-brand-green"></i>
+                            <span>Browse Catalog</span>
+                        </a>
+                    </div>
 
-                            <!-- Fast Action Row -->
-                            <div class="pt-2">
-                                <a href="https://wa.me/923338448427?text=Assalam-o-Alaikum%20Umer%20Din%20Pharmacy!%20Mujhe%20medicine%20ki%20availability%20confirm%20karni%20hai." 
-                                   target="_blank" 
-                                   rel="noopener noreferrer"
-                                   class="w-full py-3 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-sm">
-                                    <i class="fa-brands fa-whatsapp text-base"></i>
-                                    <span>Chat with Store Pharmacist</span>
-                                </a>
-                            </div>
-
+                    <!-- Trust Pillars Grid -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-300/80 max-w-lg">
+                        <div>
+                            <span class="block text-xl sm:text-2xl font-black text-brand-green font-display">100%</span>
+                            <span class="text-[11px] font-semibold text-slate-600 uppercase tracking-tight block">DRAP Original</span>
+                        </div>
+                        <div class="border-l border-slate-300/80 pl-4">
+                            <span class="block text-xl sm:text-2xl font-black text-slate-900 font-display">Free</span>
+                            <span class="text-[11px] font-semibold text-slate-600 uppercase tracking-tight block">Lalamusa Delivery</span>
+                        </div>
+                        <div class="border-l border-slate-300/80 pl-4">
+                            <span class="block text-xl sm:text-2xl font-black text-brand-blue font-display">Daily</span>
+                            <span class="text-[11px] font-semibold text-slate-600 uppercase tracking-tight block">Qualified Staff</span>
                         </div>
                     </div>
 
                 </div>
-
             </div>
+
         </section>
 
-        <!-- 4. CLEAN CATEGORY HUBS (Unified, Professional Medical Design) -->
-        <section class="py-8 bg-white border-b border-slate-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- 4. CONTINUOUS LOOPING CATEGORY SLIDER -->
+        <section class="py-6 sm:py-8 bg-white border-b border-slate-200 overflow-hidden relative" aria-label="Product categories carousel">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-                    
-                    <!-- Category 1: Prescription Medicines -->
-                    <button onclick="filterCatalog('medicines', document.querySelector('[data-filter=medicines]'))" 
-                            class="p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200 hover:border-emerald-300 transition text-center flex flex-col items-center gap-2 group">
-                        <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg group-hover:scale-105 transition">
-                            <i class="fa-solid fa-pills"></i>
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold text-slate-800 block">Medicines</span>
-                            <span class="text-[10px] text-slate-500">General & Rx</span>
-                        </div>
-                    </button>
+                <!-- Side Fade Gradients for Visual Polish -->
+                <div class="pointer-events-none absolute left-4 sm:left-6 lg:left-8 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-white via-white/80 to-transparent z-10 hidden sm:block"></div>
+                <div class="pointer-events-none absolute right-4 sm:right-6 lg:right-8 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-white via-white/80 to-transparent z-10 hidden sm:block"></div>
 
-                    <!-- Category 2: Hospital Surgical -->
-                    <button onclick="filterCatalog('surgical', document.querySelector('[data-filter=surgical]'))" 
-                            class="p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200 hover:border-emerald-300 transition text-center flex flex-col items-center gap-2 group">
-                        <div class="w-11 h-11 rounded-xl bg-red-100 text-brand-red flex items-center justify-center text-lg group-hover:scale-105 transition">
-                            <i class="fa-solid fa-stethoscope"></i>
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold text-slate-800 block">Surgical Supplies</span>
-                            <span class="text-[10px] text-slate-500">Hospital & Clinical</span>
-                        </div>
-                    </button>
+                <!-- Slider Viewport -->
+                <div id="category-slider-viewport" 
+                     class="category-slider-viewport overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing select-none"
+                     tabindex="0"
+                     role="region"
+                     aria-label="Popular medical categories carousel">
+                    <div id="category-slider-track" class="flex gap-3 will-change-transform py-1 w-max">
+                        
+                        <!-- ORIGINAL 6 CATEGORY CARDS -->
+                        <!-- Card 1: Medicines -->
+                        <button type="button" onclick="selectCategoryAndScroll('medicines')" 
+                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                <i class="fa-solid fa-pills"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Medicines</span>
+                                <span class="text-[10px] text-slate-500">General &amp; Rx</span>
+                            </div>
+                        </button>
 
-                    <!-- Category 3: Baby Care & Formula -->
-                    <button onclick="filterCatalog('babycare', document.querySelector('[data-filter=babycare]'))" 
-                            class="p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200 hover:border-emerald-300 transition text-center flex flex-col items-center gap-2 group">
-                        <div class="w-11 h-11 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-lg group-hover:scale-105 transition">
-                            <i class="fa-solid fa-baby"></i>
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold text-slate-800 block">Baby Nutrition</span>
-                            <span class="text-[10px] text-slate-500">Formula & Diapers</span>
-                        </div>
-                    </button>
+                        <!-- Card 2: Surgical Supplies -->
+                        <button type="button" onclick="selectCategoryAndScroll('surgical')" 
+                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
+                            <div class="w-11 h-11 rounded-xl bg-red-100 text-brand-red flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                <i class="fa-solid fa-stethoscope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Surgical Supplies</span>
+                                <span class="text-[10px] text-slate-500">Hospital &amp; Clinical</span>
+                            </div>
+                        </button>
 
-                    <!-- Category 4: Medicated Skincare -->
-                    <button onclick="filterCatalog('cosmetics', document.querySelector('[data-filter=cosmetics]'))" 
-                            class="p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200 hover:border-emerald-300 transition text-center flex flex-col items-center gap-2 group">
-                        <div class="w-11 h-11 rounded-xl bg-pink-100 text-pink-700 flex items-center justify-center text-lg group-hover:scale-105 transition">
-                            <i class="fa-solid fa-pump-soap"></i>
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold text-slate-800 block">Cosmetics & Skin</span>
-                            <span class="text-[10px] text-slate-500">Dermatological</span>
-                        </div>
-                    </button>
+                        <!-- Card 3: Baby Nutrition -->
+                        <button type="button" onclick="selectCategoryAndScroll('babycare')" 
+                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
+                            <div class="w-11 h-11 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                <i class="fa-solid fa-baby"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Baby Nutrition</span>
+                                <span class="text-[10px] text-slate-500">Formula &amp; Diapers</span>
+                            </div>
+                        </button>
 
-                    <!-- Category 5: Diagnostics & Monitoring -->
-                    <button onclick="filterCatalog('surgical', document.querySelector('[data-filter=surgical]'))" 
-                            class="p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200 hover:border-emerald-300 transition text-center flex flex-col items-center gap-2 group">
-                        <div class="w-11 h-11 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-lg group-hover:scale-105 transition">
-                            <i class="fa-solid fa-heart-pulse"></i>
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold text-slate-800 block">Diagnostics</span>
-                            <span class="text-[10px] text-slate-500">BP, Sugar & Temp</span>
-                        </div>
-                    </button>
+                        <!-- Card 4: Cosmetics & Skin -->
+                        <button type="button" onclick="selectCategoryAndScroll('cosmetics')" 
+                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
+                            <div class="w-11 h-11 rounded-xl bg-pink-100 text-pink-700 flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                <i class="fa-solid fa-pump-soap"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Cosmetics &amp; Skin</span>
+                                <span class="text-[10px] text-slate-500">Dermatological</span>
+                            </div>
+                        </button>
 
-                    <!-- Category 6: Patient Mobility -->
-                    <button onclick="filterCatalog('surgical', document.querySelector('[data-filter=surgical]'))" 
-                            class="p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200 hover:border-emerald-300 transition text-center flex flex-col items-center gap-2 group">
-                        <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg group-hover:scale-105 transition">
-                            <i class="fa-solid fa-wheelchair"></i>
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold text-slate-800 block">Patient Mobility</span>
-                            <span class="text-[10px] text-slate-500">Wheelchairs & Aid</span>
-                        </div>
-                    </button>
+                        <!-- Card 5: Diagnostics -->
+                        <button type="button" onclick="selectCategoryAndScroll('surgical')" 
+                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
+                            <div class="w-11 h-11 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Diagnostics</span>
+                                <span class="text-[10px] text-slate-500">BP, Sugar &amp; Temp</span>
+                            </div>
+                        </button>
 
+                        <!-- Card 6: Patient Mobility -->
+                        <button type="button" onclick="selectCategoryAndScroll('surgical')" 
+                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                <i class="fa-solid fa-wheelchair"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Patient Mobility</span>
+                                <span class="text-[10px] text-slate-500">Wheelchairs &amp; Aid</span>
+                            </div>
+                        </button>
+
+                        <!-- DUPLICATED CLONES (For Seamless Infinite Loop - Screen-Reader & Tab Hidden) -->
+                        <!-- Clone 1 -->
+                        <button type="button" onclick="selectCategoryAndScroll('medicines')" tabindex="-1" aria-hidden="true"
+                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                <i class="fa-solid fa-pills"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Medicines</span>
+                                <span class="text-[10px] text-slate-500">General &amp; Rx</span>
+                            </div>
+                        </button>
+
+                        <!-- Clone 2 -->
+                        <button type="button" onclick="selectCategoryAndScroll('surgical')" tabindex="-1" aria-hidden="true"
+                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
+                            <div class="w-11 h-11 rounded-xl bg-red-100 text-brand-red flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                <i class="fa-solid fa-stethoscope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Surgical Supplies</span>
+                                <span class="text-[10px] text-slate-500">Hospital &amp; Clinical</span>
+                            </div>
+                        </button>
+
+                        <!-- Clone 3 -->
+                        <button type="button" onclick="selectCategoryAndScroll('babycare')" tabindex="-1" aria-hidden="true"
+                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
+                            <div class="w-11 h-11 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                <i class="fa-solid fa-baby"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Baby Nutrition</span>
+                                <span class="text-[10px] text-slate-500">Formula &amp; Diapers</span>
+                            </div>
+                        </button>
+
+                        <!-- Clone 4 -->
+                        <button type="button" onclick="selectCategoryAndScroll('cosmetics')" tabindex="-1" aria-hidden="true"
+                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
+                            <div class="w-11 h-11 rounded-xl bg-pink-100 text-pink-700 flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                <i class="fa-solid fa-pump-soap"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Cosmetics &amp; Skin</span>
+                                <span class="text-[10px] text-slate-500">Dermatological</span>
+                            </div>
+                        </button>
+
+                        <!-- Clone 5 -->
+                        <button type="button" onclick="selectCategoryAndScroll('surgical')" tabindex="-1" aria-hidden="true"
+                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
+                            <div class="w-11 h-11 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Diagnostics</span>
+                                <span class="text-[10px] text-slate-500">BP, Sugar &amp; Temp</span>
+                            </div>
+                        </button>
+
+                        <!-- Clone 6 -->
+                        <button type="button" onclick="selectCategoryAndScroll('surgical')" tabindex="-1" aria-hidden="true"
+                                class="cat-slide-card p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 transition-all text-center flex flex-col items-center gap-2 group shrink-0">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg group-hover:scale-105 transition">
+                                <i class="fa-solid fa-wheelchair"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block">Patient Mobility</span>
+                                <span class="text-[10px] text-slate-500">Wheelchairs &amp; Aid</span>
+                            </div>
+                        </button>
+
+                    </div>
                 </div>
 
             </div>
@@ -1486,6 +1547,171 @@
                 }
             });
         }
+
+        // Category selection from slider cards with smooth scroll to catalog
+        function selectCategoryAndScroll(category) {
+            const targetPill = document.querySelector(`.cat-pill[data-filter="${category}"]`) || (category === 'all' ? document.querySelector('.cat-pill:not([data-filter])') : null);
+            filterCatalog(category, targetPill);
+            const catSection = document.getElementById('categories');
+            if (catSection) {
+                catSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 13. CONTINUOUS AUTO-LOOP CATEGORY CAROUSEL ENGINE
+        (function initCategorySlider() {
+            const viewport = document.getElementById('category-slider-viewport');
+            const track = document.getElementById('category-slider-track');
+            if (!viewport || !track) return;
+
+            let isPaused = false;
+            let isDragging = false;
+            let startX = 0;
+            let scrollLeftStart = 0;
+            let dragDistance = 0;
+            let resumeTimeout = null;
+            let animationFrameId = null;
+            const scrollSpeed = 0.65; // pixels per animation frame (~40px/sec at 60fps)
+
+            let prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (motionQuery.addEventListener) {
+                motionQuery.addEventListener('change', (e) => {
+                    prefersReducedMotion = e.matches;
+                });
+            }
+
+            // Continuous animation frame loop
+            function step() {
+                if (!isPaused && !isDragging && !prefersReducedMotion) {
+                    viewport.scrollLeft += scrollSpeed;
+                    const halfWidth = track.scrollWidth / 2;
+                    if (halfWidth > 0 && viewport.scrollLeft >= halfWidth) {
+                        viewport.scrollLeft -= halfWidth;
+                    }
+                }
+                animationFrameId = requestAnimationFrame(step);
+            }
+            animationFrameId = requestAnimationFrame(step);
+
+            // Hover pause listeners
+            viewport.addEventListener('mouseenter', () => {
+                isPaused = true;
+            });
+
+            viewport.addEventListener('mouseleave', () => {
+                if (!isDragging) {
+                    isPaused = false;
+                }
+            });
+
+            // Keyboard accessibility focus listeners
+            viewport.addEventListener('focusin', () => {
+                isPaused = true;
+            });
+
+            viewport.addEventListener('focusout', () => {
+                isPaused = false;
+            });
+
+            // Mouse Drag interaction
+            viewport.addEventListener('mousedown', (e) => {
+                if (e.button !== 0) return; // Only primary mouse button
+                isDragging = true;
+                isPaused = true;
+                clearTimeout(resumeTimeout);
+                startX = e.pageX - viewport.offsetLeft;
+                scrollLeftStart = viewport.scrollLeft;
+                dragDistance = 0;
+                viewport.classList.add('cursor-grabbing');
+                viewport.classList.remove('cursor-grab');
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                const x = e.pageX - viewport.offsetLeft;
+                const walk = x - startX;
+                dragDistance = Math.abs(walk);
+                viewport.scrollLeft = scrollLeftStart - walk;
+
+                const halfWidth = track.scrollWidth / 2;
+                if (halfWidth > 0) {
+                    if (viewport.scrollLeft >= halfWidth) {
+                        viewport.scrollLeft -= halfWidth;
+                        scrollLeftStart -= halfWidth;
+                    } else if (viewport.scrollLeft <= 0) {
+                        viewport.scrollLeft += halfWidth;
+                        scrollLeftStart += halfWidth;
+                    }
+                }
+            });
+
+            window.addEventListener('mouseup', () => {
+                if (!isDragging) return;
+                isDragging = false;
+                viewport.classList.remove('cursor-grabbing');
+                viewport.classList.add('cursor-grab');
+                clearTimeout(resumeTimeout);
+                resumeTimeout = setTimeout(() => {
+                    isPaused = false;
+                }, 1600);
+            });
+
+            // Touch Swipe interaction for mobile & tablet
+            viewport.addEventListener('touchstart', (e) => {
+                if (e.touches.length !== 1) return;
+                isDragging = true;
+                isPaused = true;
+                clearTimeout(resumeTimeout);
+                startX = e.touches[0].pageX;
+                scrollLeftStart = viewport.scrollLeft;
+                dragDistance = 0;
+            }, { passive: true });
+
+            viewport.addEventListener('touchmove', (e) => {
+                if (!isDragging || e.touches.length !== 1) return;
+                const x = e.touches[0].pageX;
+                const walk = x - startX;
+                dragDistance = Math.abs(walk);
+                viewport.scrollLeft = scrollLeftStart - walk;
+
+                const halfWidth = track.scrollWidth / 2;
+                if (halfWidth > 0) {
+                    if (viewport.scrollLeft >= halfWidth) {
+                        viewport.scrollLeft -= halfWidth;
+                        scrollLeftStart -= halfWidth;
+                    } else if (viewport.scrollLeft <= 0) {
+                        viewport.scrollLeft += halfWidth;
+                        scrollLeftStart += halfWidth;
+                    }
+                }
+            }, { passive: true });
+
+            viewport.addEventListener('touchend', () => {
+                if (!isDragging) return;
+                isDragging = false;
+                clearTimeout(resumeTimeout);
+                resumeTimeout = setTimeout(() => {
+                    isPaused = false;
+                }, 2000);
+            });
+
+            viewport.addEventListener('touchcancel', () => {
+                isDragging = false;
+                clearTimeout(resumeTimeout);
+                resumeTimeout = setTimeout(() => {
+                    isPaused = false;
+                }, 2000);
+            });
+
+            // Prevent accidental click triggering when dragging/swiping
+            track.addEventListener('click', (e) => {
+                if (dragDistance > 6) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            }, true);
+        })();
 
         // Direct catalog item WhatsApp order
         function orderViaWhatsApp(itemName, category) {
