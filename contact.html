@@ -293,8 +293,20 @@
     <main class="flex-grow">
         
         <!-- SECTION 1 — STANDARDIZED INNER HERO -->
-        <section class="py-12 sm:py-14 lg:py-16 bg-gradient-to-b from-brand-greenSubtle/60 via-slate-50/40 to-white border-b border-slate-200/80">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="relative bg-[#F4F9F5] border-b border-slate-200/80 overflow-hidden">
+            <!-- Background Image Layer -->
+            <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+                <img src="assets/images/other-pages-hero-section.webp" 
+                     alt="" 
+                     aria-hidden="true"
+                     class="w-full h-full object-cover object-[center_right] filter contrast-[1.01]"
+                     width="1916" height="821"
+                     fetchpriority="high">
+                <!-- Subtle Gradient Overlay for crisp text legibility without washing out background photography -->
+                <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/75 sm:from-white/90 sm:via-white/55 sm:to-transparent lg:from-white/75 lg:via-white/35 lg:to-transparent"></div>
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
                 <div class="max-w-2xl sm:max-w-[650px] space-y-2.5 sm:space-y-3">
                     
                     <span class="inline-block text-xs sm:text-[13px] font-extrabold uppercase tracking-widest text-brand-green">
@@ -490,36 +502,28 @@
             </div>
         </section>
 
-        <!-- SECTION 4 — CUSTOMER ASSISTANCE -->
-        <section class="py-14 sm:py-16 bg-slate-50">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- SECTION 4 — COMPACT WHATSAPP INQUIRY STRIP -->
+        <section class="py-10 sm:py-12 bg-slate-50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-card text-center space-y-5">
+                <div class="bg-gradient-to-r from-emerald-950 via-brand-greenDark to-emerald-900 rounded-2xl p-6 sm:px-8 sm:py-7 text-white shadow-card border border-emerald-800/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-8">
                     
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-brand-green text-xs font-bold uppercase tracking-wider border border-emerald-200">
-                        <i class="fa-solid fa-headset"></i> Dedicated Customer Service
-                    </span>
-
-                    <div class="max-w-xl mx-auto space-y-2">
-                        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 font-display tracking-tight">
-                            Need Help Finding a Product?
+                    <div class="space-y-1 sm:space-y-1.5 max-w-xl">
+                        <h2 class="text-lg sm:text-xl font-bold font-display tracking-tight text-white">
+                            Need Help Finding a Medicine?
                         </h2>
-                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                            Contact us with the name of the medicine or healthcare item you are looking for, and our team can help you check availability.
+                        <p class="text-xs sm:text-sm text-emerald-100/90 leading-relaxed">
+                            Ask about medicines, surgical supplies or product availability on WhatsApp.
                         </p>
                     </div>
 
-                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-                        <a href="https://wa.me/923338448427?text=Hello%20Umer%20Din%20Pharmacy%2C%20I%20am%20looking%20for%20a%20product." 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition shadow flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-lg text-emerald-300"></i> Ask on WhatsApp
-                        </a>
-                        <a href="tel:0537517129" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 font-bold text-xs sm:text-sm uppercase tracking-wider transition shadow-subtle flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-phone text-brand-green"></i> Call the Store: 0537 517129
-                        </a>
-                    </div>
+                    <a href="https://wa.me/923338448427?text=Hello%20Umer%20Din%20Pharmacy!%20I%20would%20like%20to%20inquire%20about%20a%20medicine%20or%20surgical%20product." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition shadow-sm whitespace-nowrap shrink-0">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp Us</span>
+                    </a>
 
                 </div>
 
