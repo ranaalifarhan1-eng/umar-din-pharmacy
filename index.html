@@ -296,7 +296,7 @@
                     </a>
 
                     <!-- Mobile/Tablet Drawer Toggle Button -->
-                    <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-slate-700 hover:text-brand-green hover:bg-slate-100 rounded-xl transition flex items-center justify-center h-[38px] w-[38px] sm:h-[44px] sm:w-[44px]" aria-label="Toggle navigation menu" id="mobile-menu-btn">
+                    <button onclick="openMobileDrawer()" class="lg:hidden p-2 text-slate-700 hover:text-brand-green hover:bg-slate-100 rounded-xl transition flex items-center justify-center h-[38px] w-[38px] sm:h-[44px] sm:w-[44px]" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer" id="mobile-menu-btn">
                         <i class="fa-solid fa-bars text-lg sm:text-xl"></i>
                     </button>
                 </div>
@@ -320,39 +320,93 @@
             </div>
         </div>
 
-        <!-- Mobile & Tablet Menu Drawer -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200/80 px-4 py-4 space-y-2 shadow-card">
-            <nav class="space-y-1" aria-label="Mobile Navigation">
-                <a href="#categories" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
+    </header>
+
+    <!-- MOBILE NAVIGATION DRAWER & BACKDROP -->
+    <div id="mobile-drawer-backdrop" 
+         onclick="closeMobileDrawer()" 
+         class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-300"
+         aria-hidden="true"></div>
+
+    <div id="mobile-drawer" 
+         class="fixed top-0 right-0 bottom-0 z-50 w-[85vw] max-w-[340px] h-full bg-white shadow-2xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between overflow-y-auto"
+         role="dialog" 
+         aria-modal="true" 
+         aria-label="Navigation Menu">
+        
+        <!-- Drawer Header -->
+        <div class="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between gap-3 bg-slate-50/70">
+            <a href="index.html" class="flex items-center shrink-0" aria-label="Umer Din Pharmacy Home">
+                <img src="assets/umer-din-pharmacy-logo.png" 
+                     alt="Umer Din Pharmacy & Surgical Logo" 
+                     class="h-9 w-auto object-contain">
+            </a>
+            <button onclick="closeMobileDrawer()" 
+                    class="w-9 h-9 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-200/70 transition flex items-center justify-center"
+                    aria-label="Close navigation menu"
+                    id="mobile-drawer-close-btn">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Drawer Body & Navigation -->
+        <div class="p-4 sm:p-5 space-y-5 flex-grow">
+            <!-- Nav Links -->
+            <nav class="space-y-1.5" aria-label="Mobile Navigation">
+                <a href="index.html" onclick="closeMobileDrawer()" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-bold text-brand-green bg-emerald-50/80 transition" aria-current="page">
+                    <span class="w-8 h-8 rounded-lg bg-emerald-200/80 text-brand-green flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-house"></i></span>
+                    <span>Home</span>
+                </a>
+                <a href="#categories" onclick="closeMobileDrawer()" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/70 transition">
                     <span class="w-8 h-8 rounded-lg bg-emerald-100/70 text-brand-green flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-pills"></i></span>
                     <span>Catalog</span>
                 </a>
-                <a href="about.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
+                <a href="about.html" onclick="closeMobileDrawer()" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/70 transition">
                     <span class="w-8 h-8 rounded-lg bg-blue-100/70 text-brand-blue flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-circle-info"></i></span>
                     <span>About Us</span>
                 </a>
-                <a href="contact.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
+                <a href="contact.html" onclick="closeMobileDrawer()" class="flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/70 transition">
                     <span class="w-8 h-8 rounded-lg bg-emerald-100/70 text-brand-green flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-location-dot"></i></span>
                     <span>Contact</span>
                 </a>
             </nav>
-            
-            <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+
+            <!-- Action Buttons -->
+            <div class="pt-4 border-t border-slate-100 flex flex-col gap-2.5">
                 <a href="https://wa.me/923338448427?text=Hello%20Umer%20Din%20Pharmacy!%20I%20would%20like%20to%20order%20online." 
                    target="_blank" 
                    rel="noopener noreferrer"
-                   class="w-full py-2.5 bg-brand-green hover:bg-brand-greenDark text-white font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
-                    <i class="fa-brands fa-whatsapp text-base"></i> Order Online (WhatsApp)
+                   class="w-full py-3 bg-brand-green hover:bg-brand-greenDark text-white font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-base text-emerald-300"></i> 
+                    <span>Order Online (WhatsApp)</span>
                 </a>
-                <button onclick="openPrescriptionModal(); toggleMobileMenu();" class="w-full py-2.5 bg-brand-greenLight hover:bg-emerald-100 text-brand-green font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition border border-brand-green/30">
-                    <i class="fa-solid fa-camera"></i> Send Prescription
-                </button>
-                <a href="tel:0537517129" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
-                    <i class="fa-solid fa-phone text-brand-red"></i> Call Landline: 0537 517129
+                <a href="https://wa.me/923338448427?text=Hello%20Umer%20Din%20Pharmacy!%20I%20would%20like%20to%20send%20a%20doctor%27s%20prescription%20for%20medicine%20availability%20and%20delivery%20in%20Lalamusa.%20I%20am%20attaching%20the%20prescription%20photo%20now." 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="w-full py-3 bg-brand-greenLight hover:bg-emerald-100 text-brand-green font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition border border-brand-green/30">
+                    <i class="fa-solid fa-camera"></i> 
+                    <span>Send Prescription</span>
+                </a>
+                <a href="tel:0537517129" 
+                   class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
+                    <i class="fa-solid fa-phone text-brand-red"></i> 
+                    <span>Call Landline: 0537 517129</span>
                 </a>
             </div>
         </div>
-    </header>
+
+        <!-- Drawer Footer / Quick Info -->
+        <div class="p-4 sm:p-5 border-t border-slate-100 bg-slate-50/70 text-xs text-slate-600 space-y-1.5">
+            <div class="flex items-center gap-2 text-slate-700 font-semibold">
+                <i class="fa-solid fa-clock text-brand-green text-xs"></i>
+                <span>Daily: 8:00 AM – 11:30 PM</span>
+            </div>
+            <div class="flex items-start gap-2 text-slate-500 text-[11px] leading-tight">
+                <i class="fa-solid fa-location-dot text-brand-green mt-0.5 text-xs"></i>
+                <span>Main G.T. Road, Lalamusa (Next to BOP)</span>
+            </div>
+        </div>
+    </div>
 
     <!-- MAIN CONTENT AREA -->
     <main class="flex-grow">
@@ -398,10 +452,14 @@
 
                     <!-- Primary Action Buttons (Dual CTA with Standardized Sizing) -->
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
-                        <button onclick="openPrescriptionModal()" class="h-[46px] px-6 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs sm:text-[13px] uppercase tracking-wider transition shadow-sm hover:shadow-card flex items-center justify-center gap-2.5 shrink-0">
+                        <a href="https://wa.me/923338448427?text=Hello%20Umer%20Din%20Pharmacy!%20I%20would%20like%20to%20send%20a%20doctor%27s%20prescription%20for%20medicine%20availability%20and%20delivery%20in%20Lalamusa.%20I%20am%20attaching%20the%20prescription%20photo%20now." 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="h-[46px] px-6 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs sm:text-[13px] uppercase tracking-wider transition shadow-sm hover:shadow-card flex items-center justify-center gap-2.5 shrink-0"
+                           aria-label="Send Your Prescription via WhatsApp">
                             <i class="fa-solid fa-camera text-sm"></i>
                             <span>Send Your Prescription</span>
-                        </button>
+                        </a>
 
                         <a href="#categories" class="h-[46px] px-6 rounded-xl bg-white/95 hover:bg-white text-slate-800 font-bold text-xs sm:text-[13px] uppercase tracking-wider border border-slate-300 hover:border-brand-green transition flex items-center justify-center gap-2 shadow-subtle backdrop-blur-sm shrink-0">
                             <i class="fa-solid fa-boxes-stacked text-brand-green"></i>
@@ -628,128 +686,94 @@
             </div>
         </section>
 
-        <!-- 5. PRESCRIPTION DISPENSING SECTION (Clean, Honest WhatsApp Workflow) -->
-        <section id="prescription-section" class="py-10 sm:py-12 lg:py-14 bg-slate-50">
+        <!-- 5. ABOUT US — LOCAL PHARMACY INTRODUCTION -->
+        <section id="about" class="py-12 sm:py-16 bg-[#F5F7F3] border-t border-slate-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="bg-gradient-to-br from-[#0D6838] via-[#0B5C31] to-[#084826] rounded-3xl p-6 sm:p-8 lg:p-10 text-white shadow-card border border-emerald-700/40 relative overflow-hidden">
-                    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-                        
-                        <!-- Left: How Prescription Handover Works -->
-                        <div class="lg:col-span-6 space-y-4 sm:space-y-5">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-emerald-200 text-xs font-semibold tracking-wide border border-white/10 backdrop-blur-sm">
-                                <i class="fa-solid fa-shield-halved text-xs"></i> <span>Prescription Inquiry Service</span>
-                            </div>
-
-                            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight font-display">
-                                Order Medicines with Your Prescription
-                            </h2>
-
-                            <p class="text-emerald-100/90 text-xs sm:text-sm leading-relaxed max-w-lg">
-                                Share your prescription details with our team through WhatsApp. We'll review your request and help confirm medicine availability.
-                            </p>
-
-                            <!-- Compact Standardized 3 Steps -->
-                            <div class="space-y-2.5 pt-1">
-                                <div class="flex items-start gap-3 p-2.5 rounded-xl bg-white/5 border border-white/10">
-                                    <div class="w-6 h-6 rounded-full bg-white text-brand-green font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-                                        1
-                                    </div>
-                                    <div class="text-xs">
-                                        <strong class="text-white text-sm font-bold block mb-0.5">Take a Photo of Your Prescription</strong>
-                                        <span class="text-emerald-100/80 leading-normal block">Capture a clear photo of your doctor's prescription slip or medicine packaging.</span>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start gap-3 p-2.5 rounded-xl bg-white/5 border border-white/10">
-                                    <div class="w-6 h-6 rounded-full bg-white text-brand-green font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-                                        2
-                                    </div>
-                                    <div class="text-xs">
-                                        <strong class="text-white text-sm font-bold block mb-0.5">Share It for Review</strong>
-                                        <span class="text-emerald-100/80 leading-normal block">Our pharmacy team reviews the requested medicines, confirms dosage, and checks stock availability.</span>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start gap-3 p-2.5 rounded-xl bg-white/5 border border-white/10">
-                                    <div class="w-6 h-6 rounded-full bg-white text-brand-green font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-                                        3
-                                    </div>
-                                    <div class="text-xs">
-                                        <strong class="text-white text-sm font-bold block mb-0.5">Confirm Your Order and Delivery Options</strong>
-                                        <span class="text-emerald-100/80 leading-normal block">Verify order details, payment method, and convenient delivery in Lalamusa.</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pt-1 text-[11px] text-emerald-200/90 flex items-center gap-2">
-                                <i class="fa-solid fa-lock text-emerald-300"></i>
-                                <span>Prescriptions are handled confidentially by pharmacy staff.</span>
-                            </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    
+                    <!-- Left: Editorial Content -->
+                    <div class="lg:col-span-7 space-y-4 sm:space-y-5">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/80 text-brand-green text-xs font-bold tracking-wider uppercase border border-emerald-200/80">
+                            <i class="fa-solid fa-store text-xs"></i>
+                            <span>ABOUT UMER DIN PHARMACY</span>
                         </div>
 
-                        <!-- Right: Direct WhatsApp Order Form -->
-                        <div class="lg:col-span-6">
-                            <div class="bg-white rounded-2xl p-5 sm:p-7 text-slate-800 shadow-card border border-slate-100 space-y-3.5">
-                                <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                                    <div>
-                                        <h3 class="text-base font-bold text-slate-900">Prescription Inquiry Desk</h3>
-                                        <p class="text-[11px] text-slate-500">Lalamusa Delivery Desk</p>
-                                    </div>
-                                    <span class="text-xs bg-emerald-50 text-brand-green font-bold px-2.5 py-1 rounded-lg border border-emerald-200/70">
-                                        WhatsApp Order
-                                    </span>
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-display leading-tight">
+                            Your Local Pharmacy &amp; Surgical Store in Lalamusa
+                        </h2>
+
+                        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                            Umer Din Pharmacy &amp; Surgical offers medicines, surgical supplies, baby care, cosmetics and everyday healthcare essentials to customers in Lalamusa.
+                        </p>
+
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            Located conveniently on Main G.T. Road adjacent to the Bank of Punjab, our dedicated team provides genuine DRAP-registered prescription medicines, temperature-regulated cold-chain storage for insulins and vaccines, and patient-care equipment with prompt local delivery.
+                        </p>
+
+                        <!-- Key Highlights -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-white border border-slate-200/80 shadow-subtle">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-brand-green flex items-center justify-center text-xs shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-check-double"></i>
                                 </div>
+                                <div>
+                                    <h3 class="text-xs font-bold text-slate-900">Genuine DRAP Medicines</h3>
+                                    <p class="text-[11px] text-slate-600 leading-snug mt-0.5">Sourced from authorized pharmaceutical distributors.</p>
+                                </div>
+                            </div>
 
-                                <div class="space-y-3">
-                                    <div>
-                                        <label for="presc-name" class="block text-xs font-semibold text-slate-700 mb-1">Full Name</label>
-                                        <input type="text" id="presc-name" placeholder="e.g. Tariq Mehmood" class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green focus:bg-white transition text-slate-800 placeholder-slate-400">
-                                    </div>
-
-                                    <div>
-                                        <label for="presc-address" class="block text-xs font-semibold text-slate-700 mb-1">Delivery Address in Lalamusa</label>
-                                        <input type="text" id="presc-address" placeholder="e.g. Mohalla Islam Pura / Near City High School" class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green focus:bg-white transition text-slate-800 placeholder-slate-400">
-                                    </div>
-
-                                    <div>
-                                        <label for="presc-details" class="block text-xs font-semibold text-slate-700 mb-1">Medicine Details / Notes (Optional)</label>
-                                        <textarea id="presc-details" rows="2" placeholder="List any specific brands or dosages, or attach your prescription photo directly in WhatsApp..." class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green focus:bg-white transition text-slate-800 placeholder-slate-400 resize-none"></textarea>
-                                    </div>
-
-                                    <div class="text-[11px] text-slate-700 bg-emerald-50/90 p-3 rounded-xl border border-emerald-200/90 flex items-start gap-2.5 leading-relaxed">
-                                        <i class="fa-solid fa-circle-check text-brand-green mt-0.5 shrink-0 text-xs"></i>
-                                        <div>
-                                            <strong class="text-slate-900 block font-bold mb-0.5">Simple WhatsApp Process:</strong>
-                                            <span>Clicking the button opens WhatsApp with your pre-filled details. You can then attach a clear photo of your prescription slip directly in the chat for review.</span>
-                                        </div>
-                                    </div>
-
-                                    <button onclick="sendPrescriptionDirect()" class="w-full h-[46px] rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-sm hover:shadow">
-                                        <i class="fa-brands fa-whatsapp text-lg text-emerald-300"></i>
-                                        <span>Send Prescription on WhatsApp</span>
-                                    </button>
-                                    
-                                    <p class="text-[11px] text-slate-400 text-center font-medium">
-                                        Need immediate assistance? Call: <strong class="text-slate-700">0333 8448427</strong> or <strong class="text-slate-700">0537 517129</strong>
-                                    </p>
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-white border border-slate-200/80 shadow-subtle">
+                                <div class="w-8 h-8 rounded-lg bg-blue-100 text-brand-blue flex items-center justify-center text-xs shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-truck-fast"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xs font-bold text-slate-900">Prompt Local Delivery</h3>
+                                    <p class="text-[11px] text-slate-600 leading-snug mt-0.5">Direct to your doorstep in Lalamusa via WhatsApp.</p>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- CTA Actions -->
+                        <div class="flex flex-wrap items-center gap-3.5 pt-2">
+                            <a href="about.html" class="h-[44px] px-6 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition shadow-sm hover:shadow flex items-center justify-center gap-2">
+                                <span>Learn More</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/923338448427?text=Hello%20Umer%20Din%20Pharmacy!%20I%20would%20like%20to%20inquire%20about%20your%20pharmacy%20services." 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="h-[44px] px-5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs sm:text-sm tracking-wide border border-slate-300 hover:border-brand-green transition shadow-subtle flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-emerald-600 text-base"></i>
+                                <span>Contact on WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Framed Pharmacy Photo -->
+                    <div class="lg:col-span-5">
+                        <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-card border border-slate-200/90 bg-white p-2">
+                            <img src="assets/images/pharmacy-hero.webp" 
+                                 alt="Umer Din Pharmacy & Surgical storefront and staff in Lalamusa" 
+                                 class="w-full h-[280px] sm:h-[360px] lg:h-[400px] object-cover rounded-xl sm:rounded-2xl"
+                                 loading="lazy">
+                            <div class="absolute bottom-4 left-4 right-4 p-3 sm:p-4 rounded-xl bg-white/95 backdrop-blur-sm border border-slate-200/90 shadow-sm flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-lg bg-emerald-100 text-brand-green flex items-center justify-center text-xs shrink-0">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div class="text-left">
+                                        <div class="text-[11px] sm:text-xs font-bold text-slate-900 leading-tight">Main G.T. Road, Lalamusa</div>
+                                        <div class="text-[10px] text-slate-500">Next to Bank of Punjab • Daily 8:00 AM – 11:30 PM</div>
+                                    </div>
+                                </div>
+                                <span class="hidden sm:inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-brand-green border border-emerald-200/60">
+                                    Open Daily
+                                </span>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
-
-            </div>
-        </section>
-
-                    </div>
-
-                </div>
-
             </div>
         </section>
 
@@ -1235,118 +1259,7 @@
             </div>
         </section>
 
-        <!-- 8. ABOUT US — PHARMACY HERITAGE & CLINICAL INTEGRITY -->
-        <section id="about" class="py-14 bg-white border-t border-slate-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <!-- Section Header -->
-                <div class="max-w-3xl">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green">About Umer Din Pharmacy &amp; Surgical</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-display mt-1">
-                        Lalamusa’s Trusted Healthcare &amp; Surgical Partner
-                    </h2>
-                    <p class="text-slate-600 text-sm mt-2 leading-relaxed">
-                        Located on Main G.T. Road adjacent to the Bank of Punjab, Umer Din Pharmacy &amp; Surgical is a dedicated community healthcare provider offering 100% DRAP-approved medicines, temperature-regulated insulins, and certified surgical supplies to families across Lalamusa and nearby areas.
-                    </p>
-                </div>
-
-                <!-- 4 Trust & Service Pillars -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
-                    
-                    <!-- Pillar 1 -->
-                    <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 flex flex-col justify-between shadow-subtle hover:shadow-card">
-                        <div>
-                            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg mb-3">
-                                <i class="fa-solid fa-certificate"></i>
-                            </div>
-                            <h3 class="text-sm font-bold text-slate-900">100% DRAP-Approved Medicines</h3>
-                            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                                All prescription and over-the-counter medicines are sourced directly from licensed pharmaceutical distributors and reputable multinational manufacturers.
-                            </p>
-                        </div>
-                        <div class="pt-3 mt-3 border-t border-slate-200/70 text-[11px] font-bold text-emerald-700 flex items-center gap-1.5">
-                            <i class="fa-solid fa-check"></i> Genuine Batch Guaranteed
-                        </div>
-                    </div>
-
-                    <!-- Pillar 2 -->
-                    <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/90 hover:border-blue-300 transition-all duration-200 flex flex-col justify-between shadow-subtle hover:shadow-card">
-                        <div>
-                            <div class="w-11 h-11 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-lg mb-3">
-                                <i class="fa-solid fa-snowflake"></i>
-                            </div>
-                            <h3 class="text-sm font-bold text-slate-900">2°C – 8°C Cold Chain Storage</h3>
-                            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                                Insulins, vaccines, and sensitive biological injectables are preserved under continuous refrigeration supported by uninterrupted backup power.
-                            </p>
-                        </div>
-                        <div class="pt-3 mt-3 border-t border-slate-200/70 text-[11px] font-bold text-blue-700 flex items-center gap-1.5">
-                            <i class="fa-solid fa-check"></i> Insulated Delivery Packs
-                        </div>
-                    </div>
-
-                    <!-- Pillar 3 -->
-                    <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/90 hover:border-red-300 transition-all duration-200 flex flex-col justify-between shadow-subtle hover:shadow-card">
-                        <div>
-                            <div class="w-11 h-11 rounded-xl bg-red-100 text-brand-red flex items-center justify-center text-lg mb-3">
-                                <i class="fa-solid fa-kit-medical"></i>
-                            </div>
-                            <h3 class="text-sm font-bold text-slate-900">Surgical &amp; Home Patient Care</h3>
-                            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                                A complete selection of wheelchairs, commode chairs, nebulizers, blood pressure monitors, cannulas, and clinical disposables for home patient care and local clinics.
-                            </p>
-                        </div>
-                        <div class="pt-3 mt-3 border-t border-slate-200/70 text-[11px] font-bold text-brand-red flex items-center gap-1.5">
-                            <i class="fa-solid fa-check"></i> Certified Medical Devices
-                        </div>
-                    </div>
-
-                    <!-- Pillar 4 -->
-                    <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 flex flex-col justify-between shadow-subtle hover:shadow-card">
-                        <div>
-                            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg mb-3">
-                                <i class="fa-solid fa-user-doctor"></i>
-                            </div>
-                            <h3 class="text-sm font-bold text-slate-900">Qualified Pharmacist Guidance</h3>
-                            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                                Our experienced pharmacy staff is on hand to help you understand prescriptions, medicine schedules, and appropriate product usage.
-                            </p>
-                        </div>
-                        <div class="pt-3 mt-3 border-t border-slate-200/70 text-[11px] font-bold text-emerald-700 flex items-center gap-1.5">
-                            <i class="fa-solid fa-check"></i> Personal Patient Guidance
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Credibility & Service Commitments Strip -->
-                <div class="mt-8 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50 to-blue-50 border border-emerald-200/80 p-5 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <div class="flex flex-wrap items-center gap-4 sm:gap-8 text-xs font-semibold text-slate-800">
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-clock text-brand-green text-sm"></i>
-                            <span>Daily Hours: <strong>8:00 AM – 11:30 PM</strong></span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-motorcycle text-brand-green text-sm"></i>
-                            <span>Free Local Delivery in Lalamusa</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-shield-halved text-brand-green text-sm"></i>
-                            <span>DRAP Regulated Supply</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/923338448427?text=Hello%20Umer%20Din%20Pharmacy!%20I%20would%20like%20to%20inquire%20about%20your%20services." 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="h-[40px] px-5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center gap-2 shadow-sm whitespace-nowrap shrink-0">
-                        <i class="fa-brands fa-whatsapp text-sm"></i> Talk to Pharmacist
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- 9. PHYSICAL STORE LOCATION & CONTACT (With Embedded Interactive Google Map) -->
+        <!-- 8. PHYSICAL STORE LOCATION & CONTACT (With Embedded Interactive Google Map) -->
         <section id="contact" class="py-14 bg-slate-50 border-t border-slate-200">
             <span id="store-info" class="sr-only">Store Information</span>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1571,103 +1484,95 @@
         </span>
     </a>
 
-    <!-- 11. PRESCRIPTION ORDER MODAL -->
-    <div id="prescription-modal" 
-         class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden items-center justify-center p-4"
-         role="dialog" 
-         aria-modal="true" 
-         aria-labelledby="modal-title">
-        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-7 relative shadow-2xl space-y-4">
-            
-            <button onclick="closePrescriptionModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2 rounded-lg" aria-label="Close modal">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-
-            <div class="space-y-1">
-                <span class="text-[11px] font-bold text-brand-green uppercase tracking-wider">Quick WhatsApp Order</span>
-                <h3 id="modal-title" class="text-xl font-black text-slate-900 font-display">Prescription &amp; Order Details</h3>
-                <p class="text-xs text-slate-500">
-                    Enter your name and delivery address in Lalamusa. Clicking continue will open WhatsApp where you can attach your prescription photo:
-                </p>
-            </div>
-
-            <div class="space-y-3 pt-1">
-                <div>
-                    <label for="modal-name" class="block text-xs font-bold text-slate-700 mb-1">Customer Name</label>
-                    <input type="text" id="modal-name" placeholder="e.g. Muhammad Farooq" class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green">
-                </div>
-
-                <div>
-                    <label for="modal-address" class="block text-xs font-bold text-slate-700 mb-1">Delivery Address in Lalamusa</label>
-                    <input type="text" id="modal-address" placeholder="e.g. Near G.T. Road / Railway Road, Lalamusa" class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green">
-                </div>
-
-                <div>
-                    <label for="modal-note" class="block text-xs font-bold text-slate-700 mb-1">Medicine Details / Notes (Optional)</label>
-                    <textarea id="modal-note" rows="2" placeholder="List required medicines or any specific instructions..." class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
-                </div>
-
-                <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-xl flex items-center gap-2.5 text-xs text-brand-green">
-                    <i class="fa-solid fa-truck text-base shrink-0"></i>
-                    <span>Free Home Delivery across Lalamusa city &bull; Cash on Delivery (COD).</span>
-                </div>
-
-                <button onclick="submitModalOrder()" class="w-full py-3.5 bg-brand-green hover:bg-brand-greenDark text-white font-extrabold text-xs uppercase tracking-wider rounded-xl transition flex items-center justify-center gap-2 shadow-sm">
-                    <i class="fa-brands fa-whatsapp text-lg text-emerald-300"></i>
-                    <span>Continue to WhatsApp</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- 12. JAVASCRIPT LOGIC (Interactive Filter & Search Engine) -->
     <script>
         // Set dynamic copyright year
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Mobile drawer toggle
+        // Mobile Drawer & Accessibility Logic
+        function openMobileDrawer() {
+            const drawer = document.getElementById('mobile-drawer');
+            const backdrop = document.getElementById('mobile-drawer-backdrop');
+            const toggleBtn = document.getElementById('mobile-drawer-btn') || document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('mobile-drawer-close-btn');
+
+            if (!drawer || !backdrop) return;
+
+            backdrop.classList.remove('opacity-0', 'pointer-events-none');
+            backdrop.classList.add('opacity-100');
+            drawer.classList.remove('translate-x-full');
+            drawer.classList.add('translate-x-0');
+
+            document.body.classList.add('overflow-hidden');
+
+            if (toggleBtn) {
+                toggleBtn.setAttribute('aria-expanded', 'true');
+            }
+
+            setTimeout(function() {
+                if (closeBtn) closeBtn.focus();
+            }, 50);
+        }
+
+        function closeMobileDrawer() {
+            const drawer = document.getElementById('mobile-drawer');
+            const backdrop = document.getElementById('mobile-drawer-backdrop');
+            const toggleBtn = document.getElementById('mobile-drawer-btn') || document.getElementById('mobile-menu-btn');
+
+            if (!drawer || !backdrop) return;
+
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            drawer.classList.remove('translate-x-0');
+            drawer.classList.add('translate-x-full');
+
+            document.body.classList.remove('overflow-hidden');
+
+            if (toggleBtn) {
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                toggleBtn.focus();
+            }
+        }
+
+        // Backward compatibility alias for toggleMobileMenu
         function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu) {
-                menu.classList.toggle('hidden');
+            const drawer = document.getElementById('mobile-drawer');
+            if (drawer && !drawer.classList.contains('translate-x-full')) {
+                closeMobileDrawer();
+            } else {
+                openMobileDrawer();
             }
         }
 
-        // Prescription modal handlers
-        function openPrescriptionModal() {
-            const modal = document.getElementById('prescription-modal');
-            if (modal) {
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                document.body.classList.add('overflow-hidden');
-            }
-        }
-
-        function closePrescriptionModal() {
-            const modal = document.getElementById('prescription-modal');
-            if (modal) {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-                document.body.classList.remove('overflow-hidden');
-            }
-        }
-
-        // Close modal on Escape key
+        // Global keydown handler for Escape & Focus Trapping inside Drawer
         document.addEventListener('keydown', function(e) {
+            const drawer = document.getElementById('mobile-drawer');
+            if (!drawer || drawer.classList.contains('translate-x-full')) return;
+
             if (e.key === 'Escape') {
-                closePrescriptionModal();
+                closeMobileDrawer();
+                return;
+            }
+
+            if (e.key === 'Tab') {
+                const focusableElements = drawer.querySelectorAll('a[href], button:not([disabled]), textarea, input, select');
+                if (!focusableElements.length) return;
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+
+                if (e.shiftKey) {
+                    if (document.activeElement === firstElement) {
+                        lastElement.focus();
+                        e.preventDefault();
+                    }
+                } else {
+                    if (document.activeElement === lastElement) {
+                        firstElement.focus();
+                        e.preventDefault();
+                    }
+                }
             }
         });
-
-        // Close modal when clicking outside modal body
-        const modalContainer = document.getElementById('prescription-modal');
-        if (modalContainer) {
-            modalContainer.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closePrescriptionModal();
-                }
-            });
-        }
 
         // Catalog Search Filter Engine (Desktop & Mobile Unified)
         function handleSearchFilter(query) {
@@ -1958,42 +1863,7 @@
             window.open(`https://wa.me/923338448427?text=${encodeURIComponent(message)}`, '_blank');
         }
 
-        // Direct prescription form forwarder
-        function sendPrescriptionDirect() {
-            const name = document.getElementById('presc-name').value.trim() || 'Customer';
-            const address = document.getElementById('presc-address').value.trim() || 'Lalamusa';
-            const details = document.getElementById('presc-details').value.trim();
 
-            let msg = `*PRESCRIPTION ORDER - UMER DIN PHARMACY*\n\n`;
-            msg += `*Name:* ${name}\n`;
-            msg += `*Delivery Address:* ${address}\n`;
-            if (details) {
-                msg += `*Medicines / Notes:* ${details}\n`;
-            } else {
-                msg += `*Note:* Attaching prescription photo in the following message.\n`;
-            }
-            msg += `\nPlease confirm availability and delivery options. Thank you!`;
-            window.open(`https://wa.me/923338448427?text=${encodeURIComponent(msg)}`, '_blank');
-        }
-
-        // Modal Form Forwarder
-        function submitModalOrder() {
-            const name = document.getElementById('modal-name').value.trim() || 'Customer';
-            const address = document.getElementById('modal-address').value.trim() || 'Lalamusa';
-            const note = document.getElementById('modal-note').value.trim();
-
-            let msg = `*NEW ORDER - UMER DIN PHARMACY LALAMUSA*\n\n`;
-            msg += `*Customer Name:* ${name}\n`;
-            msg += `*Delivery Location:* ${address}\n`;
-            if (note) {
-                msg += `*Requirement / Notes:* ${note}\n`;
-            } else {
-                msg += `*Note:* Attaching prescription photo in the following message.\n`;
-            }
-            msg += `\nPlease confirm availability and delivery. Thank you!`;
-            window.open(`https://wa.me/923338448427?text=${encodeURIComponent(msg)}`, '_blank');
-            closePrescriptionModal();
-        }
     </script>
 </body>
 </html>
