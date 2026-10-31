@@ -237,25 +237,25 @@
     <!-- 2. MAIN HEADER & DIRECTORY NAVIGATION -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all shadow-subtle">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-[68px] sm:h-20 gap-3 sm:gap-4">
+            <div class="flex items-center justify-between h-[72px] sm:h-20 gap-3 md:gap-4 lg:gap-6">
                 
-                <!-- Official Brand Logo -->
+                <!-- 1. OFFICIAL LOGO (Far Left) -->
                 <a href="#" class="flex items-center shrink-0 py-1" aria-label="Umer Din Pharmacy & Surgical Home">
                     <img src="assets/umer-din-pharmacy-logo.png" 
                          alt="Umer Din Pharmacy & Surgical Logo - Lalamusa" 
-                         class="h-10 sm:h-12 w-auto object-contain transition-transform duration-200 hover:scale-[1.02]"
+                         class="w-[160px] sm:w-[190px] lg:w-[210px] h-auto object-contain transition-transform duration-200 hover:scale-[1.01]"
                          width="1986" height="564">
                 </a>
 
-                <!-- Desktop Search Bar (Proportionate & Balanced) -->
-                <div class="hidden md:flex flex-1 max-w-xs lg:max-w-sm xl:max-w-md mx-2 lg:mx-4 relative">
+                <!-- 2. SEARCH BAR (After Logo - Desktop & Tablet) -->
+                <div class="hidden md:flex flex-1 max-w-[270px] lg:max-w-[290px] xl:max-w-[320px] relative">
                     <div class="w-full relative">
                         <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs sm:text-sm pointer-events-none"></i>
                         <input type="text" 
                                id="global-search" 
                                onkeyup="handleSearchFilter(this.value)" 
-                               placeholder="Search medicines, BP monitors, baby milk..." 
-                               class="w-full pl-9 pr-8 py-2 bg-slate-50 hover:bg-slate-100/70 focus:bg-white border border-slate-200/90 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green transition"
+                               placeholder="Search medicines, surgical items..." 
+                               class="w-full pl-9 pr-8 py-2.5 bg-slate-50 hover:bg-slate-100/70 focus:bg-white border border-slate-200/90 rounded-xl text-xs sm:text-[13px] text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green transition"
                                aria-label="Search catalog items">
                         <button onclick="clearSearch()" id="clear-search-btn" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1 transition" aria-label="Clear search">
                             <i class="fa-solid fa-circle-xmark text-sm"></i>
@@ -263,50 +263,54 @@
                     </div>
                 </div>
 
-                <!-- Navigation Links & Order CTAs -->
-                <div class="flex items-center gap-2 sm:gap-3">
-                    <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-[13px] font-semibold text-slate-700 tracking-normal mr-1" aria-label="Main Navigation">
-                        <a href="#categories" class="hover:text-brand-green transition-colors py-1">Catalog</a>
-                        <a href="#prescription-section" class="hover:text-brand-green transition-colors py-1">Prescription</a>
-                        <a href="#surgical-section" class="hover:text-brand-green transition-colors py-1">Surgical Supplies</a>
-                        <a href="#store-info" class="hover:text-brand-green transition-colors py-1">Store Info</a>
-                    </nav>
+                <!-- 3. NAVIGATION LINKS (After Search - Exactly 3 links) -->
+                <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium text-slate-700 tracking-normal" aria-label="Main Navigation">
+                    <a href="#categories" class="hover:text-brand-green transition-colors py-1">Catalog</a>
+                    <a href="#store-info" class="hover:text-brand-green transition-colors py-1">About Us</a>
+                    <a href="#store-info" class="hover:text-brand-green transition-colors py-1">Contact</a>
+                </nav>
 
-                    <!-- Fast Prescription Modal Trigger -->
-                    <button onclick="openPrescriptionModal()" class="hidden sm:inline-flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-xl border border-brand-green/30 bg-brand-greenLight/70 text-brand-green font-semibold text-xs uppercase tracking-wider hover:bg-brand-green hover:text-white transition shadow-subtle shrink-0">
-                        <i class="fa-solid fa-file-prescription text-sm"></i>
-                        <span>Order Parchi</span>
-                    </button>
-
-                    <!-- Direct Pharmacist Contact Touchpoint -->
-                    <a href="https://wa.me/923338448427?text=Assalam-o-Alaikum%20Umer%20Din%20Pharmacy!%20Mujhe%20medicine%20order%20karni%20hai." 
+                <!-- 4. ORDER ONLINE BUTTON (Far Right) & MOBILE CONTROLS -->
+                <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+                    
+                    <!-- Single Professional Primary Order Online Button (Desktop & Tablet) -->
+                    <a href="https://wa.me/923338448427?text=Assalam-o-Alaikum%20Umer%20Din%20Pharmacy!%20Mujhe%20online%20order%20karna%20hai." 
                        target="_blank" 
                        rel="noopener noreferrer"
-                       class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-semibold text-xs tracking-wide transition shadow-sm hover:shadow shrink-0"
-                       aria-label="Direct WhatsApp Contact 0333 8448427">
-                        <i class="fa-brands fa-whatsapp text-base text-emerald-300"></i>
-                        <span class="hidden sm:inline">0333 8448427</span>
-                        <span class="sm:hidden">WhatsApp</span>
+                       class="hidden sm:inline-flex items-center justify-center gap-2.5 px-4 sm:px-5 h-[44px] rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-semibold text-xs sm:text-sm tracking-wide transition shadow-sm hover:shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green"
+                       aria-label="Order Online via WhatsApp">
+                        <i class="fa-brands fa-whatsapp text-lg text-emerald-300"></i>
+                        <span>Order Online</span>
                     </a>
 
-                    <!-- Mobile Drawer Toggle -->
-                    <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-slate-700 hover:text-brand-green hover:bg-slate-100 rounded-xl transition shrink-0" aria-label="Toggle navigation menu" id="mobile-menu-btn">
+                    <!-- Compact Mobile Order Online Button (<640px) -->
+                    <a href="https://wa.me/923338448427?text=Assalam-o-Alaikum%20Umer%20Din%20Pharmacy!%20Mujhe%20online%20order%20karna%20hai." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="sm:hidden inline-flex items-center justify-center gap-1.5 px-3 h-[38px] rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-semibold text-xs tracking-wide transition shadow-sm"
+                       aria-label="Order Online via WhatsApp">
+                        <i class="fa-brands fa-whatsapp text-base text-emerald-300"></i>
+                        <span>Order Online</span>
+                    </a>
+
+                    <!-- Mobile/Tablet Drawer Toggle Button -->
+                    <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-slate-700 hover:text-brand-green hover:bg-slate-100 rounded-xl transition flex items-center justify-center h-[38px] w-[38px] sm:h-[44px] sm:w-[44px]" aria-label="Toggle navigation menu" id="mobile-menu-btn">
                         <i class="fa-solid fa-bars text-lg sm:text-xl"></i>
                     </button>
                 </div>
 
             </div>
 
-            <!-- Mobile Search Bar (Compact & Integrated) -->
+            <!-- Mobile Second Row: Full-Width Search Bar (<768px) -->
             <div class="md:hidden pb-3 pt-0">
                 <div class="relative">
                     <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
                     <input type="text" 
                            id="mobile-search"
                            onkeyup="handleSearchFilter(this.value)" 
-                           placeholder="Search medicines, surgical, baby care..." 
-                           class="w-full pl-9 pr-8 py-2 bg-slate-100 border border-slate-200 rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green focus:bg-white transition"
-                           aria-label="Mobile search items">
+                           placeholder="Search medicines, surgical items..." 
+                           class="w-full pl-9 pr-8 py-2.5 bg-slate-100 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green focus:bg-white transition"
+                           aria-label="Search catalog items">
                     <button onclick="clearSearch()" id="clear-mobile-search-btn" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1 transition" aria-label="Clear mobile search">
                         <i class="fa-solid fa-circle-xmark text-sm"></i>
                     </button>
@@ -314,29 +318,31 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Drawer (Refined Healthcare Styling) -->
+        <!-- Mobile & Tablet Menu Drawer -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200/80 px-4 py-4 space-y-2 shadow-card">
             <nav class="space-y-1" aria-label="Mobile Navigation">
                 <a href="#categories" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
                     <span class="w-8 h-8 rounded-lg bg-emerald-100/70 text-brand-green flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-pills"></i></span>
-                    <span>Browse Medical Catalog</span>
-                </a>
-                <a href="#prescription-section" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
-                    <span class="w-8 h-8 rounded-lg bg-emerald-100/70 text-brand-green flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-file-prescription"></i></span>
-                    <span>Doctor Prescription (Parchi) Order</span>
-                </a>
-                <a href="#surgical-section" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
-                    <span class="w-8 h-8 rounded-lg bg-red-100/70 text-brand-red flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-stethoscope"></i></span>
-                    <span>Hospital &amp; Surgical Supplies</span>
+                    <span>Catalog</span>
                 </a>
                 <a href="#store-info" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
-                    <span class="w-8 h-8 rounded-lg bg-blue-100/70 text-brand-blue flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-location-dot"></i></span>
-                    <span>Store Timings &amp; Address</span>
+                    <span class="w-8 h-8 rounded-lg bg-blue-100/70 text-brand-blue flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-circle-info"></i></span>
+                    <span>About Us</span>
+                </a>
+                <a href="#store-info" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
+                    <span class="w-8 h-8 rounded-lg bg-emerald-100/70 text-brand-green flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-location-dot"></i></span>
+                    <span>Contact</span>
                 </a>
             </nav>
             
             <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
-                <button onclick="openPrescriptionModal(); toggleMobileMenu();" class="w-full py-2.5 bg-brand-green hover:bg-brand-greenDark text-white font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
+                <a href="https://wa.me/923338448427?text=Assalam-o-Alaikum%20Umer%20Din%20Pharmacy!%20Mujhe%20online%20order%20karna%20hai." 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="w-full py-2.5 bg-brand-green hover:bg-brand-greenDark text-white font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Order Online (WhatsApp)
+                </a>
+                <button onclick="openPrescriptionModal(); toggleMobileMenu();" class="w-full py-2.5 bg-brand-greenLight hover:bg-emerald-100 text-brand-green font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition border border-brand-green/30">
                     <i class="fa-solid fa-camera"></i> Send Doctor Prescription
                 </button>
                 <a href="tel:0537517129" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
