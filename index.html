@@ -268,8 +268,8 @@
                 <!-- 3. NAVIGATION LINKS (After Search - Exactly 3 links) -->
                 <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium text-slate-700 tracking-normal" aria-label="Main Navigation">
                     <a href="#categories" class="hover:text-brand-green transition-colors py-1">Catalog</a>
-                    <a href="#about" class="hover:text-brand-green transition-colors py-1">About Us</a>
-                    <a href="#contact" class="hover:text-brand-green transition-colors py-1">Contact</a>
+                    <a href="about.html" class="hover:text-brand-green transition-colors py-1">About Us</a>
+                    <a href="contact.html" class="hover:text-brand-green transition-colors py-1">Contact</a>
                 </nav>
 
                 <!-- 4. ORDER ONLINE BUTTON (Far Right) & MOBILE CONTROLS -->
@@ -327,11 +327,11 @@
                     <span class="w-8 h-8 rounded-lg bg-emerald-100/70 text-brand-green flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-pills"></i></span>
                     <span>Catalog</span>
                 </a>
-                <a href="#about" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
+                <a href="about.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
                     <span class="w-8 h-8 rounded-lg bg-blue-100/70 text-brand-blue flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-circle-info"></i></span>
                     <span>About Us</span>
                 </a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
+                <a href="contact.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
                     <span class="w-8 h-8 rounded-lg bg-emerald-100/70 text-brand-green flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-location-dot"></i></span>
                     <span>Contact</span>
                 </a>
@@ -1515,8 +1515,8 @@
                     <ul class="space-y-1.5 text-slate-400">
                         <li><strong class="text-slate-200">Landline:</strong> <a href="tel:0537517129" class="hover:text-emerald-400 transition">0537 517129</a></li>
                         <li><strong class="text-slate-200">WhatsApp:</strong> <a href="https://wa.me/923338448427" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition">0333 8448427</a></li>
-                        <li><strong class="text-slate-200">Location:</strong> <a href="#contact" class="hover:text-emerald-400 transition">Main G.T. Road, Lalamusa</a></li>
-                        <li><strong class="text-slate-200">About Us:</strong> <a href="#about" class="hover:text-emerald-400 transition">Pharmacy Heritage &amp; Care</a></li>
+                        <li><strong class="text-slate-200">Location:</strong> <a href="contact.html" class="hover:text-emerald-400 transition">Main G.T. Road, Lalamusa</a></li>
+                        <li><strong class="text-slate-200">About Us:</strong> <a href="about.html" class="hover:text-emerald-400 transition">Pharmacy Heritage &amp; Care</a></li>
                     </ul>
                 </div>
 
@@ -1541,9 +1541,9 @@
                 <div class="flex flex-wrap items-center gap-3">
                     <span>100% DRAP Regulated Stock</span>
                     <span>&bull;</span>
-                    <a href="#about" class="hover:text-emerald-400 transition">About Us</a>
+                    <a href="about.html" class="hover:text-emerald-400 transition">About Us</a>
                     <span>&bull;</span>
-                    <a href="#contact" class="hover:text-emerald-400 transition">Contact &amp; Store Map</a>
+                    <a href="contact.html" class="hover:text-emerald-400 transition">Contact &amp; Store Map</a>
                     <span>&bull;</span>
                     <span>Free Home Delivery Lalamusa</span>
                 </div>
@@ -1706,6 +1706,29 @@
                 mobileInput.focus();
             }
         }
+
+        // Handle URL search parameter on load (e.g., from about.html or contact.html)
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                const params = new URLSearchParams(window.location.search);
+                const query = params.get('search');
+                if (query) {
+                    const globalInput = document.getElementById('global-search');
+                    const mobileInput = document.getElementById('mobile-search');
+                    if (globalInput) globalInput.value = query;
+                    if (mobileInput) mobileInput.value = query;
+                    handleSearchFilter(query);
+                    const catSection = document.getElementById('categories');
+                    if (catSection) {
+                        setTimeout(() => {
+                            catSection.scrollIntoView({ behavior: 'smooth' });
+                        }, 200);
+                    }
+                }
+            } catch (err) {
+                console.error('Error parsing search param:', err);
+            }
+        });
 
         // Catalog Category Filter Tabs
         function filterCatalog(category, btnElement) {
