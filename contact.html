@@ -57,11 +57,13 @@
                     },
                     colors: {
                         brand: {
-                            green: '#0D6838',       /* Physical Signboard Green */
-                            greenDark: '#084826',
+                            green: '#138552',        /* Primary Green */
+                            greenDark: '#075C37',    /* Deep Green */
                             greenLight: '#EBF7F0',
                             greenSubtle: '#F2FAF5',
-                            red: '#E02424',         /* Medical Red Cross */
+                            ivory: '#F5F7F3',        /* Soft Warm Ivory */
+                            navy: '#101D2B',         /* Dark Navy */
+                            red: '#E32636',          /* Medical Red */
                             redDark: '#BC1C1C',
                             redLight: '#FDF2F2',
                             blue: '#1A365D',        /* "Cosmetics & General" navy */
@@ -73,8 +75,8 @@
                     },
                     boxShadow: {
                         'subtle': '0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02)',
-                        'card': '0 4px 18px -2px rgba(13, 104, 56, 0.05), 0 2px 8px -2px rgba(0,0,0,0.03)',
-                        'hover': '0 12px 28px -4px rgba(13, 104, 56, 0.10), 0 4px 10px -2px rgba(0,0,0,0.04)',
+                        'card': '0 4px 18px -2px rgba(7, 92, 55, 0.06), 0 2px 8px -2px rgba(16, 29, 43, 0.04)',
+                        'hover': '0 12px 28px -4px rgba(7, 92, 55, 0.12), 0 4px 10px -2px rgba(16, 29, 43, 0.05)',
                         'floating': '0 20px 40px -10px rgba(0,0,0,0.12)',
                     }
                 }
@@ -292,8 +294,8 @@
 
     <main class="flex-grow">
         
-        <!-- SECTION 1 — STANDARDIZED INNER HERO -->
-        <section class="relative bg-[#F4F9F5] border-b border-slate-200/80 overflow-hidden">
+        <!-- SECTION 1 — STANDARDIZED COMPACT INNER HERO -->
+        <section class="relative bg-brand-ivory border-b border-slate-200/90 overflow-hidden">
             <!-- Background Image Layer -->
             <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
                 <img src="assets/images/other-pages-hero-section.webp" 
@@ -303,21 +305,22 @@
                      width="1916" height="821"
                      fetchpriority="high">
                 <!-- Subtle Gradient Overlay for crisp text legibility without washing out background photography -->
-                <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/75 sm:from-white/90 sm:via-white/55 sm:to-transparent lg:from-white/75 lg:via-white/35 lg:to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/75 sm:from-white/90 sm:via-white/55 sm:to-transparent lg:from-white/80 lg:via-white/35 lg:to-transparent"></div>
             </div>
 
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
                 <div class="max-w-2xl sm:max-w-[650px] space-y-2.5 sm:space-y-3">
                     
-                    <span class="inline-block text-xs sm:text-[13px] font-extrabold uppercase tracking-widest text-brand-green">
-                        Get in Touch
-                    </span>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/90 text-brand-greenDark text-xs font-extrabold uppercase tracking-widest shadow-sm">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span>
+                        <span>Get in Touch</span>
+                    </div>
 
-                    <h1 class="text-3xl sm:text-4xl lg:text-[44px] font-black text-slate-900 tracking-tight font-display leading-[1.16]">
+                    <h1 class="text-3xl sm:text-4xl lg:text-[44px] font-black text-brand-navy tracking-tight font-display leading-[1.16]">
                         We're Here to Help.
                     </h1>
 
-                    <p class="text-slate-600 text-sm sm:text-base lg:text-[17px] leading-relaxed pt-0.5">
+                    <p class="text-slate-700 text-sm sm:text-base lg:text-[17px] leading-relaxed pt-0.5 font-normal">
                         Contact Umer Din Pharmacy &amp; Surgical for medicine inquiries, surgical supplies, prescription orders and store directions in Lalamusa.
                     </p>
 
@@ -325,175 +328,134 @@
             </div>
         </section>
 
-        <!-- SECTION 2 — CONTACT INFORMATION CARDS -->
-        <section class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200">
+        <!-- SECTION 2 — UNIFIED STORE LOCATION & CONTACT HUB -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-brand-ivory border-b border-slate-200/90">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                    <!-- Card 1: Address -->
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-subtle flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <div class="w-11 h-11 rounded-xl bg-red-100 text-brand-red flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <h2 class="text-base font-bold text-slate-900">Store Address</h2>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                Main G.T. Road, Near Bank of Punjab (BOP), Lalamusa, District Gujrat, Punjab, Pakistan.
-                            </p>
-                        </div>
-                        <div class="pt-4 mt-4 border-t border-slate-100">
-                            <a href="#map" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1.5">
-                                <span>View Map Below</span> <i class="fa-solid fa-arrow-down text-[10px]"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card 2: Landline -->
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-subtle flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <div class="w-11 h-11 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <h2 class="text-base font-bold text-slate-900">Landline Contact</h2>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                Call for general stock inquiries, store directions, and direct pharmacy assistance.
-                            </p>
-                            <a href="tel:0537517129" class="text-base font-black text-slate-900 hover:text-brand-green transition block tracking-wide">
-                                0537 517129
-                            </a>
-                        </div>
-                        <div class="pt-4 mt-4 border-t border-slate-100">
-                            <a href="tel:0537517129" class="text-xs font-bold text-brand-blue hover:underline inline-flex items-center gap-1.5">
-                                <i class="fa-solid fa-phone-flip text-[10px]"></i> <span>Call Now</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: WhatsApp & Mobile -->
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-subtle flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg">
-                                <i class="fa-brands fa-whatsapp text-xl"></i>
-                            </div>
-                            <h2 class="text-base font-bold text-slate-900">WhatsApp &amp; Mobile</h2>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                Share prescription photos, confirm product pricing, and coordinate local home delivery.
-                            </p>
-                            <a href="https://wa.me/923338448427?text=Hello%20Umer%20Din%20Pharmacy!%20I%20would%20like%20to%20inquire%20about%20a%20product." target="_blank" rel="noopener noreferrer" class="text-base font-black text-brand-green hover:underline transition block tracking-wide">
-                                0333 8448427
-                            </a>
-                        </div>
-                        <div class="pt-4 mt-4 border-t border-slate-100">
-                            <a href="https://wa.me/923338448427?text=Hello%20Umer%20Din%20Pharmacy!%20I%20would%20like%20to%20inquire%20about%20a%20product." target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1.5">
-                                <i class="fa-brands fa-whatsapp text-sm"></i> <span>Message on WhatsApp</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card 4: Store Hours -->
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-subtle flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-                            <h2 class="text-base font-bold text-slate-900">Store Hours</h2>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                Open 7 days a week:
-                            </p>
-                            <p class="text-sm font-bold text-slate-900">
-                                Daily: 8:00 AM – 11:30 PM
-                            </p>
-                            <p class="text-[11px] text-slate-500 italic">
-                                *Operating hours and delivery schedules are subject to client confirmation.
-                            </p>
-                        </div>
-                        <div class="pt-4 mt-4 border-t border-slate-100">
-                            <span class="text-xs font-bold text-emerald-700 inline-flex items-center gap-1.5">
-                                <i class="fa-solid fa-circle text-[8px] text-emerald-500"></i> Open Today
-                            </span>
-                        </div>
-                    </div>
-
+                <div class="max-w-3xl mb-8 sm:mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-brand-greenDark">Visit or Reach Out</span>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-navy tracking-tight font-display mt-1.5 leading-[1.2]">
+                        Pharmacy Location &amp; Direct Communication
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
+                        Visit our dispensary directly on Main G.T. Road, Lalamusa or reach out via WhatsApp and phone for immediate prescription and product support.
+                    </p>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- SECTION 3 — FIND OUR PHARMACY (Location & Map) -->
-        <section id="map" class="py-14 sm:py-16 bg-white border-b border-slate-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+                <!-- Unified 2-Column Store Hub -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
                     
-                    <!-- Left: Directions & Store Guidance -->
-                    <div class="lg:col-span-5 bg-slate-50 rounded-3xl p-7 border border-slate-200/90 shadow-subtle flex flex-col justify-between">
-                        <div class="space-y-6">
-                            <div>
-                                <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green">Store Location</span>
-                                <h2 class="text-2xl font-black text-slate-900 font-display mt-0.5">Find Our Pharmacy</h2>
-                                <p class="text-xs text-slate-500 mt-1">Convenient roadside access in Lalamusa</p>
+                    <!-- Left: Unified Information & Contact Panel -->
+                    <div class="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-card flex flex-col justify-between space-y-6">
+                        
+                        <!-- 1. Store Header & Address -->
+                        <div class="space-y-3">
+                            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-greenDark">
+                                <i class="fa-solid fa-location-dot text-brand-red text-sm"></i>
+                                <span>Main Dispensary</span>
                             </div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-brand-navy font-display">
+                                Main G.T. Road, Lalamusa
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Situated directly on Main G.T. Road next to the Bank of Punjab (BOP) branch, Lalamusa, District Gujrat, Punjab, Pakistan.
+                            </p>
+                        </div>
 
-                            <div class="space-y-4 text-xs">
-                                
-                                <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-subtle space-y-1.5">
-                                    <div class="font-bold text-slate-900 flex items-center gap-2">
-                                        <i class="fa-solid fa-building-columns text-brand-red"></i>
-                                        <span>Recognizable Landmark</span>
-                                    </div>
-                                    <p class="text-slate-600 leading-relaxed">
-                                        Located directly on Main G.T. Road next to the Bank of Punjab (BOP) branch in Lalamusa, marked by our official green storefront sign.
-                                    </p>
+                        <!-- 2. Dual Direct Action Cards (Landline & WhatsApp) -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-slate-100">
+                            <!-- Landline Action -->
+                            <a href="tel:0537517129" class="p-3.5 rounded-2xl bg-brand-ivory/80 hover:bg-emerald-50 border border-slate-200/80 hover:border-emerald-200 transition group flex flex-col justify-between">
+                                <div>
+                                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Store Landline</span>
+                                    <p class="text-sm font-black text-brand-navy group-hover:text-brand-greenDark transition mt-0.5">0537 517129</p>
                                 </div>
+                                <span class="text-[11px] font-bold text-brand-blue group-hover:text-brand-greenDark transition mt-2 inline-flex items-center gap-1">
+                                    <i class="fa-solid fa-phone text-[10px]"></i> <span>Call Store</span>
+                                </span>
+                            </a>
 
-                                <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-subtle space-y-1.5">
-                                    <div class="font-bold text-slate-900 flex items-center gap-2">
-                                        <i class="fa-solid fa-square-parking text-brand-green"></i>
-                                        <span>Customer Parking</span>
-                                    </div>
-                                    <p class="text-slate-600 leading-relaxed">
-                                        Open storefront space available for easy parking of cars and motorcycles while visiting for medicine collection.
-                                    </p>
+                            <!-- WhatsApp Action -->
+                            <a href="https://wa.me/923338448427?text=Hello%20Umer%20Din%20Pharmacy!%20I%20would%20like%20to%20inquire%20about%20a%20product." target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-2xl bg-emerald-50/80 hover:bg-emerald-100/70 border border-emerald-200/80 transition group flex flex-col justify-between">
+                                <div>
+                                    <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800">WhatsApp &amp; Orders</span>
+                                    <p class="text-sm font-black text-brand-greenDark mt-0.5">0333 8448427</p>
                                 </div>
+                                <span class="text-[11px] font-bold text-[#25D366] group-hover:text-emerald-700 transition mt-2 inline-flex items-center gap-1">
+                                    <i class="fa-brands fa-whatsapp text-xs"></i> <span>Message Us</span>
+                                </span>
+                            </a>
+                        </div>
 
-                                <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-subtle space-y-1.5">
-                                    <div class="font-bold text-slate-900 flex items-center gap-2">
-                                        <i class="fa-solid fa-motorcycle text-brand-green"></i>
-                                        <span>Local City Delivery</span>
-                                    </div>
-                                    <p class="text-slate-600 leading-relaxed">
-                                        Doorstep delivery service active across all sectors, mohallas, and adjoining link roads in Lalamusa city.
-                                    </p>
+                        <!-- 3. Store Hours & Live Status -->
+                        <div class="p-3.5 rounded-2xl bg-brand-ivory/80 border border-slate-200/80 flex items-center justify-between gap-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 text-sm">
+                                    <i class="fa-solid fa-clock"></i>
                                 </div>
+                                <div>
+                                    <p class="text-xs font-bold text-brand-navy">Daily: 8:00 AM – 11:30 PM</p>
+                                    <p class="text-[10px] text-slate-500">Open 7 Days a Week</p>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100/80 text-brand-greenDark text-[11px] font-bold whitespace-nowrap">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Open Today
+                            </span>
+                        </div>
 
+                        <!-- 4. Consolidated Convenience Notes -->
+                        <div class="pt-2 border-t border-slate-100 space-y-2 text-xs text-slate-600">
+                            <div class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-building-columns text-brand-red text-xs w-4 text-center shrink-0"></i>
+                                <span><strong>Landmark:</strong> Next to Bank of Punjab (BOP) branch</span>
+                            </div>
+                            <div class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-square-parking text-brand-greenDark text-xs w-4 text-center shrink-0"></i>
+                                <span><strong>Parking:</strong> Front roadside space for cars &amp; motorcycles</span>
+                            </div>
+                            <div class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-motorcycle text-brand-greenDark text-xs w-4 text-center shrink-0"></i>
+                                <span><strong>Delivery:</strong> Active across all localities in Lalamusa city</span>
                             </div>
                         </div>
 
-                        <div class="pt-6 border-t border-slate-200/90 mt-6">
+                        <!-- 5. Directions Button -->
+                        <div class="pt-2">
                             <a href="https://maps.google.com/?q=Main+GT+Road+Near+Bank+of+Punjab+Lalamusa" 
                                target="_blank" 
                                rel="noopener noreferrer" 
-                               class="w-full py-3.5 bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider rounded-xl transition flex items-center justify-center gap-2 shadow-sm">
-                                <i class="fa-solid fa-diamond-turn-right"></i>
+                               class="w-full py-3.5 bg-brand-greenDark hover:bg-[#084826] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition flex items-center justify-center gap-2 shadow-sm">
+                                <i class="fa-solid fa-diamond-turn-right text-emerald-300"></i>
                                 <span>Get Directions on Google Maps</span>
                             </a>
                         </div>
+
                     </div>
 
-                    <!-- Right: Responsive Embedded Google Map -->
+                    <!-- Right: Large Responsive Embedded Google Map -->
                     <div class="lg:col-span-7 flex flex-col justify-between">
-                        <div class="w-full h-80 sm:h-96 lg:h-full min-h-[340px] rounded-3xl border border-slate-200 overflow-hidden relative shadow-subtle">
+                        <div class="w-full h-80 sm:h-96 lg:h-full min-h-[460px] rounded-3xl border border-slate-200/90 overflow-hidden relative shadow-card bg-slate-100">
+                            
+                            <!-- Floating Location Pin Card over Map -->
+                            <div class="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-2xl shadow-card border border-slate-200/80 flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-xl bg-red-100 text-brand-red flex items-center justify-center shrink-0 text-xs">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-brand-navy">Umer Din Pharmacy &amp; Surgical</p>
+                                    <p class="text-[10px] text-slate-500">Main G.T. Road, Near BOP, Lalamusa</p>
+                                </div>
+                            </div>
+
                             <iframe 
                                 title="Umer Din Pharmacy Location on Google Maps" 
                                 src="https://maps.google.com/maps?q=Bank+of+Punjab+GT+Road+Lalamusa+Pakistan&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                                class="w-full h-full border-0" 
-                                loading="lazy" 
+                                class="w-full h-full border-0 min-h-[460px]" 
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
                         <p class="text-[11px] text-slate-500 text-center mt-3">
-                            Map location corresponds to Bank of Punjab / Main G.T. Road commercial landmark in Lalamusa.
+                            Map location corresponds to Bank of Punjab / Main G.T. Road commercial center in Lalamusa.
                         </p>
                     </div>
 
@@ -502,11 +464,50 @@
             </div>
         </section>
 
+        <!-- SECTION 3 — STORE SERVICE ASSURANCE STRIP -->
+        <section class="py-10 sm:py-12 bg-white border-b border-slate-200/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-brand-ivory/70 border border-slate-200/70">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-brand-greenDark flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-pills"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-brand-navy">Genuine DRAP Medicines</h3>
+                            <p class="text-xs text-slate-600 mt-0.5">Procured from verified pharmaceutical distributors.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-brand-ivory/70 border border-slate-200/70">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-800 flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-wheelchair"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-brand-navy">Surgical &amp; Home Care</h3>
+                            <p class="text-xs text-slate-600 mt-0.5">Wheelchairs, nebulizers, BP monitors &amp; recovery aids.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-brand-ivory/70 border border-slate-200/70">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-100 text-brand-blue flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-motorcycle"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-brand-navy">Prompt Local Delivery</h3>
+                            <p class="text-xs text-slate-600 mt-0.5">Reliable doorstep medicine delivery in Lalamusa.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <!-- SECTION 4 — COMPACT WHATSAPP INQUIRY STRIP -->
-        <section class="py-10 sm:py-12 bg-slate-50">
+        <section class="py-10 sm:py-12 bg-brand-ivory">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="bg-gradient-to-r from-emerald-950 via-brand-greenDark to-emerald-900 rounded-2xl p-6 sm:px-8 sm:py-7 text-white shadow-card border border-emerald-800/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-8">
+                <div class="bg-gradient-to-r from-emerald-950 via-brand-greenDark to-brand-navy rounded-3xl p-6 sm:px-8 sm:py-7 text-white shadow-card border border-emerald-800/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-8">
                     
                     <div class="space-y-1 sm:space-y-1.5 max-w-xl">
                         <h2 class="text-lg sm:text-xl font-bold font-display tracking-tight text-white">
@@ -520,7 +521,7 @@
                     <a href="https://wa.me/923338448427?text=Hello%20Umer%20Din%20Pharmacy!%20I%20would%20like%20to%20inquire%20about%20a%20medicine%20or%20surgical%20product." 
                        target="_blank" 
                        rel="noopener noreferrer"
-                       class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition shadow-sm whitespace-nowrap shrink-0">
+                       class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition shadow-sm whitespace-nowrap shrink-0">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                         <span>WhatsApp Us</span>
                     </a>

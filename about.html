@@ -57,11 +57,13 @@
                     },
                     colors: {
                         brand: {
-                            green: '#0D6838',       /* Physical Signboard Green */
-                            greenDark: '#084826',
+                            green: '#138552',        /* Primary Green */
+                            greenDark: '#075C37',    /* Deep Green */
                             greenLight: '#EBF7F0',
                             greenSubtle: '#F2FAF5',
-                            red: '#E02424',         /* Medical Red Cross */
+                            ivory: '#F5F7F3',        /* Soft Warm Ivory */
+                            navy: '#101D2B',         /* Dark Navy */
+                            red: '#E32636',          /* Medical Red */
                             redDark: '#BC1C1C',
                             redLight: '#FDF2F2',
                             blue: '#1A365D',        /* "Cosmetics & General" navy */
@@ -73,8 +75,8 @@
                     },
                     boxShadow: {
                         'subtle': '0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02)',
-                        'card': '0 4px 18px -2px rgba(13, 104, 56, 0.05), 0 2px 8px -2px rgba(0,0,0,0.03)',
-                        'hover': '0 12px 28px -4px rgba(13, 104, 56, 0.10), 0 4px 10px -2px rgba(0,0,0,0.04)',
+                        'card': '0 4px 18px -2px rgba(7, 92, 55, 0.06), 0 2px 8px -2px rgba(16, 29, 43, 0.04)',
+                        'hover': '0 12px 28px -4px rgba(7, 92, 55, 0.12), 0 4px 10px -2px rgba(16, 29, 43, 0.05)',
                         'floating': '0 20px 40px -10px rgba(0,0,0,0.12)',
                     }
                 }
@@ -283,8 +285,8 @@
 
     <main class="flex-grow">
         
-        <!-- SECTION 1 — STANDARDIZED INNER HERO -->
-        <section class="relative bg-[#F4F9F5] border-b border-slate-200/80 overflow-hidden">
+        <!-- SECTION 1 — STANDARDIZED COMPACT INNER HERO -->
+        <section class="relative bg-brand-ivory border-b border-slate-200/90 overflow-hidden">
             <!-- Background Image Layer -->
             <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
                 <img src="assets/images/other-pages-hero-section.webp" 
@@ -294,62 +296,100 @@
                      width="1916" height="821"
                      fetchpriority="high">
                 <!-- Subtle Gradient Overlay for crisp text legibility without washing out background photography -->
-                <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/75 sm:from-white/90 sm:via-white/55 sm:to-transparent lg:from-white/75 lg:via-white/35 lg:to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/75 sm:from-white/90 sm:via-white/55 sm:to-transparent lg:from-white/80 lg:via-white/35 lg:to-transparent"></div>
             </div>
 
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
                 <div class="max-w-2xl sm:max-w-[650px] space-y-2.5 sm:space-y-3">
                     
-                    <span class="inline-block text-xs sm:text-[13px] font-extrabold uppercase tracking-widest text-brand-green">
-                        About Umer Din Pharmacy
-                    </span>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/90 text-brand-greenDark text-xs font-extrabold uppercase tracking-widest shadow-sm">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span>
+                        <span>About Umer Din Pharmacy</span>
+                    </div>
 
-                    <h1 class="text-3xl sm:text-4xl lg:text-[44px] font-black text-slate-900 tracking-tight font-display leading-[1.16]">
+                    <h1 class="text-3xl sm:text-4xl lg:text-[44px] font-black text-brand-navy tracking-tight font-display leading-[1.16]">
                         More Than Just a Pharmacy.
                     </h1>
 
-                    <p class="text-slate-600 text-sm sm:text-base lg:text-[17px] leading-relaxed pt-0.5">
-                        Learn about Umer Din Pharmacy &amp; Surgical, our local presence in Lalamusa, and the medicines, surgical supplies and everyday healthcare essentials we offer.
+                    <p class="text-slate-700 text-sm sm:text-base lg:text-[17px] leading-relaxed pt-0.5 font-normal">
+                        Learn about Umer Din Pharmacy &amp; Surgical, our local presence on Main G.T. Road, Lalamusa, and the genuine medicines, surgical supplies and everyday healthcare essentials we provide.
                     </p>
 
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 2 — WHO WE ARE -->
-        <section class="py-14 sm:py-16 bg-white border-b border-slate-200">
+        <!-- SECTION 2 — WHO WE ARE (EDITORIAL BRAND STORY) -->
+        <section class="py-14 sm:py-16 lg:py-20 bg-white border-b border-slate-200/80">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="max-w-3xl">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green">Who We Are</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-display mt-1">
-                        Serving the Healthcare Needs of Lalamusa
-                    </h2>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-8 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                     
-                    <!-- Paragraphs column -->
-                    <div class="lg:col-span-7 space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
-                        <p>
-                            Umer Din Pharmacy &amp; Surgical is a community retail pharmacy situated directly on Main G.T. Road, next to the Bank of Punjab in Lalamusa. We serve local families, home caregivers, and neighborhood healthcare clinics across the city and nearby localities with reliable access to daily medicines and medical supplies.
-                        </p>
-                        <p>
-                            Our dispensary focuses on stocking genuine, DRAP-registered prescription medicines and healthcare products procured from authorized pharmaceutical distributors. We maintain careful storage standards, including continuous commercial refrigeration for cold-chain insulins, vaccines, and sensitive biological treatments to protect medicine potency.
-                        </p>
-                        <p>
-                            Alongside prescription pharmaceuticals, we provide a practical range of surgical and home patient-care equipment, diagnostic monitoring devices, infant nutrition, and personal skincare items. Customers can visit our pharmacy in person or reach out through WhatsApp for prompt medicine availability checks, prescription inquiries, and local doorstep delivery within Lalamusa.
-                        </p>
+                    <!-- Left Column: Editorial Brand Story -->
+                    <div class="lg:col-span-7 space-y-5">
+                        
+                        <div>
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-brand-greenDark">Our Community Role</span>
+                            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-navy tracking-tight font-display mt-1.5 leading-[1.2]">
+                                Serving the Healthcare Needs of Lalamusa
+                            </h2>
+                        </div>
+
+                        <div class="space-y-3.5 text-slate-600 text-sm sm:text-[15px] leading-relaxed">
+                            <p>
+                                Umer Din Pharmacy &amp; Surgical is an established community retail pharmacy located directly on Main G.T. Road, next to the Bank of Punjab in Lalamusa. We serve local families, home caregivers, and neighborhood healthcare clinics with dependable daily access to authentic medicines and medical supplies.
+                            </p>
+                            <p>
+                                Our dispensary stocks genuine, DRAP-registered prescription medicines sourced exclusively from authorized pharmaceutical distributors. We maintain strict storage controls, including continuous commercial refrigeration for cold-chain insulins, vaccines, and sensitive biological treatments to protect medicine potency.
+                            </p>
+                            <p>
+                                Alongside prescription care, we provide essential patient recovery equipment, diagnostic monitoring devices, infant nutrition, and personal skincare. Customers can visit our pharmacy in person or connect through WhatsApp for prompt availability checks and local doorstep delivery within Lalamusa.
+                            </p>
+                        </div>
+
+                        <!-- 2 Refined Quality Highlights (Inline, Non-clunky) -->
+                        <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-brand-ivory/90 border border-slate-200/80">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-brand-greenDark flex items-center justify-center shrink-0 text-sm">
+                                    <i class="fa-solid fa-certificate"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xs font-bold text-brand-navy">100% DRAP Regulated</h3>
+                                    <p class="text-[11px] text-slate-500 mt-0.5 leading-snug">Genuine batch-verified medicines &amp; certified hospital disposables.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-brand-ivory/90 border border-slate-200/80">
+                                <div class="w-8 h-8 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center shrink-0 text-sm">
+                                    <i class="fa-solid fa-snowflake"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xs font-bold text-brand-navy">Continuous Cold-Chain</h3>
+                                    <p class="text-[11px] text-slate-500 mt-0.5 leading-snug">Dedicated 2°C – 8°C commercial cooling for insulins &amp; vaccines.</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <!-- Pharmacy Store Image Column -->
+                    <!-- Right Column: Pharmacy Store Image Column -->
                     <div class="lg:col-span-5">
-                        <div class="overflow-hidden rounded-2xl aspect-[4/3] bg-slate-100 border border-slate-200 shadow-card">
+                        <div class="relative overflow-hidden rounded-3xl bg-slate-100 border border-slate-200/90 shadow-card group">
                             <img src="assets/images/pharmacy-hero.webp" 
                                  alt="Umer Din Pharmacy & Surgical dispensary counter in Lalamusa" 
-                                 class="w-full h-full object-cover object-center"
+                                 class="w-full aspect-[4/3] object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
                                  width="800" height="600"
                                  loading="lazy">
+                            
+                            <!-- Floating Location Pill on Image -->
+                            <div class="absolute bottom-3 left-3 right-3 sm:left-4 sm:right-auto bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-2xl shadow-card border border-slate-200/80 flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-xl bg-emerald-100 text-brand-greenDark flex items-center justify-center shrink-0 text-xs">
+                                    <i class="fa-solid fa-location-dot text-brand-red"></i>
+                                </div>
+                                <div class="text-left">
+                                    <p class="text-[11px] font-bold text-brand-navy leading-tight">Main G.T. Road, Lalamusa</p>
+                                    <p class="text-[10px] text-slate-500 leading-tight">Next to Bank of Punjab (BOP)</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -358,91 +398,135 @@
             </div>
         </section>
 
-        <!-- SECTION 3 — WHAT WE OFFER -->
-        <section class="py-14 sm:py-16 bg-slate-50 border-b border-slate-200">
+        <!-- SECTION 3 — WHAT WE OFFER (IMAGE-LED SHOWCASE) -->
+        <section class="py-14 sm:py-16 lg:py-20 bg-brand-ivory border-b border-slate-200/90">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="max-w-3xl">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green">Our Product &amp; Service Range</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-display mt-1">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-brand-greenDark">Our Product &amp; Service Range</span>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-navy tracking-tight font-display mt-1.5 leading-[1.2]">
                         Healthcare Essentials for Individuals &amp; Families
                     </h2>
-                    <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                    <p class="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
                         A practical range of medicines, surgical supplies, and everyday care products available in store and through local delivery.
                     </p>
                 </div>
 
-                <!-- 4 Service / Category Cards -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                <!-- 4 Image-Led Category Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
                     
-                    <!-- Card 1 -->
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-subtle hover:shadow-card transition flex flex-col justify-between">
+                    <!-- Category 1: Medicines & Healthcare -->
+                    <div class="group bg-white rounded-3xl p-5 border border-slate-200/90 shadow-card hover:shadow-hover hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
                         <div>
-                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-pills"></i>
+                            <!-- Product Image Showcase -->
+                            <div class="h-44 rounded-2xl bg-gradient-to-b from-emerald-50/70 to-slate-50 border border-slate-100 flex items-center justify-center p-4 relative overflow-hidden">
+                                <span class="absolute top-3 left-3 px-2 py-0.5 rounded-full bg-white/90 text-brand-greenDark text-[10px] font-bold uppercase tracking-wider border border-emerald-100 shadow-xs">
+                                    Prescription &amp; OTC
+                                </span>
+                                <img src="assets/products/nutrifactor-multivitamins.webp" 
+                                     alt="Medicines, Vitamins & Healthcare Products" 
+                                     class="max-h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                                     loading="lazy">
                             </div>
-                            <h3 class="text-base font-bold text-slate-900">Medicines &amp; Healthcare</h3>
-                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                                Genuine prescription medications, over-the-counter remedies, vitamins, supplements, and 2°C – 8°C cold-chain insulins sourced through authorized distribution.
-                            </p>
+
+                            <div class="mt-4">
+                                <h3 class="text-base font-bold text-brand-navy group-hover:text-brand-greenDark transition">Medicines &amp; Healthcare</h3>
+                                <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                                    Genuine prescription medications, over-the-counter remedies, vitamins, supplements, and 2°C – 8°C cold-chain insulins.
+                                </p>
+                            </div>
                         </div>
+
                         <div class="pt-4 mt-4 border-t border-slate-100">
-                            <a href="index.html#categories" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">
-                                <span>Browse Catalog</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            <a href="index.html#categories" class="text-xs font-bold text-brand-greenDark group-hover:text-brand-green hover:underline inline-flex items-center gap-1.5">
+                                <span>Browse Catalog</span> <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-0.5"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-subtle hover:shadow-card transition flex flex-col justify-between">
+                    <!-- Category 2: Surgical & Patient Care -->
+                    <div class="group bg-white rounded-3xl p-5 border border-slate-200/90 shadow-card hover:shadow-hover hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
                         <div>
-                            <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-wheelchair"></i>
+                            <!-- Product Image Showcase -->
+                            <div class="h-44 rounded-2xl bg-gradient-to-b from-teal-50/70 to-slate-50 border border-slate-100 flex items-center justify-center p-4 relative overflow-hidden">
+                                <span class="absolute top-3 left-3 px-2 py-0.5 rounded-full bg-white/90 text-teal-800 text-[10px] font-bold uppercase tracking-wider border border-teal-100 shadow-xs">
+                                    Home Care &amp; Clinical
+                                </span>
+                                <img src="assets/products/foldable-wheelchair.webp" 
+                                     alt="Wheelchairs & Patient Care Equipment" 
+                                     class="max-h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                                     loading="lazy">
                             </div>
-                            <h3 class="text-base font-bold text-slate-900">Surgical &amp; Patient Care</h3>
-                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                                Mobility aids, wheelchairs, commode chairs, blood pressure apparatus, digital glucometers, nebulizers, cannulas, and clinical disposable supplies.
-                            </p>
+
+                            <div class="mt-4">
+                                <h3 class="text-base font-bold text-brand-navy group-hover:text-brand-greenDark transition">Surgical &amp; Patient Care</h3>
+                                <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                                    Mobility aids, wheelchairs, commode chairs, blood pressure apparatus, digital glucometers, nebulizers, and cannulas.
+                                </p>
+                            </div>
                         </div>
+
                         <div class="pt-4 mt-4 border-t border-slate-100">
-                            <a href="index.html#surgical-section" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">
-                                <span>View Surgical Items</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            <a href="index.html#surgical-section" class="text-xs font-bold text-brand-greenDark group-hover:text-brand-green hover:underline inline-flex items-center gap-1.5">
+                                <span>View Surgical Items</span> <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-0.5"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-subtle hover:shadow-card transition flex flex-col justify-between">
+                    <!-- Category 3: Baby Care Essentials -->
+                    <div class="group bg-white rounded-3xl p-5 border border-slate-200/90 shadow-card hover:shadow-hover hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
                         <div>
-                            <div class="w-12 h-12 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-baby"></i>
+                            <!-- Product Image Showcase -->
+                            <div class="h-44 rounded-2xl bg-gradient-to-b from-blue-50/70 to-slate-50 border border-slate-100 flex items-center justify-center p-4 relative overflow-hidden">
+                                <span class="absolute top-3 left-3 px-2 py-0.5 rounded-full bg-white/90 text-brand-blue text-[10px] font-bold uppercase tracking-wider border border-blue-100 shadow-xs">
+                                    Infant Nutrition
+                                </span>
+                                <img src="assets/products/morinaga-bf-milk.webp" 
+                                     alt="Infant Formula & Baby Care Essentials" 
+                                     class="max-h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                                     loading="lazy">
                             </div>
-                            <h3 class="text-base font-bold text-slate-900">Baby Care Essentials</h3>
-                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                                Trusted infant milk formulas (Morinaga BF, Lactogen, Cerelac), feeding accessories, gentle baby skincare, and essential infant nutrition.
-                            </p>
+
+                            <div class="mt-4">
+                                <h3 class="text-base font-bold text-brand-navy group-hover:text-brand-greenDark transition">Baby Care Essentials</h3>
+                                <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                                    Trusted infant formulas (Morinaga BF, Lactogen, Cerelac), feeding bottles, gentle baby lotions, and baby nutrition.
+                                </p>
+                            </div>
                         </div>
+
                         <div class="pt-4 mt-4 border-t border-slate-100">
-                            <a href="index.html#categories" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">
-                                <span>Explore Baby Care</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            <a href="index.html#categories" class="text-xs font-bold text-brand-greenDark group-hover:text-brand-green hover:underline inline-flex items-center gap-1.5">
+                                <span>Explore Baby Care</span> <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-0.5"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Card 4 -->
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-subtle hover:shadow-card transition flex flex-col justify-between">
+                    <!-- Category 4: Cosmetics & Personal Care -->
+                    <div class="group bg-white rounded-3xl p-5 border border-slate-200/90 shadow-card hover:shadow-hover hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
                         <div>
-                            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-pump-medical"></i>
+                            <!-- Product Image Showcase -->
+                            <div class="h-44 rounded-2xl bg-gradient-to-b from-amber-50/70 to-slate-50 border border-slate-100 flex items-center justify-center p-4 relative overflow-hidden">
+                                <span class="absolute top-3 left-3 px-2 py-0.5 rounded-full bg-white/90 text-amber-800 text-[10px] font-bold uppercase tracking-wider border border-amber-100 shadow-xs">
+                                    Dermatology &amp; Care
+                                </span>
+                                <img src="assets/products/spectrablock-sunblock.webp" 
+                                     alt="Medicated Sunblock & Skincare" 
+                                     class="max-h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                                     loading="lazy">
                             </div>
-                            <h3 class="text-base font-bold text-slate-900">Cosmetics &amp; Personal Care</h3>
-                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                                Dermatologist-recommended sunblocks, medicated creams, antiseptic cleansers, and personal wellness essentials for daily skincare.
-                            </p>
+
+                            <div class="mt-4">
+                                <h3 class="text-base font-bold text-brand-navy group-hover:text-brand-greenDark transition">Cosmetics &amp; Personal Care</h3>
+                                <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                                    Dermatologist-recommended sunblocks, medicated creams, antiseptic washes, and personal wellness essentials.
+                                </p>
+                            </div>
                         </div>
+
                         <div class="pt-4 mt-4 border-t border-slate-100">
-                            <a href="index.html#categories" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">
-                                <span>Explore Skincare</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            <a href="index.html#categories" class="text-xs font-bold text-brand-greenDark group-hover:text-brand-green hover:underline inline-flex items-center gap-1.5">
+                                <span>Explore Skincare</span> <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-0.5"></i>
                             </a>
                         </div>
                     </div>
@@ -452,67 +536,96 @@
             </div>
         </section>
 
-        <!-- SECTION 4 — OUR APPROACH -->
-        <section class="py-14 sm:py-16 bg-white border-b border-slate-200">
+        <!-- SECTION 4 — HOW WE ASSIST CUSTOMERS (STREAMLINED PROCESS) -->
+        <section class="py-14 sm:py-16 lg:py-20 bg-white border-b border-slate-200/80">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="max-w-3xl">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green">How We Assist Customers</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-display mt-1">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-brand-greenDark">How We Assist Customers</span>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-navy tracking-tight font-display mt-1.5 leading-[1.2]">
                         Simple, Direct &amp; Helpful Pharmacy Service
                     </h2>
-                    <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                    <p class="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
                         We prioritize clear communication, straightforward ordering, and convenient access to the healthcare supplies you need.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <!-- 4-Step Process Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 relative">
                     
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center shrink-0 font-bold text-sm">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
+                    <!-- Step 1 -->
+                    <div class="relative flex flex-col justify-between">
                         <div>
-                            <h3 class="text-sm font-bold text-slate-900">Medicine &amp; Product Inquiries</h3>
-                            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                                Customers can ask about specific medicines, active ingredients, dosage strengths, and pack sizes before visiting the store or confirming an order.
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-brand-greenDark border border-emerald-200/60 flex items-center justify-center text-lg shadow-xs">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 font-display">01</span>
+                            </div>
+                            <h3 class="text-base font-bold text-brand-navy">Medicine &amp; Stock Inquiries</h3>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                Ask about specific medicines, active ingredients, dosage strengths, and pack sizes before visiting the store or ordering.
                             </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-slate-100 text-[11px] font-semibold text-brand-greenDark">
+                            Instant stock confirmation
                         </div>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center shrink-0 font-bold text-sm">
-                            <i class="fa-brands fa-whatsapp text-base"></i>
-                        </div>
+                    <!-- Step 2 -->
+                    <div class="relative flex flex-col justify-between">
                         <div>
-                            <h3 class="text-sm font-bold text-slate-900">Prescription Inquiries via WhatsApp</h3>
-                            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                                Share a clear photo of your doctor's prescription slip through WhatsApp. Our team reviews item availability, verifies stock, and confirms total costs promptly.
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-emerald-100/70 text-[#25D366] border border-emerald-200/80 flex items-center justify-center text-xl shadow-xs">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 font-display">02</span>
+                            </div>
+                            <h3 class="text-base font-bold text-brand-navy">Prescription via WhatsApp</h3>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                Share a clear photo of your doctor's prescription. Our team verifies item availability, dosages, and confirms pricing promptly.
                             </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-slate-100 text-[11px] font-semibold text-brand-greenDark">
+                            Verified by qualified staff
                         </div>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center shrink-0 font-bold text-sm">
-                            <i class="fa-solid fa-heart-pulse"></i>
-                        </div>
+                    <!-- Step 3 -->
+                    <div class="relative flex flex-col justify-between">
                         <div>
-                            <h3 class="text-sm font-bold text-slate-900">Surgical &amp; Home Care Guidance</h3>
-                            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                                We help individuals and caregivers select appropriate home recovery aids, explaining device specifications for wheelchairs, commode chairs, nebulizers, and monitors.
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-800 border border-teal-200/60 flex items-center justify-center text-lg shadow-xs">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 font-display">03</span>
+                            </div>
+                            <h3 class="text-base font-bold text-brand-navy">Surgical &amp; Home Guidance</h3>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                We help caregivers select appropriate recovery aids, explaining device specifications for wheelchairs, nebulizers, and monitors.
                             </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-slate-100 text-[11px] font-semibold text-teal-800">
+                            Practical caregiver support
                         </div>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center shrink-0 font-bold text-sm">
-                            <i class="fa-solid fa-motorcycle"></i>
-                        </div>
+                    <!-- Step 4 -->
+                    <div class="relative flex flex-col justify-between">
                         <div>
-                            <h3 class="text-sm font-bold text-slate-900">Store Collection &amp; Local Delivery</h3>
-                            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                                Collect your items directly from our storefront on Main G.T. Road, or request doorstep delivery across residential neighborhoods in Lalamusa city.
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-blue-50 text-brand-blue border border-blue-200/60 flex items-center justify-center text-lg shadow-xs">
+                                    <i class="fa-solid fa-motorcycle"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 font-display">04</span>
+                            </div>
+                            <h3 class="text-base font-bold text-brand-navy">Store Pickup or Delivery</h3>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                Collect directly from our Main G.T. Road dispensary, or request swift doorstep delivery across residential neighborhoods in Lalamusa.
                             </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-slate-100 text-[11px] font-semibold text-brand-blue">
+                            Doorstep delivery in Lalamusa
                         </div>
                     </div>
 
@@ -522,10 +635,10 @@
         </section>
 
         <!-- SECTION 5 — COMPACT WHATSAPP ORDER STRIP -->
-        <section class="py-10 sm:py-12 bg-slate-50">
+        <section class="py-10 sm:py-12 bg-brand-ivory">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="bg-gradient-to-r from-emerald-950 via-brand-greenDark to-emerald-900 rounded-2xl p-6 sm:px-8 sm:py-7 text-white shadow-card border border-emerald-800/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-8">
+                <div class="bg-gradient-to-r from-emerald-950 via-brand-greenDark to-brand-navy rounded-3xl p-6 sm:px-8 sm:py-7 text-white shadow-card border border-emerald-800/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-8">
                     
                     <div class="space-y-1 sm:space-y-1.5 max-w-xl">
                         <h2 class="text-lg sm:text-xl font-bold font-display tracking-tight text-white">
@@ -539,7 +652,7 @@
                     <a href="https://wa.me/923338448427?text=Hello%20Umer%20Din%20Pharmacy!%20I%20would%20like%20to%20order%20medicines%20or%20inquire%20about%20a%20prescription." 
                        target="_blank" 
                        rel="noopener noreferrer"
-                       class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition shadow-sm whitespace-nowrap shrink-0">
+                       class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition shadow-sm whitespace-nowrap shrink-0">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                         <span>Order Online</span>
                     </a>
