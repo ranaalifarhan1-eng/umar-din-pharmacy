@@ -135,25 +135,27 @@
             outline-offset: 2px;
         }
 
-        /* Category Carousel Responsive Card Widths */
+        /* Category Carousel Responsive Card Widths (Fixed pixel sizing prevents % resolution explosion inside w-max) */
         .cat-slide-card {
-            flex: 0 0 calc((100% - 14px) / 1.75);
-            min-width: 165px;
+            flex: 0 0 152px;
+            width: 152px;
         }
         @media (min-width: 640px) {
             .cat-slide-card {
-                flex: 0 0 calc((100% - (2 * 16px)) / 3);
+                flex: 0 0 176px;
+                width: 176px;
             }
         }
         @media (min-width: 768px) {
             .cat-slide-card {
-                flex: 0 0 calc((100% - (3 * 16px)) / 4);
+                flex: 0 0 186px;
+                width: 186px;
             }
         }
         @media (min-width: 1024px) {
             .cat-slide-card {
-                flex: 0 0 calc((100% - (5 * 16px)) / 6);
-                min-width: 0;
+                flex: 0 0 196px;
+                width: 196px;
             }
         }
         .no-scrollbar::-webkit-scrollbar {
@@ -203,7 +205,7 @@
     }
     </script>
 </head>
-<body class="bg-[#F8FAFC] font-sans text-slate-800 antialiased selection:bg-emerald-100 selection:text-emerald-900 flex flex-col min-h-screen">
+<body class="bg-[#F8FAFC] font-sans text-slate-800 antialiased selection:bg-emerald-100 selection:text-emerald-900 flex flex-col min-h-screen overflow-x-hidden w-full">
 
     <!-- 1. TOP ANNOUNCEMENT & UTILITY BAR -->
     <div class="bg-brand-dark text-white text-[11px] sm:text-xs py-2 px-4 border-b border-slate-800/80">
@@ -215,7 +217,7 @@
                     Verified Pharmacy
                 </span>
                 <span class="text-slate-300">
-                    Main G.T. Road, Lalamusa &bull; <strong class="text-white font-medium">100% DRAP Original Medicines & Surgical</strong>
+                    Main G.T. Road, Lalamusa &bull; <strong class="text-white font-medium">100% DRAP Medicines</strong><span class="hidden sm:inline"> &amp; Surgical</span>
                 </span>
             </div>
 
@@ -243,7 +245,7 @@
                 <a href="#" class="flex items-center shrink-0 py-1" aria-label="Umer Din Pharmacy & Surgical Home">
                     <img src="assets/umer-din-pharmacy-logo.png" 
                          alt="Umer Din Pharmacy & Surgical Logo - Lalamusa" 
-                         class="w-[160px] sm:w-[190px] lg:w-[210px] h-auto object-contain transition-transform duration-200 hover:scale-[1.01]"
+                         class="w-[142px] sm:w-[190px] lg:w-[210px] h-auto object-contain transition-transform duration-200 hover:scale-[1.01]"
                          width="1986" height="564">
                 </a>
 
@@ -266,8 +268,8 @@
                 <!-- 3. NAVIGATION LINKS (After Search - Exactly 3 links) -->
                 <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium text-slate-700 tracking-normal" aria-label="Main Navigation">
                     <a href="#categories" class="hover:text-brand-green transition-colors py-1">Catalog</a>
-                    <a href="#store-info" class="hover:text-brand-green transition-colors py-1">About Us</a>
-                    <a href="#store-info" class="hover:text-brand-green transition-colors py-1">Contact</a>
+                    <a href="#about" class="hover:text-brand-green transition-colors py-1">About Us</a>
+                    <a href="#contact" class="hover:text-brand-green transition-colors py-1">Contact</a>
                 </nav>
 
                 <!-- 4. ORDER ONLINE BUTTON (Far Right) & MOBILE CONTROLS -->
@@ -287,10 +289,10 @@
                     <a href="https://wa.me/923338448427?text=Assalam-o-Alaikum%20Umer%20Din%20Pharmacy!%20Mujhe%20online%20order%20karna%20hai." 
                        target="_blank" 
                        rel="noopener noreferrer"
-                       class="sm:hidden inline-flex items-center justify-center gap-1.5 px-3 h-[38px] rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-semibold text-xs tracking-wide transition shadow-sm"
+                       class="sm:hidden inline-flex items-center justify-center gap-1.5 px-2.5 h-[38px] rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-semibold text-xs tracking-wide transition shadow-sm whitespace-nowrap"
                        aria-label="Order Online via WhatsApp">
-                        <i class="fa-brands fa-whatsapp text-base text-emerald-300"></i>
-                        <span>Order Online</span>
+                        <i class="fa-brands fa-whatsapp text-sm text-emerald-300"></i>
+                        <span>Order</span>
                     </a>
 
                     <!-- Mobile/Tablet Drawer Toggle Button -->
@@ -325,11 +327,11 @@
                     <span class="w-8 h-8 rounded-lg bg-emerald-100/70 text-brand-green flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-pills"></i></span>
                     <span>Catalog</span>
                 </a>
-                <a href="#store-info" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
+                <a href="#about" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
                     <span class="w-8 h-8 rounded-lg bg-blue-100/70 text-brand-blue flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-circle-info"></i></span>
                     <span>About Us</span>
                 </a>
-                <a href="#store-info" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
+                <a href="#contact" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-green hover:bg-emerald-50/60 transition">
                     <span class="w-8 h-8 rounded-lg bg-emerald-100/70 text-brand-green flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-location-dot"></i></span>
                     <span>Contact</span>
                 </a>
@@ -382,7 +384,7 @@
                     </div>
 
                     <!-- Primary Headline -->
-                    <h1 class="text-3xl sm:text-4xl lg:text-[44px] font-black text-slate-900 tracking-tight leading-[1.16] font-display">
+                    <h1 class="text-[26px] sm:text-4xl lg:text-[44px] font-black text-slate-900 tracking-tight leading-[1.2] font-display break-words">
                         Lalamusa’s Trusted <br class="hidden sm:inline">
                         <span class="text-brand-green">Pharmacy &amp; Surgical</span> Superstore.
                     </h1>
@@ -393,14 +395,14 @@
                         <strong class="text-slate-900 font-semibold bg-emerald-100/70 px-1.5 py-0.5 rounded">100% Asal DRAP medicines</strong> hasil karein. Temperature-controlled insulins, certified hospital surgical items aur baby care ki complete range.
                     </p>
 
-                    <!-- Primary Action Buttons (Dual CTA) -->
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
-                        <button onclick="openPrescriptionModal()" class="px-5 sm:px-6 py-3 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition shadow-sm hover:shadow-card flex items-center justify-center gap-2.5">
+                    <!-- Primary Action Buttons (Dual CTA with Standardized Sizing) -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
+                        <button onclick="openPrescriptionModal()" class="h-[46px] px-6 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs sm:text-[13px] uppercase tracking-wider transition shadow-sm hover:shadow-card flex items-center justify-center gap-2.5 shrink-0">
                             <i class="fa-solid fa-camera text-sm"></i>
                             <span>Send Prescription Parchi</span>
                         </button>
 
-                        <a href="#categories" class="px-5 sm:px-6 py-3 rounded-xl bg-white/95 hover:bg-white text-slate-800 font-bold text-xs uppercase tracking-wider border border-slate-300 hover:border-brand-green transition flex items-center justify-center gap-2 shadow-subtle backdrop-blur-sm">
+                        <a href="#categories" class="h-[46px] px-6 rounded-xl bg-white/95 hover:bg-white text-slate-800 font-bold text-xs sm:text-[13px] uppercase tracking-wider border border-slate-300 hover:border-brand-green transition flex items-center justify-center gap-2 shadow-subtle backdrop-blur-sm shrink-0">
                             <i class="fa-solid fa-boxes-stacked text-brand-green"></i>
                             <span>Browse Catalog</span>
                         </a>
@@ -439,9 +441,31 @@
         <section class="py-6 sm:py-7 bg-white border-b border-slate-200 overflow-hidden relative" aria-label="Product categories carousel">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 
+                <!-- Section Header with Category Title & Manual Prev/Next Navigation Controls -->
+                <div class="flex items-center justify-between gap-4 mb-4">
+                    <div>
+                        <span class="text-[11px] font-extrabold uppercase tracking-wider text-brand-green block">Medical Departments</span>
+                        <h2 class="text-lg sm:text-xl font-black text-slate-900 font-display">Browse by Category</h2>
+                    </div>
+                    
+                    <!-- Accessible Carousel Navigation Buttons -->
+                    <div class="flex items-center gap-1.5 sm:gap-2">
+                        <button type="button" onclick="slideCategories('prev')" 
+                                class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-brand-green border border-slate-200 hover:border-emerald-300 flex items-center justify-center transition shadow-subtle active:scale-95 cursor-pointer" 
+                                aria-label="Previous categories">
+                            <i class="fa-solid fa-chevron-left text-xs pointer-events-none"></i>
+                        </button>
+                        <button type="button" onclick="slideCategories('next')" 
+                                class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-brand-green border border-slate-200 hover:border-emerald-300 flex items-center justify-center transition shadow-subtle active:scale-95 cursor-pointer" 
+                                aria-label="Next categories">
+                            <i class="fa-solid fa-chevron-right text-xs pointer-events-none"></i>
+                        </button>
+                    </div>
+                </div>
+
                 <!-- Side Fade Gradients for Visual Polish -->
-                <div class="pointer-events-none absolute left-4 sm:left-6 lg:left-8 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-white via-white/80 to-transparent z-10 hidden sm:block"></div>
-                <div class="pointer-events-none absolute right-4 sm:right-6 lg:right-8 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-white via-white/80 to-transparent z-10 hidden sm:block"></div>
+                <div class="pointer-events-none absolute left-4 sm:left-6 lg:left-8 top-16 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-white via-white/80 to-transparent z-10 hidden sm:block"></div>
+                <div class="pointer-events-none absolute right-4 sm:right-6 lg:right-8 top-16 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-white via-white/80 to-transparent z-10 hidden sm:block"></div>
 
                 <!-- Slider Viewport -->
                 <div id="category-slider-viewport" 
@@ -454,146 +478,146 @@
                         <!-- ORIGINAL 6 CATEGORY CARDS -->
                         <!-- Card 1: Medicines -->
                         <button type="button" onclick="selectCategoryAndScroll('medicines')" 
-                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[102px] sm:min-h-[108px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card cursor-pointer">
                             <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-pills"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-slate-800 block">Medicines</span>
-                                <span class="text-[10px] text-slate-500">General &amp; Rx</span>
+                                <span class="text-[10px] text-slate-500 block">General &amp; Rx</span>
                             </div>
                         </button>
 
                         <!-- Card 2: Surgical Supplies -->
                         <button type="button" onclick="selectCategoryAndScroll('surgical')" 
-                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[102px] sm:min-h-[108px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card cursor-pointer">
                             <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-red-100 text-brand-red flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-stethoscope"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-slate-800 block">Surgical Supplies</span>
-                                <span class="text-[10px] text-slate-500">Hospital &amp; Clinical</span>
+                                <span class="text-[10px] text-slate-500 block">Hospital &amp; Clinical</span>
                             </div>
                         </button>
 
                         <!-- Card 3: Baby Nutrition -->
                         <button type="button" onclick="selectCategoryAndScroll('babycare')" 
-                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[102px] sm:min-h-[108px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card cursor-pointer">
                             <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-baby"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-slate-800 block">Baby Nutrition</span>
-                                <span class="text-[10px] text-slate-500">Formula &amp; Diapers</span>
+                                <span class="text-[10px] text-slate-500 block">Formula &amp; Diapers</span>
                             </div>
                         </button>
 
                         <!-- Card 4: Cosmetics & Skin -->
                         <button type="button" onclick="selectCategoryAndScroll('cosmetics')" 
-                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[102px] sm:min-h-[108px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card cursor-pointer">
                             <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-pink-100 text-pink-700 flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-pump-soap"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-slate-800 block">Cosmetics &amp; Skin</span>
-                                <span class="text-[10px] text-slate-500">Dermatological</span>
+                                <span class="text-[10px] text-slate-500 block">Dermatological</span>
                             </div>
                         </button>
 
                         <!-- Card 5: Diagnostics -->
                         <button type="button" onclick="selectCategoryAndScroll('surgical')" 
-                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[102px] sm:min-h-[108px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card cursor-pointer">
                             <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-heart-pulse"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-slate-800 block">Diagnostics</span>
-                                <span class="text-[10px] text-slate-500">BP, Sugar &amp; Temp</span>
+                                <span class="text-[10px] text-slate-500 block">BP, Sugar &amp; Temp</span>
                             </div>
                         </button>
 
                         <!-- Card 6: Patient Mobility -->
                         <button type="button" onclick="selectCategoryAndScroll('surgical')" 
-                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[102px] sm:min-h-[108px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card cursor-pointer">
                             <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-wheelchair"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-slate-800 block">Patient Mobility</span>
-                                <span class="text-[10px] text-slate-500">Wheelchairs &amp; Aid</span>
+                                <span class="text-[10px] text-slate-500 block">Wheelchairs &amp; Aid</span>
                             </div>
                         </button>
 
                         <!-- DUPLICATED CLONES (For Seamless Infinite Loop - Screen-Reader & Tab Hidden) -->
                         <!-- Clone 1 -->
                         <button type="button" onclick="selectCategoryAndScroll('medicines')" tabindex="-1" aria-hidden="true"
-                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[102px] sm:min-h-[108px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card cursor-pointer">
                             <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-pills"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-slate-800 block">Medicines</span>
-                                <span class="text-[10px] text-slate-500">General &amp; Rx</span>
+                                <span class="text-[10px] text-slate-500 block">General &amp; Rx</span>
                             </div>
                         </button>
 
                         <!-- Clone 2 -->
                         <button type="button" onclick="selectCategoryAndScroll('surgical')" tabindex="-1" aria-hidden="true"
-                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[102px] sm:min-h-[108px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card cursor-pointer">
                             <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-red-100 text-brand-red flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-stethoscope"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-slate-800 block">Surgical Supplies</span>
-                                <span class="text-[10px] text-slate-500">Hospital &amp; Clinical</span>
+                                <span class="text-[10px] text-slate-500 block">Hospital &amp; Clinical</span>
                             </div>
                         </button>
 
                         <!-- Clone 3 -->
                         <button type="button" onclick="selectCategoryAndScroll('babycare')" tabindex="-1" aria-hidden="true"
-                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[102px] sm:min-h-[108px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card cursor-pointer">
                             <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-baby"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-slate-800 block">Baby Nutrition</span>
-                                <span class="text-[10px] text-slate-500">Formula &amp; Diapers</span>
+                                <span class="text-[10px] text-slate-500 block">Formula &amp; Diapers</span>
                             </div>
                         </button>
 
                         <!-- Clone 4 -->
                         <button type="button" onclick="selectCategoryAndScroll('cosmetics')" tabindex="-1" aria-hidden="true"
-                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[102px] sm:min-h-[108px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card cursor-pointer">
                             <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-pink-100 text-pink-700 flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-pump-soap"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-slate-800 block">Cosmetics &amp; Skin</span>
-                                <span class="text-[10px] text-slate-500">Dermatological</span>
+                                <span class="text-[10px] text-slate-500 block">Dermatological</span>
                             </div>
                         </button>
 
                         <!-- Clone 5 -->
                         <button type="button" onclick="selectCategoryAndScroll('surgical')" tabindex="-1" aria-hidden="true"
-                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[102px] sm:min-h-[108px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card cursor-pointer">
                             <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-heart-pulse"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-slate-800 block">Diagnostics</span>
-                                <span class="text-[10px] text-slate-500">BP, Sugar &amp; Temp</span>
+                                <span class="text-[10px] text-slate-500 block">BP, Sugar &amp; Temp</span>
                             </div>
                         </button>
 
                         <!-- Clone 6 -->
                         <button type="button" onclick="selectCategoryAndScroll('surgical')" tabindex="-1" aria-hidden="true"
-                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[96px] sm:min-h-[102px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card">
+                                class="cat-slide-card p-3 sm:p-3.5 rounded-2xl bg-slate-50/90 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 text-center flex flex-col items-center justify-center gap-2 group shrink-0 min-h-[102px] sm:min-h-[108px] hover:-translate-y-0.5 shadow-subtle hover:shadow-card cursor-pointer">
                             <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-base sm:text-lg group-hover:scale-105 transition-transform duration-200">
                                 <i class="fa-solid fa-wheelchair"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-slate-800 block">Patient Mobility</span>
-                                <span class="text-[10px] text-slate-500">Wheelchairs &amp; Aid</span>
+                                <span class="text-[10px] text-slate-500 block">Wheelchairs &amp; Aid</span>
                             </div>
                         </button>
 
@@ -694,12 +718,15 @@
                                         <textarea id="presc-details" rows="2" placeholder="Agar medicines ke naam maloom hain to likhein, warna WhatsApp par seedha photo attach kar dein..." class="w-full text-xs px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green focus:bg-white transition text-slate-800 placeholder-slate-400 resize-none"></textarea>
                                     </div>
 
-                                    <div class="text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-200/80 flex items-start gap-2.5 leading-relaxed">
-                                        <i class="fa-solid fa-circle-info text-brand-green mt-0.5 shrink-0 text-xs"></i>
-                                        <span>Clicking opens WhatsApp with your pre-filled details. Please attach your prescription slip photo in the chat.</span>
+                                    <div class="text-[11px] text-slate-700 bg-emerald-50/90 p-3 rounded-xl border border-emerald-200/90 flex items-start gap-2.5 leading-relaxed">
+                                        <i class="fa-solid fa-circle-check text-brand-green mt-0.5 shrink-0 text-xs"></i>
+                                        <div>
+                                            <strong class="text-slate-900 block font-bold mb-0.5">Asan WhatsApp Ordering:</strong>
+                                            <span>Button dabane se aapka WhatsApp pre-filled details ke sath open ho jayega. Wahan camera icon daba kar doctor ki parchi (prescription slip) ki photo attach kar dein.</span>
+                                        </div>
                                     </div>
 
-                                    <button onclick="sendPrescriptionDirect()" class="w-full py-3 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-sm hover:shadow">
+                                    <button onclick="sendPrescriptionDirect()" class="w-full h-[46px] rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-sm hover:shadow">
                                         <i class="fa-brands fa-whatsapp text-lg text-emerald-300"></i>
                                         <span>Open WhatsApp &amp; Forward Prescription</span>
                                     </button>
@@ -758,8 +785,8 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="products-grid">
                     
                     <!-- Product 1: Omron Digital BP Monitor -->
-                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200" data-category="surgical" data-title="Omron M2 Digital Blood Pressure Monitor BP Apparatus">
-                        <div>
+                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200 h-full" data-category="surgical" data-title="Omron M2 Digital Blood Pressure Monitor BP Apparatus">
+                        <div class="flex-1 flex flex-col">
                             <!-- Header category tag -->
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-red-50 text-brand-red border border-red-200">
@@ -772,16 +799,16 @@
                             <div class="h-44 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3 p-3">
                                 <img src="assets/products/omron-m2-bp-monitor.webp" 
                                      alt="Omron M2 Basic Digital Blood Pressure Monitor with Upper Arm Cuff" 
-                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105"
+                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105" 
                                      loading="lazy" 
                                      width="600" 
                                      height="600">
                             </div>
 
-                            <h3 class="text-sm font-bold text-slate-900 leading-snug">Digital BP Monitor (Omron M2)</h3>
-                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">Clinical precision automatic blood pressure and pulse rate monitor. Large LCD display with memory.</p>
+                            <h3 class="text-sm font-bold text-slate-900 leading-snug line-clamp-1 min-h-[20px]">Digital BP Monitor (Omron M2)</h3>
+                            <p class="text-xs text-slate-500 mt-1.5 line-clamp-2 min-h-[32px] leading-relaxed">Clinical precision automatic blood pressure and pulse rate monitor. Large LCD display with memory.</p>
 
-                            <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <div class="mt-auto pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
                                 <span class="text-emerald-700 font-bold flex items-center gap-1">
                                     <i class="fa-solid fa-circle-check text-[10px]"></i> Available In-Store
                                 </span>
@@ -789,16 +816,16 @@
                             </div>
                         </div>
 
-                        <div class="pt-3">
-                            <button onclick="orderViaWhatsApp('Digital BP Monitor (Omron M2)', 'Surgical')" class="w-full py-2.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                        <div class="pt-3 mt-auto">
+                            <button onclick="orderViaWhatsApp('Digital BP Monitor (Omron M2)', 'Surgical')" class="w-full h-[40px] rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99]">
                                 <i class="fa-brands fa-whatsapp text-sm text-emerald-300"></i> Order on WhatsApp
                             </button>
                         </div>
                     </div>
 
                     <!-- Product 2: Accu-Chek Instant Glucometer -->
-                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200" data-category="surgical" data-title="Accu-Chek Instant Blood Glucose Sugar Meter Roche Strips">
-                        <div>
+                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200 h-full" data-category="surgical" data-title="Accu-Chek Instant Blood Glucose Sugar Meter Roche Strips">
+                        <div class="flex-1 flex flex-col">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-blue-50 text-brand-blue border border-blue-200">
                                     Diabetes Care
@@ -810,16 +837,16 @@
                             <div class="h-44 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3 p-3">
                                 <img src="assets/products/accu-chek-instant.webp" 
                                      alt="Accu-Chek Instant Blood Glucose Meter Kit with Test Strips" 
-                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105"
+                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105" 
                                      loading="lazy" 
                                      width="400" 
                                      height="400">
                             </div>
 
-                            <h3 class="text-sm font-bold text-slate-900 leading-snug">Accu-Chek Instant Sugar Kit</h3>
-                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">Fast blood glucose monitoring device with lancets and test strips bottle.</p>
+                            <h3 class="text-sm font-bold text-slate-900 leading-snug line-clamp-1 min-h-[20px]">Accu-Chek Instant Sugar Kit</h3>
+                            <p class="text-xs text-slate-500 mt-1.5 line-clamp-2 min-h-[32px] leading-relaxed">Fast blood glucose monitoring device with lancets and test strips bottle.</p>
 
-                            <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <div class="mt-auto pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
                                 <span class="text-emerald-700 font-bold flex items-center gap-1">
                                     <i class="fa-solid fa-circle-check text-[10px]"></i> Genuine Stock
                                 </span>
@@ -827,16 +854,16 @@
                             </div>
                         </div>
 
-                        <div class="pt-3">
-                            <button onclick="orderViaWhatsApp('Accu-Chek Instant Sugar Meter Kit', 'Surgical')" class="w-full py-2.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                        <div class="pt-3 mt-auto">
+                            <button onclick="orderViaWhatsApp('Accu-Chek Instant Sugar Meter Kit', 'Surgical')" class="w-full h-[40px] rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99]">
                                 <i class="fa-brands fa-whatsapp text-sm text-emerald-300"></i> Order on WhatsApp
                             </button>
                         </div>
                     </div>
 
                     <!-- Product 3: Cold-Chain Insulins -->
-                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200" data-category="medicines" data-title="Insulin Pens Lantus Novomix Mixtard Cold Chain Storage 2C-8C">
-                        <div>
+                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200 h-full" data-category="medicines" data-title="Insulin Pens Lantus Novomix Mixtard Cold Chain Storage 2C-8C">
+                        <div class="flex-1 flex flex-col">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-emerald-50 text-brand-green border border-emerald-200">
                                     2°C – 8°C Cold Chain
@@ -848,16 +875,16 @@
                             <div class="h-44 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3 p-3">
                                 <img src="assets/products/insulin-pen-lantus.webp" 
                                      alt="Lantus Solostar Insulin Prefilled Delivery Pen 100 IU/ml" 
-                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105"
+                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105" 
                                      loading="lazy" 
                                      width="600" 
                                      height="195">
                             </div>
 
-                            <h3 class="text-sm font-bold text-slate-900 leading-snug">Insulin Pens (Lantus / Mixtard)</h3>
-                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">Temperature-controlled storage with dedicated ice-pack delivery box across Lalamusa city.</p>
+                            <h3 class="text-sm font-bold text-slate-900 leading-snug line-clamp-1 min-h-[20px]">Insulin Pens (Lantus / Mixtard)</h3>
+                            <p class="text-xs text-slate-500 mt-1.5 line-clamp-2 min-h-[32px] leading-relaxed">Temperature-controlled storage with dedicated ice-pack delivery box across Lalamusa city.</p>
 
-                            <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <div class="mt-auto pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
                                 <span class="text-blue-700 font-bold flex items-center gap-1">
                                     <i class="fa-solid fa-snowflake text-[10px]"></i> Cold Guaranteed
                                 </span>
@@ -865,16 +892,16 @@
                             </div>
                         </div>
 
-                        <div class="pt-3">
-                            <button onclick="orderViaWhatsApp('Insulin Pens (Lantus/Mixtard)', 'Medicines')" class="w-full py-2.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                        <div class="pt-3 mt-auto">
+                            <button onclick="orderViaWhatsApp('Insulin Pens (Lantus/Mixtard)', 'Medicines')" class="w-full h-[40px] rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99]">
                                 <i class="fa-brands fa-whatsapp text-sm text-emerald-300"></i> Order on WhatsApp
                             </button>
                         </div>
                     </div>
 
                     <!-- Product 4: Foldable Wheelchair & Commode -->
-                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200" data-category="surgical" data-title="Foldable Wheelchair Commode Chair Patient Rehab Mobility Aid">
-                        <div>
+                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200 h-full" data-category="surgical" data-title="Foldable Wheelchair Commode Chair Patient Rehab Mobility Aid">
+                        <div class="flex-1 flex flex-col">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200">
                                     Patient Mobility
@@ -886,16 +913,16 @@
                             <div class="h-44 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3 p-3">
                                 <img src="assets/products/foldable-wheelchair.webp" 
                                      alt="Chrome Foldable Patient Mobility Wheelchair with Footrests" 
-                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105"
+                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105" 
                                      loading="lazy" 
                                      width="410" 
                                      height="404">
                             </div>
 
-                            <h3 class="text-sm font-bold text-slate-900 leading-snug">Foldable Wheelchair &amp; Commode</h3>
-                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">Durable chrome-plated foldable transit chair for elder patient recovery and indoor mobility.</p>
+                            <h3 class="text-sm font-bold text-slate-900 leading-snug line-clamp-1 min-h-[20px]">Foldable Wheelchair &amp; Commode</h3>
+                            <p class="text-xs text-slate-500 mt-1.5 line-clamp-2 min-h-[32px] leading-relaxed">Durable chrome-plated foldable transit chair for elder patient recovery and indoor mobility.</p>
 
-                            <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <div class="mt-auto pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
                                 <span class="text-emerald-700 font-bold flex items-center gap-1">
                                     <i class="fa-solid fa-truck text-[10px]"></i> In-Store Stock
                                 </span>
@@ -903,16 +930,16 @@
                             </div>
                         </div>
 
-                        <div class="pt-3">
-                            <button onclick="orderViaWhatsApp('Foldable Wheelchair / Commode', 'Surgical')" class="w-full py-2.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                        <div class="pt-3 mt-auto">
+                            <button onclick="orderViaWhatsApp('Foldable Wheelchair / Commode', 'Surgical')" class="w-full h-[40px] rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99]">
                                 <i class="fa-brands fa-whatsapp text-sm text-emerald-300"></i> Order on WhatsApp
                             </button>
                         </div>
                     </div>
 
                     <!-- Product 5: Infant Formula Milk (Morinaga / Lactogen) -->
-                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200" data-category="babycare" data-title="Morinaga BF Lactogen Baby Milk Formula Diapers Molfix Pampers">
-                        <div>
+                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200 h-full" data-category="babycare" data-title="Morinaga BF Lactogen Baby Milk Formula Diapers Molfix Pampers">
+                        <div class="flex-1 flex flex-col">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-purple-50 text-purple-700 border border-purple-200">
                                     Baby Nutrition
@@ -924,16 +951,16 @@
                             <div class="h-44 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3 p-3">
                                 <img src="assets/products/morinaga-bf-milk.webp" 
                                      alt="Morinaga BF-1 Infant Formula Milk 400g Sealed Tin" 
-                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105"
+                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105" 
                                      loading="lazy" 
                                      width="600" 
                                      height="600">
                             </div>
 
-                            <h3 class="text-sm font-bold text-slate-900 leading-snug">Morinaga BF, Lactogen &amp; Cerelac</h3>
-                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">Complete infant milk stages (1, 2, 3), Cerelac cereals and branded baby diapers (Molfix/Canbebe).</p>
+                            <h3 class="text-sm font-bold text-slate-900 leading-snug line-clamp-1 min-h-[20px]">Morinaga BF, Lactogen &amp; Cerelac</h3>
+                            <p class="text-xs text-slate-500 mt-1.5 line-clamp-2 min-h-[32px] leading-relaxed">Complete infant milk stages (1, 2, 3), Cerelac cereals and branded baby diapers (Molfix/Canbebe).</p>
 
-                            <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <div class="mt-auto pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
                                 <span class="text-emerald-700 font-bold flex items-center gap-1">
                                     <i class="fa-solid fa-shield-halved text-[10px]"></i> Sealed Packaging
                                 </span>
@@ -941,16 +968,16 @@
                             </div>
                         </div>
 
-                        <div class="pt-3">
-                            <button onclick="orderViaWhatsApp('Baby Formula Milk & Diapers', 'Baby Care')" class="w-full py-2.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                        <div class="pt-3 mt-auto">
+                            <button onclick="orderViaWhatsApp('Baby Formula Milk & Diapers', 'Baby Care')" class="w-full h-[40px] rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99]">
                                 <i class="fa-brands fa-whatsapp text-sm text-emerald-300"></i> Order on WhatsApp
                             </button>
                         </div>
                     </div>
 
                     <!-- Product 6: Medicated Sunblocks & Serums -->
-                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200" data-category="cosmetics" data-title="SpectraBlock CeraVe Sunblock Hyaluronic Acid Skin Serums Whitening Cream">
-                        <div>
+                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200 h-full" data-category="cosmetics" data-title="SpectraBlock CeraVe Sunblock Hyaluronic Acid Skin Serums Whitening Cream">
+                        <div class="flex-1 flex flex-col">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-pink-50 text-pink-700 border border-pink-200">
                                     Dermatology
@@ -962,16 +989,16 @@
                             <div class="h-44 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3 p-3">
                                 <img src="assets/products/spectrablock-sunblock.webp" 
                                      alt="SpectraBlock SPF 60 Medicated Dermatological Sunblock Cream" 
-                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105"
+                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105" 
                                      loading="lazy" 
                                      width="600" 
                                      height="600">
                             </div>
 
-                            <h3 class="text-sm font-bold text-slate-900 leading-snug">Medicated Sunblocks &amp; Skin Serums</h3>
-                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">Dermatologist-prescribed sunblocks (SpectraBlock, Solaris), acne cleansers and authentic repair serums.</p>
+                            <h3 class="text-sm font-bold text-slate-900 leading-snug line-clamp-1 min-h-[20px]">Medicated Sunblocks &amp; Skin Serums</h3>
+                            <p class="text-xs text-slate-500 mt-1.5 line-clamp-2 min-h-[32px] leading-relaxed">Dermatologist-prescribed sunblocks (SpectraBlock, Solaris), acne cleansers and authentic repair serums.</p>
 
-                            <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <div class="mt-auto pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
                                 <span class="text-emerald-700 font-bold flex items-center gap-1">
                                     <i class="fa-solid fa-check text-[10px]"></i> Original Cosmetic Stock
                                 </span>
@@ -979,16 +1006,16 @@
                             </div>
                         </div>
 
-                        <div class="pt-3">
-                            <button onclick="orderViaWhatsApp('Medicated Sunblocks & Serums', 'Cosmetics')" class="w-full py-2.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                        <div class="pt-3 mt-auto">
+                            <button onclick="orderViaWhatsApp('Medicated Sunblocks & Serums', 'Cosmetics')" class="w-full h-[40px] rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99]">
                                 <i class="fa-brands fa-whatsapp text-sm text-emerald-300"></i> Order on WhatsApp
                             </button>
                         </div>
                     </div>
 
                     <!-- Product 7: Nutrifactor Multivitamins & Wellness -->
-                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200" data-category="medicines" data-title="Nutrifactor Biotin Calcium D3 Multivitamins Fish Oil Omega 3 Supplements">
-                        <div>
+                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200 h-full" data-category="medicines" data-title="Nutrifactor Biotin Calcium D3 Multivitamins Fish Oil Omega 3 Supplements">
+                        <div class="flex-1 flex flex-col">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-emerald-50 text-brand-green border border-emerald-200">
                                     Dietary Supplements
@@ -1000,16 +1027,16 @@
                             <div class="h-44 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3 p-3">
                                 <img src="assets/products/nutrifactor-multivitamins.webp" 
                                      alt="Nutrifactor Biotin Plus Dietary Supplement Tablets Bottle" 
-                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105"
+                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105" 
                                      loading="lazy" 
                                      width="600" 
                                      height="600">
                             </div>
 
-                            <h3 class="text-sm font-bold text-slate-900 leading-snug">Nutrifactor Multivitamins &amp; Calcium</h3>
-                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">Biotin Plus, Omega-3 Fish Oil, Vitamin C-1000, Calcium D3 and daily immune health capsules.</p>
+                            <h3 class="text-sm font-bold text-slate-900 leading-snug line-clamp-1 min-h-[20px]">Nutrifactor Multivitamins &amp; Calcium</h3>
+                            <p class="text-xs text-slate-500 mt-1.5 line-clamp-2 min-h-[32px] leading-relaxed">Biotin Plus, Omega-3 Fish Oil, Vitamin C-1000, Calcium D3 and daily immune health capsules.</p>
 
-                            <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <div class="mt-auto pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
                                 <span class="text-emerald-700 font-bold flex items-center gap-1">
                                     <i class="fa-solid fa-certificate text-[10px]"></i> Sealed Bottles
                                 </span>
@@ -1017,16 +1044,16 @@
                             </div>
                         </div>
 
-                        <div class="pt-3">
-                            <button onclick="orderViaWhatsApp('Nutrifactor Multivitamins', 'Medicines')" class="w-full py-2.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                        <div class="pt-3 mt-auto">
+                            <button onclick="orderViaWhatsApp('Nutrifactor Multivitamins', 'Medicines')" class="w-full h-[40px] rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99]">
                                 <i class="fa-brands fa-whatsapp text-sm text-emerald-300"></i> Order on WhatsApp
                             </button>
                         </div>
                     </div>
 
                     <!-- Product 8: Compressor Nebulizer Machine -->
-                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200" data-category="surgical" data-title="Compressor Nebulizer Machine Asthma Chest Breathing Device Surgical">
-                        <div>
+                    <div class="product-item bg-white rounded-2xl border border-slate-200 p-4 flex flex-col justify-between shadow-subtle hover:shadow-card hover:border-emerald-300 transition-all duration-200 h-full" data-category="surgical" data-title="Compressor Nebulizer Machine Asthma Chest Breathing Device Surgical">
+                        <div class="flex-1 flex flex-col">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-red-50 text-brand-red border border-red-200">
                                     Respiratory Care
@@ -1038,16 +1065,16 @@
                             <div class="h-44 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center relative overflow-hidden mb-3 p-3">
                                 <img src="assets/products/compressor-nebulizer.webp" 
                                      alt="Medical Compressor Jet Nebulizer Machine with Child and Adult Mask Set" 
-                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105"
+                                     class="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105" 
                                      loading="lazy" 
                                      width="513" 
                                      height="600">
                             </div>
 
-                            <h3 class="text-sm font-bold text-slate-900 leading-snug">Compressor Nebulizer Machine</h3>
-                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">Asthma, allergy and chest congestion relief device with complete tubing and mask set.</p>
+                            <h3 class="text-sm font-bold text-slate-900 leading-snug line-clamp-1 min-h-[20px]">Compressor Nebulizer Machine</h3>
+                            <p class="text-xs text-slate-500 mt-1.5 line-clamp-2 min-h-[32px] leading-relaxed">Asthma, allergy and chest congestion relief device with complete tubing and mask set.</p>
 
-                            <div class="mt-3 py-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                            <div class="mt-auto pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
                                 <span class="text-emerald-700 font-bold flex items-center gap-1">
                                     <i class="fa-solid fa-shield-halved text-[10px]"></i> Tested Unit
                                 </span>
@@ -1055,8 +1082,8 @@
                             </div>
                         </div>
 
-                        <div class="pt-3">
-                            <button onclick="orderViaWhatsApp('Compressor Nebulizer Machine', 'Surgical')" class="w-full py-2.5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
+                        <div class="pt-3 mt-auto">
+                            <button onclick="orderViaWhatsApp('Compressor Nebulizer Machine', 'Surgical')" class="w-full h-[40px] rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99]">
                                 <i class="fa-brands fa-whatsapp text-sm text-emerald-300"></i> Order on WhatsApp
                             </button>
                         </div>
@@ -1200,8 +1227,120 @@
             </div>
         </section>
 
-        <!-- 8. PHYSICAL STORE LOCATION & ACCESSIBILITY (With Embedded Interactive Google Map) -->
-        <section id="store-info" class="py-14 bg-white border-t border-slate-200">
+        <!-- 8. ABOUT US — PHARMACY HERITAGE & CLINICAL INTEGRITY -->
+        <section id="about" class="py-14 bg-white border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="max-w-3xl">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green">About Umer Din Pharmacy &amp; Surgical</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-display mt-1">
+                        Lalamusa’s Trusted Healthcare &amp; Surgical Partner
+                    </h2>
+                    <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                        Main G.T. Road par Bank of Punjab ke sath waqe Umer Din Pharmacy &amp; Surgical Lalamusa aur gird-o-nawah ke ilaqon ke liye 100% DRAP-approved medicines, cold-chain insulins aur certified surgical equipment faraham karne wala mohtaram healthcare markaz hai.
+                    </p>
+                </div>
+
+                <!-- 4 Trust & Service Pillars -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
+                    
+                    <!-- Pillar 1 -->
+                    <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 flex flex-col justify-between shadow-subtle hover:shadow-card">
+                        <div>
+                            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg mb-3">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+                            <h3 class="text-sm font-bold text-slate-900">100% Asal DRAP Medicines</h3>
+                            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                                Hamari tamam dawaiyan licensed multinational aur registered pharmaceutical companies se direct purchase ki jati hain. Nakli ya ghair-tasdeeq shuda dawaon ki zero gunjaish.
+                            </p>
+                        </div>
+                        <div class="pt-3 mt-3 border-t border-slate-200/70 text-[11px] font-bold text-emerald-700 flex items-center gap-1.5">
+                            <i class="fa-solid fa-check"></i> Genuine Batch Guaranteed
+                        </div>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/90 hover:border-blue-300 transition-all duration-200 flex flex-col justify-between shadow-subtle hover:shadow-card">
+                        <div>
+                            <div class="w-11 h-11 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-lg mb-3">
+                                <i class="fa-solid fa-snowflake"></i>
+                            </div>
+                            <h3 class="text-sm font-bold text-slate-900">2°C – 8°C Cold Chain Care</h3>
+                            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                                Insulins, vaccines aur biological injections ko 24 ghante uninterrupted commercial refrigeration aur generator backup par mehfooz rakha jata hai.
+                            </p>
+                        </div>
+                        <div class="pt-3 mt-3 border-t border-slate-200/70 text-[11px] font-bold text-blue-700 flex items-center gap-1.5">
+                            <i class="fa-solid fa-check"></i> Insulated Delivery Packs
+                        </div>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/90 hover:border-red-300 transition-all duration-200 flex flex-col justify-between shadow-subtle hover:shadow-card">
+                        <div>
+                            <div class="w-11 h-11 rounded-xl bg-red-100 text-brand-red flex items-center justify-center text-lg mb-3">
+                                <i class="fa-solid fa-kit-medical"></i>
+                            </div>
+                            <h3 class="text-sm font-bold text-slate-900">Hospital &amp; Surgical Rehab</h3>
+                            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                                Wheelchairs, commode chairs, nebulizers, BP apparatus, cannula aur clinical disposables ka wasee stock general practitioners aur home care ke liye har waqt tayyar hai.
+                            </p>
+                        </div>
+                        <div class="pt-3 mt-3 border-t border-slate-200/70 text-[11px] font-bold text-brand-red flex items-center gap-1.5">
+                            <i class="fa-solid fa-check"></i> Certified Diagnostic Devices
+                        </div>
+                    </div>
+
+                    <!-- Pillar 4 -->
+                    <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 flex flex-col justify-between shadow-subtle hover:shadow-card">
+                        <div>
+                            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-lg mb-3">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                            <h3 class="text-sm font-bold text-slate-900">Qualified Pharmacist Advice</h3>
+                            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                                Doctor ke nuskhey ki parchi samajhne, dawaiyon ke waqt aur tareeqe par rehnumai ke liye hamare trained pharmacists call aur WhatsApp par dastiyab hain.
+                            </p>
+                        </div>
+                        <div class="pt-3 mt-3 border-t border-slate-200/70 text-[11px] font-bold text-emerald-700 flex items-center gap-1.5">
+                            <i class="fa-solid fa-check"></i> Personal Patient Guidance
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Credibility & Service Commitments Strip -->
+                <div class="mt-8 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50 to-blue-50 border border-emerald-200/80 p-5 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="flex flex-wrap items-center gap-4 sm:gap-8 text-xs font-semibold text-slate-800">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-brand-green text-sm"></i>
+                            <span>Daily Timings: <strong>8:00 AM – 11:30 PM</strong></span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-motorcycle text-brand-green text-sm"></i>
+                            <span>Free Local Delivery in Lalamusa</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-shield-halved text-brand-green text-sm"></i>
+                            <span>DRAP Regulated Supply</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/923338448427?text=Assalam-o-Alaikum%20Umer%20Din%20Pharmacy!%20Mujhe%20aapke%20store%20ke%20barey%20mein%20maloomat%20chahiye." 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="h-[40px] px-5 rounded-xl bg-brand-green hover:bg-brand-greenDark text-white font-bold text-xs uppercase tracking-wider transition flex items-center gap-2 shadow-sm whitespace-nowrap shrink-0">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> Talk to Pharmacist
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 9. PHYSICAL STORE LOCATION & CONTACT (With Embedded Interactive Google Map) -->
+        <section id="contact" class="py-14 bg-slate-50 border-t border-slate-200">
+            <span id="store-info" class="sr-only">Store Information</span>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
@@ -1355,22 +1494,22 @@
                 <div class="space-y-2">
                     <h4 class="text-xs font-bold uppercase tracking-wider text-white">Store Range</h4>
                     <ul class="space-y-1.5 text-slate-400">
-                        <li>General &amp; Prescription Medicines</li>
-                        <li>Surgical Tools &amp; Hospital Disposables</li>
-                        <li>Infant Milk Formula &amp; Baby Care</li>
-                        <li>Medicated Sunblocks &amp; Cosmetics</li>
-                        <li>Nutrifactor &amp; Dietary Supplements</li>
+                        <li><a href="#categories" onclick="selectCategoryAndScroll('medicines')" class="hover:text-emerald-400 transition">General &amp; Prescription Medicines</a></li>
+                        <li><a href="#surgical-section" class="hover:text-emerald-400 transition">Surgical Tools &amp; Hospital Disposables</a></li>
+                        <li><a href="#categories" onclick="selectCategoryAndScroll('babycare')" class="hover:text-emerald-400 transition">Infant Milk Formula &amp; Baby Care</a></li>
+                        <li><a href="#categories" onclick="selectCategoryAndScroll('cosmetics')" class="hover:text-emerald-400 transition">Medicated Sunblocks &amp; Cosmetics</a></li>
+                        <li><a href="#categories" onclick="selectCategoryAndScroll('medicines')" class="hover:text-emerald-400 transition">Nutrifactor &amp; Dietary Supplements</a></li>
                     </ul>
                 </div>
 
                 <!-- Col 3: Contact & Address -->
                 <div class="space-y-2">
-                    <h4 class="text-xs font-bold uppercase tracking-wider text-white">Contact &amp; Address</h4>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-white">Contact &amp; Navigation</h4>
                     <ul class="space-y-1.5 text-slate-400">
-                        <li><strong class="text-slate-200">Landline:</strong> 0537 517129</li>
-                        <li><strong class="text-slate-200">WhatsApp:</strong> 0333 8448427</li>
-                        <li><strong class="text-slate-200">Location:</strong> Main G.T. Road, Lalamusa</li>
-                        <li><strong class="text-slate-200">Delivery:</strong> Free across Lalamusa city</li>
+                        <li><strong class="text-slate-200">Landline:</strong> <a href="tel:0537517129" class="hover:text-emerald-400 transition">0537 517129</a></li>
+                        <li><strong class="text-slate-200">WhatsApp:</strong> <a href="https://wa.me/923338448427" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition">0333 8448427</a></li>
+                        <li><strong class="text-slate-200">Location:</strong> <a href="#contact" class="hover:text-emerald-400 transition">Main G.T. Road, Lalamusa</a></li>
+                        <li><strong class="text-slate-200">About Us:</strong> <a href="#about" class="hover:text-emerald-400 transition">Pharmacy Heritage &amp; Care</a></li>
                     </ul>
                 </div>
 
@@ -1392,8 +1531,12 @@
 
             <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500 text-[11px]">
                 <p>&copy; <span id="current-year"></span> Umer Din Pharmacy &amp; Surgical &bull; Lalamusa, Pakistan. All Rights Reserved.</p>
-                <div class="flex items-center gap-3">
+                <div class="flex flex-wrap items-center gap-3">
                     <span>100% DRAP Regulated Stock</span>
+                    <span>&bull;</span>
+                    <a href="#about" class="hover:text-emerald-400 transition">About Us</a>
+                    <span>&bull;</span>
+                    <a href="#contact" class="hover:text-emerald-400 transition">Contact &amp; Store Map</a>
                     <span>&bull;</span>
                     <span>Free Home Delivery Lalamusa</span>
                 </div>
@@ -1592,6 +1735,22 @@
             }
         }
 
+        // Accessible manual navigation for category slider (Prev/Next buttons)
+        function slideCategories(direction) {
+            const viewport = document.getElementById('category-slider-viewport');
+            if (!viewport) return;
+            if (typeof window._internalSlideCategories === 'function') {
+                window._internalSlideCategories(direction);
+            } else {
+                const card = viewport.querySelector('.cat-slide-card');
+                const step = card ? (card.offsetWidth + 16) : 200;
+                viewport.scrollBy({
+                    left: direction === 'prev' ? -step : step,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
         // 13. CONTINUOUS AUTO-LOOP CATEGORY CAROUSEL ENGINE
         (function initCategorySlider() {
             const viewport = document.getElementById('category-slider-viewport');
@@ -1745,6 +1904,21 @@
                     e.stopPropagation();
                 }
             }, true);
+
+            // Exposed manual slide handler that syncs with auto-loop engine
+            window._internalSlideCategories = function(direction) {
+                isPaused = true;
+                clearTimeout(resumeTimeout);
+                const card = viewport.querySelector('.cat-slide-card');
+                const step = card ? (card.offsetWidth + 16) : 200;
+                viewport.scrollBy({
+                    left: direction === 'prev' ? -step : step,
+                    behavior: 'smooth'
+                });
+                resumeTimeout = setTimeout(() => {
+                    isPaused = false;
+                }, 2200);
+            };
         })();
 
         // Direct catalog item WhatsApp order
